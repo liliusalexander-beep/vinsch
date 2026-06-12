@@ -228,9 +228,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: oklch(from var(--color-bg) l c h / 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: oklch(from var(--color-bg) l c h / 0.96);
   transition: box-shadow 0.3s var(--ease-out);
 }
 .header--scrolled {
@@ -865,6 +863,12 @@
 .contact__channel a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.contact__channel .contact__addr {
+  color: var(--color-panel-text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
 }
 .contact__small {
   margin-top: var(--space-8);
