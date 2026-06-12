@@ -7,11 +7,19 @@
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var lenis = null;
 
+  /* cookie-based prefs (storage APIs are unavailable in some embeds) */
+  function readPref(k) {
+    try { var m = document.cookie.match(new RegExp('(?:^|; )' + k + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : null; } catch (e) { return null; }
+  }
+  function writePref(k, v, persist) {
+    try { document.cookie = k + '=' + encodeURIComponent(v) + '; path=/; SameSite=Lax' + (persist ? '; max-age=31536000' : ''); } catch (e) {}
+  }
+
   /* ---------- theme ---------- */
   var themeToggle = document.getElementById('themeToggle');
   function setTheme(t) {
     doc.dataset.theme = t;
-    try { localStorage.setItem('talja-theme', t); } catch (e) {}
+    writePref('talja-theme', t, true);
     themeToggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', t === 'dark' ? '#171411' : '#F4F1EA');
@@ -55,11 +63,11 @@
   /* ---------- preloader ---------- */
   var loader = document.getElementById('loader');
   var seen = false;
-  try { seen = sessionStorage.getItem('talja-seen') === '1'; } catch (e) {}
+  seen = readPref('talja-seen') === '1';
   function finishLoader() {
     loader.classList.add('is-done');
     doc.classList.remove('is-loading');
-    try { sessionStorage.setItem('talja-seen', '1'); } catch (e) {}
+    writePref('talja-seen', '1', false);
     setTimeout(function () { loader.classList.add('is-removed'); }, 950);
     heroIntro();
   }
