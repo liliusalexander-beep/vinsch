@@ -3,6 +3,32 @@
    Warm paper, ink, burnt amber. Clash Display + Satoshi.
    ============================================================ */
 
+/* Self-hosted fonts (woff2) for GDPR safety and speed. No third-party CDN. */
+@font-face {
+  font-family: "Clash Display"; font-style: normal; font-weight: 500;
+  src: url("assets/fonts/clash-500.woff2") format("woff2"); font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display"; font-style: normal; font-weight: 600;
+  src: url("assets/fonts/clash-600.woff2") format("woff2"); font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display"; font-style: normal; font-weight: 700;
+  src: url("assets/fonts/clash-700.woff2") format("woff2"); font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi"; font-style: normal; font-weight: 400;
+  src: url("assets/fonts/satoshi-400.woff2") format("woff2"); font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi"; font-style: normal; font-weight: 500;
+  src: url("assets/fonts/satoshi-500.woff2") format("woff2"); font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi"; font-style: normal; font-weight: 700;
+  src: url("assets/fonts/satoshi-700.woff2") format("woff2"); font-display: swap;
+}
+
 :root {
   /* color: light */
   --bg: #F4F1EA;
@@ -574,6 +600,54 @@ html.js .hero.is-intro .hero__media { transition-delay: 300ms; }
 .form__success a { color: var(--inverse-ink); font-weight: 700; }
 @media (max-width: 560px) { .form__row { grid-template-columns: 1fr; } }
 @media (max-width: 880px) { .contact__grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   LANGUAGE TOGGLE
+   ============================================================ */
+.lang-toggle {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  height: 2.5rem; padding: 0 0.75rem; border-radius: 999px;
+  border: 1.5px solid var(--line); background: transparent; cursor: pointer;
+  font-family: var(--font-display); font-weight: 600; font-size: 0.8125rem;
+  letter-spacing: 0.04em; color: var(--ink-soft);
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+.lang-toggle:hover { border-color: var(--ink); }
+.lang-toggle__opt { transition: color var(--t-fast); }
+.lang-toggle__opt.is-active { color: var(--accent); }
+.lang-toggle__sep { color: var(--line); }
+@media (max-width: 420px) { .lang-toggle { padding: 0 0.6rem; gap: 0.25rem; } }
+
+/* ============================================================
+   GUARANTEE / PROMISE
+   ============================================================ */
+.promise { background: var(--bg-dim); padding: var(--section) 0; }
+.section-head--center { margin-left: auto; margin-right: auto; text-align: center; max-width: 40rem; }
+.section-head--center .kicker { justify-content: center; }
+.promise__grid {
+  list-style: none; display: grid; gap: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+  grid-template-columns: repeat(4, 1fr);
+}
+.promise__item {
+  background: var(--bg-raise); border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg); padding: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  display: grid; gap: var(--s-3); align-content: start;
+}
+.promise__icon {
+  width: 2.5rem; height: 2.5rem; padding: 0.55rem; border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent);
+}
+.promise__item h3 { font-size: var(--text-lg); line-height: 1.2; }
+.promise__item p { color: var(--ink-soft); font-size: var(--text-sm); line-height: 1.5; }
+@media (max-width: 980px) { .promise__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .promise__grid { grid-template-columns: 1fr; } }
+
+/* honeypot: kept in the layout for bots, hidden from people and AT */
+.form__hp {
+  position: absolute; left: -9999px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
+}
+.form__success-icon { width: 2.75rem; height: 2.75rem; color: var(--accent); justify-self: center; }
 
 /* ============================================================
    FOOTER

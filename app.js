@@ -15,18 +15,64 @@
     try { document.cookie = k + '=' + encodeURIComponent(v) + '; path=/; SameSite=Lax' + (persist ? '; max-age=31536000' : ''); } catch (e) {}
   }
 
+  /* ---------- i18n (Swedish default, English secondary) ---------- */
+  var I18N = window.TALJA_I18N || { sv: {}, en: {} };
+  var lang = (doc.lang === 'sv' || doc.lang === 'en') ? doc.lang : 'sv';
+  function tr(key) {
+    var d = I18N[lang];
+    return (d && d[key] != null) ? d[key] : key;
+  }
+  function setNode(el, val) {
+    if (/[<&]/.test(val)) el.innerHTML = val; else el.textContent = val;
+  }
+  function applyI18n() {
+    var dict = I18N[lang] || {};
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n');
+      if (dict[k] != null) setNode(el, dict[k]);
+      else if (window.console && console.warn) console.warn('i18n missing [' + lang + ']:', k);
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-html');
+      if (dict[k] != null) el.innerHTML = dict[k];
+      else if (window.console && console.warn) console.warn('i18n missing [' + lang + ']:', k);
+    });
+    doc.lang = lang;
+    var lt = document.getElementById('langToggle');
+    if (lt) {
+      lt.setAttribute('aria-label', dict['aria.lang'] || 'Switch language');
+      lt.querySelectorAll('.lang-toggle__opt').forEach(function (opt) {
+        opt.classList.toggle('is-active', opt.getAttribute('data-lang') === lang);
+      });
+    }
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', doc.dataset.theme === 'dark' ? tr('aria.themeToLight') : tr('aria.themeToDark'));
+    }
+  }
+
   /* ---------- theme ---------- */
   var themeToggle = document.getElementById('themeToggle');
-  function setTheme(t) {
-    doc.dataset.theme = t;
-    writePref('talja-theme', t, true);
-    themeToggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  function setTheme(mode) {
+    doc.dataset.theme = mode;
+    writePref('talja-theme', mode, true);
+    themeToggle.setAttribute('aria-label', mode === 'dark' ? tr('aria.themeToLight') : tr('aria.themeToDark'));
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', t === 'dark' ? '#171411' : '#F4F1EA');
+    if (meta) meta.setAttribute('content', mode === 'dark' ? '#171411' : '#F4F1EA');
   }
   themeToggle.addEventListener('click', function () {
     setTheme(doc.dataset.theme === 'dark' ? 'light' : 'dark');
   });
+
+  /* ---------- language toggle ---------- */
+  var langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', function () {
+      lang = (lang === 'sv') ? 'en' : 'sv';
+      writePref('talja-lang', lang, true);
+      applyI18n();
+    });
+  }
+  applyI18n();
 
   /* ---------- footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -327,12 +373,12 @@
   function validate() {
     var ok = true;
     var name = form.name, email = form.email, topic = form.topic, msg = form.message;
-    if (!name.value.trim()) { setErr(name, 'Please tell us your name.'); ok = false; } else setErr(name, '');
-    if (!email.value.trim()) { setErr(email, 'We need an email to reply to.'); ok = false; }
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setErr(email, 'That email does not look right.'); ok = false; }
+    if (!name.value.trim()) { setErr(name, tr('err.name')); ok = false; } else setErr(name, '');
+    if (!email.value.trim()) { setErr(email, tr('err.email')); ok = false; }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setErr(email, tr('err.emailBad')); ok = false; }
     else setErr(email, '');
-    if (!topic.value) { setErr(topic, 'Pick the closest match.'); ok = false; } else setErr(topic, '');
-    if (!msg.value.trim()) { setErr(msg, 'One or two sentences is plenty.'); ok = false; } else setErr(msg, '');
+    if (!topic.value) { setErr(topic, tr('err.topic')); ok = false; } else setErr(topic, '');
+    if (!msg.value.trim()) { setErr(msg, tr('err.msg')); ok = false; } else setErr(msg, '');
     return ok;
   }
   ['input', 'change'].forEach(function (evt) {
@@ -341,29 +387,70 @@
       if (f && f.classList.contains('has-error')) validate();
     });
   });
+  /* Set FORM_ENDPOINT to a POST URL (e.g. a Formspree/Basin form or your own
+     handler) to submit in the background via fetch. While it is empty, the form
+     gracefully falls back to opening the visitor's mail client. */
+  var FORM_ENDPOINT = '';
+
+  function showSuccess() {
+    success.hidden = false;
+    success.setAttribute('tabindex', '-1');
+    success.focus();
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    /* honeypot: real people never fill this hidden field */
+    if (form.website && form.website.value.trim() !== '') { return; }
     if (!validate()) {
       var firstErr = form.querySelector('.has-error input, .has-error select, .has-error textarea');
       if (firstErr) firstErr.focus();
       return;
     }
     var d = form;
+    var payload = {
+      name: d.name.value.trim(),
+      company: d.company.value.trim(),
+      email: d.email.value.trim(),
+      phone: d.phone.value.trim(),
+      topic: d.topic.value,
+      message: d.message.value.trim(),
+      locale: lang
+    };
+    var submitBtn = form.querySelector('.form__submit');
+
+    if (FORM_ENDPOINT) {
+      if (submitBtn) submitBtn.disabled = true;
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('bad status');
+        form.reset();
+        showSuccess();
+      }).catch(function () {
+        if (submitBtn) submitBtn.disabled = false;
+        setErr(form.message, tr('err.send'));
+        form.message.focus();
+      });
+      return;
+    }
+
+    /* fallback: hand off to the mail client, then confirm */
     var body = [
-      'Name: ' + d.name.value.trim(),
-      'Company: ' + (d.company.value.trim() || 'Not provided'),
-      'Email: ' + d.email.value.trim(),
-      'Phone: ' + (d.phone.value.trim() || 'Not provided'),
-      'Need: ' + d.topic.value,
+      'Name: ' + payload.name,
+      'Company: ' + (payload.company || 'Not provided'),
+      'Email: ' + payload.email,
+      'Phone: ' + (payload.phone || 'Not provided'),
+      'Need: ' + payload.topic,
       '',
-      d.message.value.trim()
+      payload.message
     ].join('\n');
     var href = 'mailto:hello@talja.se?subject=' +
-      encodeURIComponent('Quote request: ' + d.topic.value) +
+      encodeURIComponent('Quote request: ' + payload.topic) +
       '&body=' + encodeURIComponent(body);
     window.location.href = href;
-    success.hidden = false;
-    success.focus && success.setAttribute('tabindex', '-1');
-    success.focus();
+    showSuccess();
   });
 })();

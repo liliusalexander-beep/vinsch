@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Talja | Practical AI, websites and IT support for small business</title>
-  <meta name="description" content="Talja rigs AI for small and medium businesses in Stockholm: websites that sell, custom internal AI tools, automation, integrations and IT support that stays. Fixed quotes, plain language.">
+  <meta name="description" content="Talja rigs AI for small and medium businesses in Stockholm: websites that sell, custom internal AI tools, automation, integrations and IT support that stays. Fixed quotes, plain language, in Swedish or English.">
   <link rel="canonical" href="https://talja.se/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Talja">
@@ -17,13 +17,19 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#F4F1EA">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap">
+  <link rel="preload" href="assets/fonts/clash-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js');
-    (function(){try{var m=document.cookie.match(/(?:^|; )talja-theme=([^;]*)/);var t=m?m[1]:null;if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.dataset.theme='dark';}}catch(e){}})();
+    (function(){try{
+      var ck=function(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;};
+      var t=ck('talja-theme');
+      if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.dataset.theme='dark';}
+      var l=ck('talja-lang');
+      if(l!=='sv'&&l!=='en'){l='sv';}
+      document.documentElement.lang=l;
+    }catch(e){}})();
   </script>
   <script type="application/ld+json">
   {
@@ -36,12 +42,13 @@
     "telephone": "+46 8 410 244 60",
     "address": { "@type": "PostalAddress", "streetAddress": "Vasagatan 28", "addressLocality": "Stockholm", "postalCode": "111 20", "addressCountry": "SE" },
     "areaServed": "Sweden",
+    "availableLanguage": ["sv", "en"],
     "priceRange": "$$"
   }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <!-- Preloader -->
   <div class="loader" id="loader" aria-hidden="true">
@@ -71,23 +78,28 @@
       </a>
       <nav class="nav" id="nav" aria-label="Main">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#services"><span>Services</span></a></li>
-          <li><a class="nav__link" href="#process"><span>Process</span></a></li>
-          <li><a class="nav__link" href="#why"><span>Why Talja</span></a></li>
-          <li><a class="nav__link" href="#faq"><span>FAQ</span></a></li>
-          <li><a class="nav__link" href="#contact"><span>Contact</span></a></li>
+          <li><a class="nav__link" href="#services"><span data-i18n="nav.services">Services</span></a></li>
+          <li><a class="nav__link" href="#process"><span data-i18n="nav.process">Process</span></a></li>
+          <li><a class="nav__link" href="#why"><span data-i18n="nav.why">Why Talja</span></a></li>
+          <li><a class="nav__link" href="#faq"><span data-i18n="nav.faq">FAQ</span></a></li>
+          <li><a class="nav__link" href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
         </ul>
         <div class="nav__foot">
-          <a class="btn btn--solid" href="#contact" data-magnetic>Get a fixed quote</a>
+          <a class="btn btn--solid" href="#contact" data-magnetic data-i18n="cta.fixedQuote">Get a fixed quote</a>
           <p class="nav__meta">hello@talja.se · 08-410 244 60</p>
         </div>
       </nav>
       <div class="header__actions">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Byt till svenska">
+          <span class="lang-toggle__opt" data-lang="sv">SV</span>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <span class="lang-toggle__opt" data-lang="en">EN</span>
+        </button>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
           <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M18.5 5.5l-1.7 1.7M7.2 16.8l-1.7 1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         </button>
-        <a class="btn btn--solid header__cta" href="#contact" data-magnetic>Get a quote</a>
+        <a class="btn btn--solid header__cta" href="#contact" data-magnetic data-i18n="cta.quote">Get a quote</a>
         <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span></button>
       </div>
     </div>
@@ -99,38 +111,39 @@
       <canvas class="hero__canvas" id="ropeCanvas" aria-hidden="true"></canvas>
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="hero__kicker intro-fade">AI and IT partner for growing businesses · Stockholm</p>
+          <p class="hero__kicker intro-fade" data-i18n="hero.kicker">AI and IT partner for small business · Stockholm</p>
           <h1 class="hero__title">
-            <span class="hero__line"><span>Technology</span></span>
-            <span class="hero__line"><span>that pulls</span></span>
-            <span class="hero__line"><span>its <em>weight.</em></span></span>
+            <span class="hero__line"><span data-i18n="hero.title1">Technology</span></span>
+            <span class="hero__line"><span data-i18n="hero.title2">that pulls</span></span>
+            <span class="hero__line"><span data-i18n-html="hero.title3">its <em>weight.</em></span></span>
           </h1>
-          <p class="hero__lede intro-fade">A talja is the block and tackle: the simple machine that lets one person lift what normally takes ten. We rig the same advantage for your business, with websites that sell, internal AI tools, automation and IT support that stays.</p>
+          <p class="hero__lede intro-fade" data-i18n="hero.lede">We build the websites, internal AI tools, automation and IT support that let a small team do the work of a big one. Fixed quotes, senior builders, plain language.</p>
           <div class="hero__cta intro-fade">
-            <a class="btn btn--solid btn--lg" href="#contact" data-magnetic>Request a free quote</a>
-            <a class="btn btn--ghost btn--lg" href="#services" data-magnetic>See what we rig</a>
+            <a class="btn btn--solid btn--lg" href="#contact" data-magnetic data-i18n="hero.cta1">Request a free quote</a>
+            <a class="btn btn--ghost btn--lg" href="#services" data-magnetic data-i18n="hero.cta2">See what we build</a>
           </div>
           <ul class="hero__trust intro-fade">
-            <li>Fixed-price quotes</li>
-            <li>First delivery in weeks</li>
-            <li>Reply within one business day</li>
+            <li data-i18n="hero.trust1">Fixed-price quotes</li>
+            <li data-i18n="hero.trust2">First delivery in weeks</li>
+            <li data-i18n="hero.trust3">You own everything</li>
+            <li data-i18n="hero.trust4">Reply within one business day</li>
           </ul>
         </div>
         <figure class="hero__media intro-fade">
           <div class="hero__frame"><img src="assets/hero.webp" alt="A sculptural block and tackle: an amber rope over two pulley wheels lifting a heavy stone cube" width="1000" height="1500" fetchpriority="high"></div>
           <figcaption class="hero__card">
-            <strong>Mechanical advantage</strong>
-            <span>Small force in. Heavy load up. That is the whole idea.</span>
+            <strong data-i18n="hero.cardTitle">Talja, the block and tackle</strong>
+            <span data-i18n="hero.cardBody">Small force in. Heavy load up. That is the whole idea.</span>
           </figcaption>
         </figure>
       </div>
-      <a class="hero__scroll" href="#services" aria-label="Scroll to services"><span class="hero__scroll-line"></span>Scroll</a>
+      <a class="hero__scroll" href="#services" aria-label="Scroll to services"><span class="hero__scroll-line"></span><span data-i18n="hero.scroll">Scroll</span></a>
     </section>
 
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track" id="marqueeTrack">
-        <span>Websites that sell</span><i>·</i><span>Internal AI tools</span><i>·</i><span>Automation that runs itself</span><i>·</i><span>Integrations</span><i>·</i><span>IT support that stays</span><i>·</i>
+        <span data-i18n="mq.1">Websites that sell</span><i>·</i><span data-i18n="mq.2">Internal AI tools</span><i>·</i><span data-i18n="mq.3">Automation that runs itself</span><i>·</i><span data-i18n="mq.4">Integrations</span><i>·</i><span data-i18n="mq.5">IT support that stays</span><i>·</i>
       </div>
     </div>
 
@@ -138,13 +151,13 @@
     <section class="stats" aria-label="What we aim for">
       <div class="container stats__grid">
         <header class="stats__head reveal">
-          <p class="kicker">The point of a pulley</p>
-          <h2 class="stats__title">Every engagement is designed around three numbers.</h2>
+          <p class="kicker" data-i18n="stats.kicker">The point of a pulley</p>
+          <h2 class="stats__title" data-i18n="stats.title">Every engagement is designed around three numbers.</h2>
         </header>
         <dl class="stats__row">
-          <div class="stat reveal"><dt>Hours given back, per person, per month</dt><dd><span class="stat__num" data-count="10">0</span><span class="stat__unit">+</span></dd></div>
-          <div class="stat reveal"><dt>Weeks to a first working delivery</dt><dd><span class="stat__num" data-count="3">0</span><span class="stat__unit">&nbsp;wks</span></dd></div>
-          <div class="stat reveal"><dt>Partner for web, AI and IT. One quote, one number to call</dt><dd><span class="stat__num" data-count="1">0</span></dd></div>
+          <div class="stat reveal"><dt data-i18n="stats.s1">Hours given back, per person, per month</dt><dd><span class="stat__num" data-count="10">0</span><span class="stat__unit">+</span></dd></div>
+          <div class="stat reveal"><dt data-i18n="stats.s2">Weeks to a first working delivery</dt><dd><span class="stat__num" data-count="3">0</span><span class="stat__unit" data-i18n="stats.wks">&nbsp;wks</span></dd></div>
+          <div class="stat reveal"><dt data-i18n="stats.s3">Partner for web, AI and IT. One quote, one number to call</dt><dd><span class="stat__num" data-count="1">0</span></dd></div>
         </dl>
       </div>
     </section>
@@ -153,18 +166,18 @@
     <section class="services" id="services" aria-label="Services">
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker">Services</p>
-          <h2>Four ways we add pull.</h2>
-          <p class="section-head__lede">Start with one. Most clients end up combining them, because they share the same goal: more output from the team you already have.</p>
+          <p class="kicker" data-i18n="nav.services">Services</p>
+          <h2 data-i18n="svc.title">Four ways we add pull.</h2>
+          <p class="section-head__lede" data-i18n="svc.lede">Start with one. Most clients end up combining them, because they share the same goal: more output from the team you already have.</p>
         </header>
         <ul class="svc" id="svcList">
           <li class="svc__row reveal" data-img="assets/svc-web.webp">
             <a class="svc__hit" href="#contact" aria-label="Websites that earn their keep. Request a quote.">
               <span class="svc__no">01</span>
               <div class="svc__body">
-                <h3 class="svc__title">Websites that earn their keep</h3>
-                <p class="svc__desc">We design, build and rebuild fast, modern sites that turn visitors into inquiries. Copy, SEO and analytics included, so you know what the site brings in.</p>
-                <ul class="svc__tags"><li>Design &amp; build</li><li>Redesigns</li><li>Copy &amp; SEO</li><li>Analytics</li></ul>
+                <h3 class="svc__title" data-i18n="svc.1.t">Websites that earn their keep</h3>
+                <p class="svc__desc" data-i18n="svc.1.d">We design, build and rebuild fast, modern sites that turn visitors into inquiries. Copy, SEO and analytics included, so you know what the site brings in.</p>
+                <ul class="svc__tags"><li data-i18n="svc.1.a">Design &amp; build</li><li data-i18n="svc.1.b">Redesigns</li><li data-i18n="svc.1.c">Copy &amp; SEO</li><li data-i18n="svc.1.e">Analytics</li></ul>
               </div>
               <span class="svc__arrow" aria-hidden="true">→</span>
             </a>
@@ -174,9 +187,9 @@
             <a class="svc__hit" href="#contact" aria-label="Internal AI tools built around your work. Request a quote.">
               <span class="svc__no">02</span>
               <div class="svc__body">
-                <h3 class="svc__title">Internal AI tools, built around your work</h3>
-                <p class="svc__desc">Assistants that answer from your documents, draft your quotes and summarize your cases. Trained on how your business actually runs, hosted where your data is safe.</p>
-                <ul class="svc__tags"><li>Custom assistants</li><li>Knowledge search</li><li>Quoting &amp; documents</li><li>Team training</li></ul>
+                <h3 class="svc__title" data-i18n="svc.2.t">Internal AI tools, built around your work</h3>
+                <p class="svc__desc" data-i18n="svc.2.d">Assistants that answer from your documents, draft your quotes and summarize your cases. Trained on how your business actually runs, hosted where your data is safe.</p>
+                <ul class="svc__tags"><li data-i18n="svc.2.a">Custom assistants</li><li data-i18n="svc.2.b">Knowledge search</li><li data-i18n="svc.2.c">Quoting &amp; documents</li><li data-i18n="svc.2.e">Team training</li></ul>
               </div>
               <span class="svc__arrow" aria-hidden="true">→</span>
             </a>
@@ -186,9 +199,9 @@
             <a class="svc__hit" href="#contact" aria-label="Automation and integrations. Request a quote.">
               <span class="svc__no">03</span>
               <div class="svc__body">
-                <h3 class="svc__title">Automation that runs while you sleep</h3>
-                <p class="svc__desc">We connect the systems you already pay for and remove the retyping between them. Invoices, CRM updates, inbox triage and reports that write themselves.</p>
-                <ul class="svc__tags"><li>System integrations</li><li>Workflow automation</li><li>Inbox &amp; CRM</li><li>Auto reporting</li></ul>
+                <h3 class="svc__title" data-i18n="svc.3.t">Automation that runs while you sleep</h3>
+                <p class="svc__desc" data-i18n="svc.3.d">We connect the systems you already pay for and remove the retyping between them. Invoices, CRM updates, inbox triage and reports that write themselves.</p>
+                <ul class="svc__tags"><li data-i18n="svc.3.a">System integrations</li><li data-i18n="svc.3.b">Workflow automation</li><li data-i18n="svc.3.c">Inbox &amp; CRM</li><li data-i18n="svc.3.e">Auto reporting</li></ul>
               </div>
               <span class="svc__arrow" aria-hidden="true">→</span>
             </a>
@@ -198,9 +211,9 @@
             <a class="svc__hit" href="#contact" aria-label="IT support that stays. Request a quote.">
               <span class="svc__no">04</span>
               <div class="svc__body">
-                <h3 class="svc__title">IT support that stays</h3>
-                <p class="svc__desc">One number for everything technical: helpdesk, security, backups, devices and honest advice. A monthly plan instead of panicked hourly billing.</p>
-                <ul class="svc__tags"><li>Helpdesk</li><li>Security &amp; backup</li><li>Devices &amp; accounts</li><li>Advisory</li></ul>
+                <h3 class="svc__title" data-i18n="svc.4.t">IT support that stays</h3>
+                <p class="svc__desc" data-i18n="svc.4.d">One number for everything technical: helpdesk, security, backups, devices and honest advice. A monthly plan instead of panicked hourly billing.</p>
+                <ul class="svc__tags"><li data-i18n="svc.4.a">Helpdesk</li><li data-i18n="svc.4.b">Security &amp; backup</li><li data-i18n="svc.4.c">Devices &amp; accounts</li><li data-i18n="svc.4.e">Advisory</li></ul>
               </div>
               <span class="svc__arrow" aria-hidden="true">→</span>
             </a>
@@ -224,29 +237,29 @@
       <div class="container process__grid">
         <div class="process__side">
           <div class="process__sticky">
-            <p class="kicker">Process</p>
-            <h2>How a project runs.</h2>
-            <p class="process__lede">No discovery theater, no 40-page decks. A clear rope from first call to working software.</p>
+            <p class="kicker" data-i18n="nav.process">Process</p>
+            <h2 data-i18n="proc.title">How a project runs.</h2>
+            <p class="process__lede" data-i18n="proc.lede">No discovery theater, no 40-page decks. A clear rope from first call to working software.</p>
             <div class="process__progress" aria-hidden="true"><span id="processBar"></span></div>
             <p class="process__counter" aria-hidden="true"><span id="processNow">01</span> / 04</p>
           </div>
         </div>
         <ol class="process__steps" id="processSteps">
           <li class="step" data-step="01">
-            <h3><span class="step__no">01</span> Listen</h3>
-            <p>A free 30-minute call, then a short visit if it helps. We map where hours leak out of your week and what they cost you. You talk, we take notes.</p>
+            <h3><span class="step__no">01</span> <span data-i18n="proc.1.t">Listen</span></h3>
+            <p data-i18n="proc.1.d">A free 30-minute call, then a short visit if it helps. We map where hours leak out of your week and what they cost you. You talk, we take notes.</p>
           </li>
           <li class="step" data-step="02">
-            <h3><span class="step__no">02</span> Plan</h3>
-            <p>You get a fixed quote in plain language: what we will build, what it costs, what it saves and when it lands. No meter running, no surprises on the invoice.</p>
+            <h3><span class="step__no">02</span> <span data-i18n="proc.2.t">Plan</span></h3>
+            <p data-i18n="proc.2.d">You get a fixed quote in plain language: what we will build, what it costs, what it saves and when it lands. No meter running, no surprises on the invoice.</p>
           </li>
           <li class="step" data-step="03">
-            <h3><span class="step__no">03</span> Build</h3>
-            <p>Working software in weeks, not quarters. You see progress every Friday and can change course while it is still cheap to do so.</p>
+            <h3><span class="step__no">03</span> <span data-i18n="proc.3.t">Build</span></h3>
+            <p data-i18n="proc.3.d">Working software in weeks, not quarters. You see progress every Friday and can change course while it is still cheap to do so.</p>
           </li>
           <li class="step" data-step="04">
-            <h3><span class="step__no">04</span> Lift</h3>
-            <p>We train your team in an afternoon, stay for the wobbly first weeks and keep improving the setup as your business grows. Support is the product, not an afterthought.</p>
+            <h3><span class="step__no">04</span> <span data-i18n="proc.4.t">Lift</span></h3>
+            <p data-i18n="proc.4.d">We train your team in an afternoon, stay for the wobbly first weeks and keep improving the setup as your business grows. Support is the product, not an afterthought.</p>
           </li>
         </ol>
       </div>
@@ -257,17 +270,49 @@
       <div class="container why__grid">
         <div class="why__side">
           <div class="why__sticky reveal">
-            <p class="kicker">Why Talja</p>
-            <h2>Built for owners who have been burned by IT before.</h2>
-            <a class="btn btn--ghost" href="#contact" data-magnetic>Talk to a builder</a>
+            <p class="kicker" data-i18n="nav.why">Why Talja</p>
+            <h2 data-i18n="why.title">Built for owners who have been burned by IT before.</h2>
+            <a class="btn btn--ghost" href="#contact" data-magnetic data-i18n="why.cta">Talk to a builder</a>
           </div>
         </div>
         <ul class="why__list">
-          <li class="why__item reveal"><h3>Fixed quotes, no meter running</h3><p>You approve a number before we start. If we estimated wrong, that is our problem, not yours.</p></li>
-          <li class="why__item reveal"><h3>Plain language, in Swedish or English</h3><p>We explain every decision so a non-technical owner can challenge it. If you cannot understand the invoice, we have failed.</p></li>
-          <li class="why__item reveal"><h3>You own everything</h3><p>Code, accounts, domains and data sit in your name from day one. Leaving us should be easy. That is what keeps us sharp.</p></li>
-          <li class="why__item reveal"><h3>Senior builders only</h3><p>The person who quotes your project builds your project. No handoff to a junior bench you never met.</p></li>
-          <li class="why__item reveal"><h3>AI where it pays, not where it is trendy</h3><p>We recommend AI when it beats the simpler fix, and we will tell you when a 2,000 SEK plugin solves it instead.</p></li>
+          <li class="why__item reveal"><h3 data-i18n="why.1.t">Fixed quotes, no meter running</h3><p data-i18n="why.1.d">You approve a number before we start. If we estimated wrong, that is our problem, not yours.</p></li>
+          <li class="why__item reveal"><h3 data-i18n="why.2.t">Plain language, in Swedish or English</h3><p data-i18n="why.2.d">We explain every decision so a non-technical owner can challenge it. If you cannot understand the invoice, we have failed.</p></li>
+          <li class="why__item reveal"><h3 data-i18n="why.3.t">You own everything</h3><p data-i18n="why.3.d">Code, accounts, domains and data sit in your name from day one. Leaving us should be easy. That is what keeps us sharp.</p></li>
+          <li class="why__item reveal"><h3 data-i18n="why.4.t">Senior builders only</h3><p data-i18n="why.4.d">The person who quotes your project builds your project. No handoff to a junior bench you never met.</p></li>
+          <li class="why__item reveal"><h3 data-i18n="why.5.t">AI where it pays, not where it is trendy</h3><p data-i18n="why.5.d">We recommend AI when it beats the simpler fix, and we will tell you when a 2,000 SEK plugin solves it instead.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section class="promise" aria-label="Our guarantees">
+      <div class="container">
+        <header class="section-head section-head--center reveal">
+          <p class="kicker" data-i18n="promise.kicker">Our promise</p>
+          <h2 data-i18n="promise.title">Four things we put in writing.</h2>
+        </header>
+        <ul class="promise__grid">
+          <li class="promise__item reveal">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="promise__icon"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3 data-i18n="promise.1.t">A fixed price, before we start</h3>
+            <p data-i18n="promise.1.d">You sign off the number first. If we underestimate, we carry it, not you.</p>
+          </li>
+          <li class="promise__item reveal">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="promise__icon"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3 data-i18n="promise.2.t">You own all of it</h3>
+            <p data-i18n="promise.2.d">Code, domains, accounts and data are in your name from day one. No lock-in.</p>
+          </li>
+          <li class="promise__item reveal">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="promise__icon"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3 data-i18n="promise.3.t">Hosted in the EU, GDPR-safe</h3>
+            <p data-i18n="promise.3.d">Your data stays in the EU and never trains public AI models. You get a one-page map of where it all lives.</p>
+          </li>
+          <li class="promise__item reveal">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="promise__icon"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3 data-i18n="promise.4.t">A reply within one business day</h3>
+            <p data-i18n="promise.4.d">Every email and form reaches a senior builder, not a ticket queue. Support plans have no long lock-in.</p>
+          </li>
         </ul>
       </div>
     </section>
@@ -276,8 +321,8 @@
     <section class="band band--studio" aria-label="Our principle">
       <img class="band__img" src="assets/studio.webp" alt="A warm Scandinavian workshop with a laptop, rope coils and pulley wheels on an oak bench" loading="lazy" width="1800" height="900">
       <blockquote class="band__quote reveal">
-        <p>“Most businesses do not need more software. They need the right rope between the tools they already have.”</p>
-        <cite>Talja founding principle</cite>
+        <p data-i18n="studio.quote">“Most businesses do not need more software. They need the right rope between the tools they already have.”</p>
+        <cite data-i18n="studio.cite">Talja founding principle</cite>
       </blockquote>
     </section>
 
@@ -285,22 +330,22 @@
     <section class="voices" aria-label="Example client voices">
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker">Client voices</p>
-          <h2>What working with us should sound like.</h2>
-          <p class="section-head__lede section-head__lede--note">Example quotes. We are newly founded, and these illustrate the outcomes we commit to. They will be replaced by real case studies as projects complete.</p>
+          <p class="kicker" data-i18n="voices.kicker">Client voices</p>
+          <h2 data-i18n="voices.title">What working with us should sound like.</h2>
+          <p class="section-head__lede section-head__lede--note" data-i18n="voices.note">Example quotes. We are newly founded, and these illustrate the outcomes we commit to. They will be replaced by real, named case studies as projects complete.</p>
         </header>
         <div class="voices__row">
           <figure class="voice reveal">
-            <blockquote>“The quoting assistant Talja built answers in seconds from our own price lists. Quotes that took an afternoon now take ten minutes.”</blockquote>
-            <figcaption><strong>Operations manager</strong><span>Logistics company, 18 employees</span></figcaption>
+            <blockquote data-i18n="voices.1.q">“The quoting assistant Talja built answers in seconds from our own price lists. Quotes that took an afternoon now take ten minutes.”</blockquote>
+            <figcaption><strong data-i18n="voices.1.n">Operations manager</strong><span data-i18n="voices.1.m">Logistics company, 18 employees</span></figcaption>
           </figure>
           <figure class="voice reveal">
-            <blockquote>“They rebuilt our site in three weeks and inquiries doubled the first month. Then they showed us exactly where the inquiries came from.”</blockquote>
-            <figcaption><strong>Founder</strong><span>Specialist e-commerce, 6 employees</span></figcaption>
+            <blockquote data-i18n="voices.2.q">“They rebuilt our site in three weeks and inquiries doubled the first month. Then they showed us exactly where the inquiries came from.”</blockquote>
+            <figcaption><strong data-i18n="voices.2.n">Founder</strong><span data-i18n="voices.2.m">Specialist e-commerce, 6 employees</span></figcaption>
           </figure>
           <figure class="voice reveal">
-            <blockquote>“I finally have one number to call for everything technical. The monthly plan costs less than the hours we used to lose.”</blockquote>
-            <figcaption><strong>Partner</strong><span>Law firm, 11 employees</span></figcaption>
+            <blockquote data-i18n="voices.3.q">“I finally have one number to call for everything technical. The monthly plan costs less than the hours we used to lose.”</blockquote>
+            <figcaption><strong data-i18n="voices.3.n">Partner</strong><span data-i18n="voices.3.m">Law firm, 11 employees</span></figcaption>
           </figure>
         </div>
       </div>
@@ -310,34 +355,34 @@
     <section class="faq" id="faq" aria-label="Frequently asked questions">
       <div class="container faq__grid">
         <header class="faq__head reveal">
-          <p class="kicker">FAQ</p>
-          <h2>Straight answers.</h2>
-          <p class="section-head__lede">Anything missing? <a href="#contact">Ask us directly</a>, we reply within one business day.</p>
+          <p class="kicker" data-i18n="nav.faq">FAQ</p>
+          <h2 data-i18n="faq.title">Straight answers.</h2>
+          <p class="section-head__lede" data-i18n-html="faq.lede">Anything missing? <a href="#contact">Ask us directly</a>, we reply within one business day.</p>
         </header>
         <div class="faq__list">
           <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span>What does a website cost?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p>Most Talja websites land between 30,000 and 90,000 SEK as a fixed quote, depending on size and integrations. A typical build takes three to five weeks. You will know the exact number before we write a line of code.</p></div></div>
+            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.1.q">What does a website cost?</span><i class="qa__icon" aria-hidden="true"></i></button>
+            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.1.a">Most Talja websites land between 30,000 and 90,000 SEK as a fixed quote, depending on size and integrations. A typical build takes three to five weeks. You will know the exact number before we write a line of code.</p></div></div>
           </div>
           <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span>What does a custom AI tool cost, and how long does it take?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p>Internal AI tools and automations usually start around 25,000 SEK and take three to six weeks to a first working version. We always start with the narrowest tool that saves real hours, then expand once it proves itself.</p></div></div>
+            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.2.q">What does a custom AI tool cost, and how long does it take?</span><i class="qa__icon" aria-hidden="true"></i></button>
+            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.2.a">Internal AI tools and automations usually start around 25,000 SEK and take three to six weeks to a first working version. We always start with the narrowest tool that saves real hours, then expand once it proves itself.</p></div></div>
           </div>
           <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span>Is our data safe if we start using AI?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p>Yes, if it is set up properly, and that is the job. We host in the EU, configure providers so your data never trains public models, and put a data processing agreement in place. You get a one-page summary of where every piece of data lives.</p></div></div>
+            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.3.q">Is our data safe if we start using AI?</span><i class="qa__icon" aria-hidden="true"></i></button>
+            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.3.a">Yes, if it is set up properly, and that is the job. We host in the EU, configure providers so your data never trains public models, and put a data processing agreement in place. You get a one-page summary of where every piece of data lives.</p></div></div>
           </div>
           <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span>We are not technical at all. Is that a problem?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p>It is our favorite starting point. You bring the knowledge of how your business runs; we bring everything technical. Every deliverable comes with training in plain language, and most clients are surprised how little they need to learn.</p></div></div>
+            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.4.q">We are not technical at all. Is that a problem?</span><i class="qa__icon" aria-hidden="true"></i></button>
+            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.4.a">It is our favorite starting point. You bring the knowledge of how your business runs; we bring everything technical. Every deliverable comes with training in plain language, and most clients are surprised how little they need to learn.</p></div></div>
           </div>
           <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span>Can you take over a site or system someone else built?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p>Yes, that is common. We start with a fixed-price audit of what exists, tell you honestly what is worth keeping, and take over from there. No rebuild for rebuilding's sake.</p></div></div>
+            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.5.q">Can you take over a site or system someone else built?</span><i class="qa__icon" aria-hidden="true"></i></button>
+            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.5.a">Yes, that is common. We start with a fixed-price audit of what exists, tell you honestly what is worth keeping, and take over from there. No rebuild for rebuilding's sake.</p></div></div>
           </div>
           <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span>How do support plans work?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p>Plans start at 2,500 SEK per month: a guaranteed response time, a monthly health check and a set number of support hours that roll over. No binding period beyond three months, because we would rather earn the renewal.</p></div></div>
+            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.6.q">How do support plans work?</span><i class="qa__icon" aria-hidden="true"></i></button>
+            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.6.a">Plans start at 2,500 SEK per month: a guaranteed response time, a monthly health check and a set number of support hours that roll over. No binding period beyond three months, because we would rather earn the renewal.</p></div></div>
           </div>
         </div>
       </div>
@@ -346,10 +391,10 @@
     <!-- CTA BANNER -->
     <section class="cta" aria-label="Call to action">
       <div class="container">
-        <h2 class="cta__title reveal">Ready to lift more with the team you already have?</h2>
+        <h2 class="cta__title reveal" data-i18n="cta.bannerTitle">Ready to lift more with the team you already have?</h2>
         <div class="cta__row reveal">
-          <a class="btn btn--solid btn--lg" href="#contact" data-magnetic>Get your fixed quote</a>
-          <p>Free 30-minute consultation. No obligation, no slideware.</p>
+          <a class="btn btn--solid btn--lg" href="#contact" data-magnetic data-i18n="cta.bannerBtn">Get your fixed quote</a>
+          <p data-i18n="cta.bannerNote">Free 30-minute consultation. No obligation, no slideware.</p>
         </div>
       </div>
     </section>
@@ -358,62 +403,67 @@
     <section class="contact" id="contact" aria-label="Contact and quote request">
       <div class="container contact__grid">
         <div class="contact__info">
-          <p class="kicker kicker--inverse">Contact</p>
-          <h2>Tell us what feels heavy.</h2>
-          <p class="contact__lede">Describe the work in your own words. We reply within one business day with next steps, and a fixed quote follows the first call.</p>
+          <p class="kicker kicker--inverse" data-i18n="nav.contact">Contact</p>
+          <h2 data-i18n="contact.title">Tell us what feels heavy.</h2>
+          <p class="contact__lede" data-i18n="contact.lede">Describe the work in your own words. We reply within one business day with next steps, and a fixed quote follows the first call.</p>
           <ul class="contact__channels">
-            <li><span>Email</span><a href="mailto:hello@talja.se">hello@talja.se</a></li>
-            <li><span>Phone</span><a href="tel:+46841024460">08-410 244 60</a></li>
-            <li><span>Office</span><span class="contact__addr">Vasagatan 28, 111 20 Stockholm</span></li>
+            <li><span data-i18n="contact.email">Email</span><a href="mailto:hello@talja.se">hello@talja.se</a></li>
+            <li><span data-i18n="contact.phone">Phone</span><a href="tel:+46841024460">08-410 244 60</a></li>
+            <li><span data-i18n="contact.office">Office</span><span class="contact__addr">Vasagatan 28, 111 20 Stockholm</span></li>
           </ul>
-          <p class="contact__note">Prefer email? Write directly and skip the form. Same inbox, same people.</p>
+          <p class="contact__note" data-i18n="contact.note">Prefer to talk first? Email or call and skip the form. Same inbox, same people.</p>
         </div>
         <form class="form" id="quoteForm" novalidate>
-          <h3 class="form__title">Request a quote</h3>
+          <h3 class="form__title" data-i18n="form.title">Request a quote</h3>
           <div class="form__field">
             <input id="fName" name="name" type="text" autocomplete="name" placeholder=" " required>
-            <label for="fName">Your name</label>
+            <label for="fName" data-i18n="form.name">Your name</label>
             <p class="form__err" aria-live="polite"></p>
           </div>
           <div class="form__field">
             <input id="fCompany" name="company" type="text" autocomplete="organization" placeholder=" ">
-            <label for="fCompany">Company (optional)</label>
+            <label for="fCompany" data-i18n="form.company">Company (optional)</label>
             <p class="form__err" aria-live="polite"></p>
           </div>
           <div class="form__row">
             <div class="form__field">
               <input id="fEmail" name="email" type="email" autocomplete="email" placeholder=" " required>
-              <label for="fEmail">Email</label>
+              <label for="fEmail" data-i18n="form.email">Email</label>
               <p class="form__err" aria-live="polite"></p>
             </div>
             <div class="form__field">
               <input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder=" ">
-              <label for="fPhone">Phone (optional)</label>
+              <label for="fPhone" data-i18n="form.phone">Phone (optional)</label>
               <p class="form__err" aria-live="polite"></p>
             </div>
           </div>
           <div class="form__field">
             <select id="fTopic" name="topic" required>
               <option value="" selected disabled hidden></option>
-              <option>A new or improved website</option>
-              <option>An internal AI tool</option>
-              <option>Automation or integrations</option>
-              <option>Ongoing IT support</option>
-              <option>Not sure yet, let's talk</option>
+              <option data-i18n="form.opt1">A new or improved website</option>
+              <option data-i18n="form.opt2">An internal AI tool</option>
+              <option data-i18n="form.opt3">Automation or integrations</option>
+              <option data-i18n="form.opt4">Ongoing IT support</option>
+              <option data-i18n="form.opt5">Not sure yet, let's talk</option>
             </select>
-            <label for="fTopic">What do you need?</label>
+            <label for="fTopic" data-i18n="form.topic">What do you need?</label>
             <p class="form__err" aria-live="polite"></p>
           </div>
           <div class="form__field">
             <textarea id="fMsg" name="message" rows="4" placeholder=" " required></textarea>
-            <label for="fMsg">What feels heavy right now?</label>
+            <label for="fMsg" data-i18n="form.msg">What feels heavy right now?</label>
             <p class="form__err" aria-live="polite"></p>
           </div>
-          <button class="btn btn--solid btn--lg form__submit" type="submit" data-magnetic>Send request</button>
-          <p class="form__small">Opens a prefilled email from your mail app, so your message stays yours. We reply within one business day.</p>
+          <div class="form__hp" aria-hidden="true">
+            <label for="fWebsite">Leave this field empty</label>
+            <input id="fWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="btn btn--solid btn--lg form__submit" type="submit" data-magnetic data-i18n="form.submit">Send request</button>
+          <p class="form__small" data-i18n="form.small">We reply within one business day. No newsletter, no sharing your details.</p>
           <div class="form__success" id="formSuccess" hidden>
-            <h4>Draft opened. Almost there.</h4>
-            <p>Your email app should have opened with everything filled in. Hit send and we will get back to you within one business day. If nothing opened, email <a href="mailto:hello@talja.se">hello@talja.se</a> directly.</p>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="form__success-icon"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.6" opacity="0.4"/><path d="M17 8.5 10.5 15 7 11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h4 data-i18n="form.successTitle">Thank you. Message received.</h4>
+            <p data-i18n="form.successBody">A senior builder will reply within one business day. If it is urgent, call 08-410 244 60.</p>
           </div>
         </form>
       </div>
@@ -432,17 +482,17 @@
           <span class="brand__word">Talja</span>
         </a>
         <nav class="footer__nav" aria-label="Footer">
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#why">Why Talja</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#process" data-i18n="nav.process">Process</a>
+          <a href="#why" data-i18n="nav.why">Why Talja</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
       </div>
       <p class="footer__word" aria-hidden="true">Talja</p>
       <div class="footer__bottom">
         <p>© <span id="year">2026</span> Talja AB · Vasagatan 28, 111 20 Stockholm</p>
-        <p>Built in Stockholm, with care and a little AI.</p>
+        <p data-i18n="footer.tag">Built in Stockholm, with care and a little AI.</p>
       </div>
     </div>
   </footer>
@@ -450,6 +500,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="i18n.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>
