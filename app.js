@@ -17,7 +17,8 @@
 
   /* ---------- i18n (Swedish default, English secondary) ---------- */
   var I18N = window.TALJA_I18N || { sv: {}, en: {} };
-  var lang = (doc.lang === 'sv' || doc.lang === 'en') ? doc.lang : 'sv';
+  var LANGS = ['sv', 'en', 'ko'];
+  var lang = (LANGS.indexOf(doc.lang) >= 0) ? doc.lang : 'sv';
   function tr(key) {
     var d = I18N[lang];
     return (d && d[key] != null) ? d[key] : key;
@@ -63,11 +64,19 @@
     setTheme(doc.dataset.theme === 'dark' ? 'light' : 'dark');
   });
 
-  /* ---------- language toggle ---------- */
+  /* ---------- language toggle (cycles sv -> en -> ko -> sv) ---------- */
   var langToggle = document.getElementById('langToggle');
   if (langToggle) {
-    langToggle.addEventListener('click', function () {
-      lang = (lang === 'sv') ? 'en' : 'sv';
+    langToggle.addEventListener('click', function (e) {
+      var target = e.target.closest('.lang-toggle__opt');
+      if (target && target.getAttribute('data-lang')) {
+        /* clicked directly on a language pip: jump to it */
+        lang = target.getAttribute('data-lang');
+      } else {
+        /* clicked chrome: cycle to next */
+        var i = LANGS.indexOf(lang);
+        lang = LANGS[(i + 1) % LANGS.length];
+      }
       writePref('talja-lang', lang, true);
       applyI18n();
     });

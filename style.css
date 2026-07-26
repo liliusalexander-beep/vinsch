@@ -4,6 +4,7 @@
    ============================================================ */
 
 /* Self-hosted fonts (woff2) for GDPR safety and speed. No third-party CDN. */
+/* Latin-only unicode-range so the browser skips loading Clash / Satoshi for Hangul glyphs and falls through to --font-ko cleanly */
 @font-face {
   font-family: "Clash Display"; font-style: normal; font-weight: 500;
   src: url("assets/fonts/clash-500.woff2") format("woff2"); font-display: swap;
@@ -51,6 +52,8 @@
   /* type */
   --font-display: "Clash Display", "Satoshi", sans-serif;
   --font-body: "Satoshi", system-ui, sans-serif;
+  /* Korean stack: system Hangul fonts across macOS, iOS, Windows, Android, Linux. No third-party fetches. */
+  --font-ko: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "\B9D1\C740 \ACE0\B515", sans-serif;
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-base: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
@@ -91,6 +94,32 @@
   --inverse-soft: #B0A593;
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Korean typography overrides. Swap display + body stacks, ease tracking, open line-height, and keep Hangul words unbroken so Talja looks native in Korean. */
+html[lang="ko"] {
+  --font-display: var(--font-ko);
+  --font-body: var(--font-ko);
+}
+html[lang="ko"] body {
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+html[lang="ko"] h1,
+html[lang="ko"] h2,
+html[lang="ko"] h3,
+html[lang="ko"] h4 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+html[lang="ko"] .hero__title { line-height: 1.15; }
+html[lang="ko"] p,
+html[lang="ko"] li,
+html[lang="ko"] blockquote {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 html { scroll-behavior: smooth; }

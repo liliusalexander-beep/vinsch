@@ -27,7 +27,7 @@
       var t=ck('talja-theme');
       if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.dataset.theme='dark';}
       var l=ck('talja-lang');
-      if(l!=='sv'&&l!=='en'){l='sv';}
+      if(l!=='sv'&&l!=='en'&&l!=='ko'){l='sv';}
       document.documentElement.lang=l;
     }catch(e){}})();
   </script>
@@ -90,10 +90,12 @@
         </div>
       </nav>
       <div class="header__actions">
-        <button class="lang-toggle" id="langToggle" type="button" aria-label="Byt till svenska">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Byt språk">
           <span class="lang-toggle__opt" data-lang="sv">SV</span>
           <span class="lang-toggle__sep" aria-hidden="true">/</span>
           <span class="lang-toggle__opt" data-lang="en">EN</span>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <span class="lang-toggle__opt" data-lang="ko">KO</span>
         </button>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
           <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M18.5 5.5l-1.7 1.7M7.2 16.8l-1.7 1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
