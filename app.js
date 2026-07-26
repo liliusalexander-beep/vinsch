@@ -64,19 +64,12 @@
     setTheme(doc.dataset.theme === 'dark' ? 'light' : 'dark');
   });
 
-  /* ---------- language toggle (cycles sv -> en -> ko -> sv) ---------- */
+  /* ---------- language toggle (always cycles sv -> en -> ko -> sv) ---------- */
   var langToggle = document.getElementById('langToggle');
   if (langToggle) {
-    langToggle.addEventListener('click', function (e) {
-      var target = e.target.closest('.lang-toggle__opt');
-      if (target && target.getAttribute('data-lang')) {
-        /* clicked directly on a language pip: jump to it */
-        lang = target.getAttribute('data-lang');
-      } else {
-        /* clicked chrome: cycle to next */
-        var i = LANGS.indexOf(lang);
-        lang = LANGS[(i + 1) % LANGS.length];
-      }
+    langToggle.addEventListener('click', function () {
+      var i = LANGS.indexOf(lang);
+      lang = LANGS[(i + 1) % LANGS.length];
       writePref('talja-lang', lang, true);
       applyI18n();
     });
