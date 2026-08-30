@@ -15,9 +15,9 @@
     try { document.cookie = k + '=' + encodeURIComponent(v) + '; path=/; SameSite=Lax' + (persist ? '; max-age=31536000' : ''); } catch (e) {}
   }
 
-  /* ---------- i18n (Swedish default, English secondary) ---------- */
-  var I18N = window.TALJA_I18N || { sv: {}, en: {} };
-  var LANGS = ['sv', 'en', 'ko'];
+  /* ---------- i18n (Swedish default, Finnish and English) ---------- */
+  var I18N = window.TALJA_I18N || { sv: {}, fi: {}, en: {} };
+  var LANGS = ['sv', 'fi', 'en'];
   var lang = (LANGS.indexOf(doc.lang) >= 0) ? doc.lang : 'sv';
   function tr(key) {
     var d = I18N[lang];
@@ -38,6 +38,14 @@
       if (dict[k] != null) el.innerHTML = dict[k];
       else if (window.console && console.warn) console.warn('i18n missing [' + lang + ']:', k);
     });
+    document.querySelectorAll('[data-i18n-arialabel]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-arialabel');
+      if (dict[k] != null) el.setAttribute('aria-label', dict[k]);
+      else if (window.console && console.warn) console.warn('i18n missing [' + lang + ']:', k);
+    });
+    if (dict['meta.title']) document.title = dict['meta.title'];
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && dict['meta.desc']) metaDesc.setAttribute('content', dict['meta.desc']);
     doc.lang = lang;
     var lt = document.getElementById('langToggle');
     if (lt) {
@@ -64,7 +72,7 @@
     setTheme(doc.dataset.theme === 'dark' ? 'light' : 'dark');
   });
 
-  /* ---------- language toggle (always cycles sv -> en -> ko -> sv) ---------- */
+  /* ---------- language toggle (cycles sv -> fi -> en -> sv) ---------- */
   var langToggle = document.getElementById('langToggle');
   if (langToggle) {
     langToggle.addEventListener('click', function () {
@@ -108,36 +116,9 @@
     if (e.target.closest('a')) closeNav();
   });
 
-  /* ---------- preloader ---------- */
-  var loader = document.getElementById('loader');
-  var seen = false;
-  seen = readPref('talja-seen') === '1';
-  function finishLoader() {
-    loader.classList.add('is-done');
-    doc.classList.remove('is-loading');
-    writePref('talja-seen', '1', false);
-    setTimeout(function () { loader.classList.add('is-removed'); }, 950);
-    heroIntro();
-  }
-  if (reduceMotion || seen) {
-    loader.classList.add('is-done', 'is-removed');
-    heroIntro();
-  } else {
-    doc.classList.add('is-loading');
-    var count = { v: 0 };
-    var countEl = document.getElementById('loaderCount');
-    var t0 = performance.now();
-    var DUR = 1250;
-    (function tick(now) {
-      var p = Math.min((now - t0) / DUR, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      countEl.textContent = Math.round(eased * 100);
-      if (p < 1) requestAnimationFrame(tick);
-      else setTimeout(finishLoader, 150);
-    })(t0);
-  }
+  /* ---------- hero intro (no preloader) ---------- */
+  heroIntro();
 
-  /* ---------- hero intro ---------- */
   function heroIntro() {
     var hero = document.querySelector('.hero');
     requestAnimationFrame(function () {
@@ -226,23 +207,17 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
     document.querySelectorAll('.reveal').forEach(function (el) { revObs.observe(el); });
 
-    /* counters */
-    function animateCount(el) {
-      var target = parseInt(el.dataset.count, 10);
-      if (reduceMotion) { el.textContent = target; return; }
-      var t0 = performance.now(), DUR = 1400;
-      (function tick(now) {
-        var p = Math.min((now - t0) / DUR, 1);
-        el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
-        if (p < 1) requestAnimationFrame(tick);
-      })(t0);
-    }
-    var cntObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { animateCount(en.target); cntObs.unobserve(en.target); }
-      });
-    }, { threshold: 0.6 });
-    document.querySelectorAll('.stat__num').forEach(function (el) { cntObs.observe(el); });
+  });
+
+  /* ---------- service links preselect the form topic ---------- */
+  document.querySelectorAll('.svc__hit[data-topic]').forEach(function (hit) {
+    hit.addEventListener('click', function () {
+      var sel = document.getElementById('fTopic');
+      if (sel) {
+        sel.value = hit.getAttribute('data-topic');
+        setErr(sel, '');
+      }
+    });
   });
 
   /* ---------- custom cursor ---------- */
@@ -410,12 +385,13 @@
       return;
     }
     var d = form;
+    var topicSel = d.topic;
+    var topicLabel = (topicSel.selectedOptions && topicSel.selectedOptions[0]) ? topicSel.selectedOptions[0].textContent.trim() : topicSel.value;
     var payload = {
       name: d.name.value.trim(),
       company: d.company.value.trim(),
       email: d.email.value.trim(),
-      phone: d.phone.value.trim(),
-      topic: d.topic.value,
+      topic: topicLabel,
       message: d.message.value.trim(),
       locale: lang
     };
@@ -439,18 +415,17 @@
       return;
     }
 
-    /* fallback: hand off to the mail client, then confirm */
+    /* fallback: hand off to the mail client, then confirm honestly */
     var body = [
-      'Name: ' + payload.name,
-      'Company: ' + (payload.company || 'Not provided'),
-      'Email: ' + payload.email,
-      'Phone: ' + (payload.phone || 'Not provided'),
-      'Need: ' + payload.topic,
+      tr('form.mailName') + ': ' + payload.name,
+      tr('form.mailCompany') + ': ' + (payload.company || tr('form.mailNone')),
+      tr('form.mailEmail') + ': ' + payload.email,
+      tr('form.mailTopic') + ': ' + payload.topic,
       '',
       payload.message
     ].join('\n');
-    var href = 'mailto:hello@talja.se?subject=' +
-      encodeURIComponent('Quote request: ' + payload.topic) +
+    var href = 'mailto:lilius.alexander@gmail.com?subject=' +
+      encodeURIComponent(tr('form.mailSubject')) +
       '&body=' + encodeURIComponent(body);
     window.location.href = href;
     showSuccess();

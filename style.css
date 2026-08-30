@@ -52,8 +52,6 @@
   /* type */
   --font-display: "Clash Display", "Satoshi", sans-serif;
   --font-body: "Satoshi", system-ui, sans-serif;
-  /* Korean stack: system Hangul fonts across macOS, iOS, Windows, Android, Linux. No third-party fetches. */
-  --font-ko: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "\B9D1\C740 \ACE0\B515", sans-serif;
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-base: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
@@ -96,31 +94,8 @@
   --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Korean typography overrides. Swap display + body stacks, ease tracking, open line-height, and keep Hangul words unbroken so Talja looks native in Korean. */
-html[lang="ko"] {
-  --font-display: var(--font-ko);
-  --font-body: var(--font-ko);
-}
-html[lang="ko"] body {
-  letter-spacing: 0;
-  line-height: 1.7;
-}
-html[lang="ko"] h1,
-html[lang="ko"] h2,
-html[lang="ko"] h3,
-html[lang="ko"] h4 {
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  word-break: keep-all;
-}
-html[lang="ko"] .hero__title { line-height: 1.15; }
-html[lang="ko"] p,
-html[lang="ko"] li,
-html[lang="ko"] blockquote {
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-}
+/* Finnish headlines run long (compound words). Slightly smaller hero and tighter wrap keep lines whole. */
+html[lang="fi"] .hero__title { font-size: clamp(1.9rem, 4.9vw, 4rem); }
 
 html { scroll-behavior: smooth; }
 html.lenis { scroll-behavior: auto; }
@@ -189,29 +164,6 @@ p { text-wrap: pretty; }
 .btn--lg { padding: 1.05rem 2rem; font-size: var(--text-base); }
 
 /* ============================================================
-   LOADER
-   ============================================================ */
-.loader {
-  position: fixed; inset: 0; z-index: 200;
-  background: var(--bg);
-  display: grid; place-items: center;
-  transition: clip-path 900ms var(--ease-in-out);
-  clip-path: inset(0 0 0 0);
-}
-.loader.is-done { clip-path: inset(0 0 100% 0); pointer-events: none; }
-.loader.is-removed { display: none; }
-.loader__inner { display: grid; place-items: center; gap: var(--s-4); }
-.loader__mark { width: 72px; height: 72px; color: var(--ink); }
-.loader__rope, .loader__wheel { stroke-dasharray: 120; stroke-dashoffset: 120; animation: loaderDraw 1100ms var(--ease-out) forwards; }
-.loader__wheel { animation-delay: 250ms; }
-.loader__weight { fill: var(--accent); transform-origin: 34px 36px; transform: scale(0); animation: loaderPop 500ms 700ms var(--ease-out) forwards; }
-@keyframes loaderDraw { to { stroke-dashoffset: 0; } }
-@keyframes loaderPop { to { transform: scale(1); } }
-.loader__word { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); letter-spacing: -0.01em; }
-.loader__count { font-size: var(--text-xs); font-weight: 700; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
-html.is-loading { overflow: hidden; }
-
-/* ============================================================
    CURSOR (desktop, fine pointers only)
    ============================================================ */
 .cursor { display: none; }
@@ -275,7 +227,7 @@ html.is-loading { overflow: hidden; }
 
 /* mobile nav */
 @media (max-width: 880px) {
-  .header__cta { display: none; }
+  .header__cta { padding: 0.55em 1em; font-size: 0.8rem; }
   .burger {
     display: grid; place-items: center; gap: 5px;
     width: 2.5rem; height: 2.5rem; border-radius: 50%;
