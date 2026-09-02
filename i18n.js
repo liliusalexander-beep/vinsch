@@ -135,6 +135,8 @@ window.TALJA_I18N = {
     "err.send": "Det gick inte att skicka. Försök igen eller mejla direkt.",
 
     "aria.lang": "Byt språk",
+    "aria.menuOpen": "Öppna meny",
+    "aria.menuClose": "Stäng meny",
     "aria.themeToDark": "Byt till mörkt tema",
     "aria.themeToLight": "Byt till ljust tema",
 
@@ -274,6 +276,8 @@ window.TALJA_I18N = {
     "err.send": "Lähetys epäonnistui. Yritä uudelleen tai lähetä sähköpostia suoraan.",
 
     "aria.lang": "Vaihda kieltä",
+    "aria.menuOpen": "Avaa valikko",
+    "aria.menuClose": "Sulje valikko",
     "aria.themeToDark": "Vaihda tummaan teemaan",
     "aria.themeToLight": "Vaihda vaaleaan teemaan",
 
@@ -413,6 +417,8 @@ window.TALJA_I18N = {
     "err.send": "Sending failed. Try again or email directly.",
 
     "aria.lang": "Switch language",
+    "aria.menuOpen": "Open menu",
+    "aria.menuClose": "Close menu",
     "aria.themeToDark": "Switch to dark theme",
     "aria.themeToLight": "Switch to light theme",
 

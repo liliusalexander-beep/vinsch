@@ -16,7 +16,7 @@ html {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   hanging-punctuation: first last;
-  scroll-padding-top: var(--space-20);
+  scroll-padding-top: 5rem;
 }
 
 body {

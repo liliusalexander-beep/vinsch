@@ -49,11 +49,13 @@
     doc.lang = lang;
     var lt = document.getElementById('langToggle');
     if (lt) {
-      lt.setAttribute('aria-label', dict['aria.lang'] || 'Switch language');
+      lt.setAttribute('title', dict['aria.lang'] || 'Switch language');
       lt.querySelectorAll('.lang-toggle__opt').forEach(function (opt) {
         opt.classList.toggle('is-active', opt.getAttribute('data-lang') === lang);
       });
     }
+    var bg = document.getElementById('burger');
+    if (bg) bg.setAttribute('aria-label', bg.getAttribute('aria-expanded') === 'true' ? tr('aria.menuClose') : tr('aria.menuOpen'));
     if (themeToggle) {
       themeToggle.setAttribute('aria-label', doc.dataset.theme === 'dark' ? tr('aria.themeToLight') : tr('aria.themeToDark'));
     }
@@ -99,16 +101,17 @@
   var burger = document.getElementById('burger');
   var nav = document.getElementById('nav');
   function closeNav() {
+    if (!nav.classList.contains('is-open')) return;
     nav.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', 'Open menu');
+    burger.setAttribute('aria-label', tr('aria.menuOpen'));
     if (lenis) lenis.start();
     document.body.style.overflow = '';
   }
   burger.addEventListener('click', function () {
     var open = nav.classList.toggle('is-open');
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    burger.setAttribute('aria-label', open ? tr('aria.menuClose') : tr('aria.menuOpen'));
     if (open) { if (lenis) lenis.stop(); document.body.style.overflow = 'hidden'; }
     else { if (lenis) lenis.start(); document.body.style.overflow = ''; }
   });
@@ -141,12 +144,13 @@
           var target = document.querySelector(id);
           if (!target) return;
           e.preventDefault();
-          lenis.scrollTo(target, { offset: -64 });
+          if (nav.classList.contains('is-open')) { closeNav(); lenis.resize(); }
+          lenis.scrollTo(target, { offset: -64, force: true });
         });
       });
     }
 
-    if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+    function initScrollMotion() {
       gsap.registerPlugin(ScrollTrigger);
 
       /* parallax inside hero frame */
@@ -191,6 +195,12 @@
           }
         });
       }
+    }
+
+    /* Init scroll-linked motion off the critical path to keep the main thread free during load */
+    if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+      if ('requestIdleCallback' in window) requestIdleCallback(initScrollMotion, { timeout: 1200 });
+      else setTimeout(initScrollMotion, 250);
     }
 
     /* step activation (works with or without GSAP) */

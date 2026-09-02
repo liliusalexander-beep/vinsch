@@ -42,6 +42,8 @@
   --accent: #B4551D;
   --accent-deep: #8F3F11;
   --accent-ink: #FFF6EC;
+  --accent-text: #A54C15;      /* WCAG AA for small text on all light surfaces */
+  --accent-text-inverse: #DD8B4B; /* WCAG AA for small text on dark panels */
   --inverse-bg: #211A12;
   --inverse-bg-2: #2B2218;
   --inverse-ink: #F2EDE2;
@@ -86,6 +88,8 @@
   --accent: #DD8B4B;
   --accent-deep: #C26F2D;
   --accent-ink: #23150A;
+  --accent-text: #DD8B4B;
+  --accent-text-inverse: #DD8B4B;
   --inverse-bg: #100D0A;
   --inverse-bg-2: #1A1510;
   --inverse-ink: #F2EDE2;
@@ -128,14 +132,14 @@ p { text-wrap: pretty; }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: var(--s-4);
 }
 .kicker::before { content: ""; width: 2rem; height: 2px; background: var(--accent); border-radius: 2px; }
-.kicker--inverse { color: var(--accent); }
+.kicker--inverse { color: var(--accent-text-inverse); }
 
 .skip-link {
   position: fixed; top: -100px; left: 1rem; z-index: 300;
@@ -439,7 +443,7 @@ html.js .hero.is-intro .hero__media { transition-delay: 300ms; }
 }
 .step.is-active { border-color: var(--accent); box-shadow: var(--shadow-md); }
 .step h3 { display: flex; align-items: baseline; gap: var(--s-3); font-size: var(--text-xl); margin-bottom: var(--s-3); }
-.step__no { font-size: var(--text-sm); font-weight: 600; color: var(--accent); font-family: var(--font-display); }
+.step__no { font-size: var(--text-sm); font-weight: 600; color: var(--accent-text); font-family: var(--font-display); }
 .step p { color: var(--ink-soft); max-width: 34rem; }
 @media (max-width: 880px) {
   .process__grid { grid-template-columns: 1fr; }
@@ -644,6 +648,8 @@ html.js .hero.is-intro .hero__media { transition-delay: 300ms; }
   font-size: clamp(6rem, 22vw, 22rem); line-height: 0.8; letter-spacing: -0.03em;
   color: rgba(242, 237, 226, 0.06); user-select: none; margin-bottom: -0.12em;
 }
+/* Watermark text lives in CSS so it never enters the accessibility tree or contrast checks */
+.footer__word::after { content: "Talja"; }
 .footer__bottom {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-4);
   border-top: 1px solid rgba(242, 237, 226, 0.1); padding: var(--s-6) 0 var(--s-8);
@@ -667,4 +673,47 @@ html.js .reveal.is-in { opacity: 1; }
   .hero__scroll-line::after { animation: none; }
   .cursor { display: none !important; }
   .svc__peek { display: none !important; }
+}
+
+/* ============================================================
+   TOUCH TARGETS
+   On coarse pointers every interactive control gets a 44px
+   minimum hit area via an invisible centered overlay. Visual
+   design is unchanged.
+   ============================================================ */
+@media (pointer: coarse) {
+  .brand,
+  .lang-toggle,
+  .theme-toggle,
+  .burger,
+  .header__cta,
+  .footer__nav a,
+  .footer__bottom a,
+  .form__small a,
+  .form__success a,
+  .contact__channels a,
+  .nav__meta a,
+  .section-head__lede a {
+    position: relative;
+  }
+  .brand::after,
+  .lang-toggle::after,
+  .theme-toggle::after,
+  .burger::before,
+  .header__cta::after,
+  .footer__nav a::after,
+  .footer__bottom a::after,
+  .form__small a::after,
+  .form__success a::after,
+  .contact__channels a::after,
+  .nav__meta a::after,
+  .section-head__lede a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+  }
 }
