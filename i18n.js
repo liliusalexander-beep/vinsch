@@ -245,7 +245,7 @@ window.TALJA_I18N = {
     "studio.cite": "Taljan perusperiaate",
 
     "case.kicker": "Käytännön näyttö",
-    "case.title": "Tekoäly myyntityössä, mitattuna siellä missä sillä on väliä.",
+    "case.title": "Tekoäly myyntityössä, tuloksilla mitattuna.",
     "case.lede": "Tekoälyavusteiset myynnin työnkulut ovat Taljan tekoälyneuvonnan erikoisala. Tässä tulos kahdeksan kuukauden todellisesta myyntityöstä.",
     "case.body": "Lokakuun 2025 alusta toukokuun 2026 loppuun Taljan perustaja rakensi ja käytti tekoälyavusteista myynnin työnkulkua kansainvälisessä B2B-myyntiorganisaatiossa, jonka asiakkaat ovat suuryrityksiä. Tekoäly hoiti asiakastutkimuksen, soittojen priorisoinnin ja jokaisen puhelun valmistelun. Jokaisen puhelun hoiti ihminen.",
     "case.stat1n": "22",
