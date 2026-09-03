@@ -452,6 +452,31 @@ html.js .hero.is-intro .hero__media { transition-delay: 300ms; }
 }
 
 /* ============================================================
+   CASE
+   ============================================================ */
+.case { padding: var(--section) 0; background: var(--bg-raise); border-block: 1px solid var(--line-soft); }
+.case__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 2rem + 4vw, 6rem); align-items: start; }
+.case__head { display: grid; gap: var(--s-6); justify-items: start; position: sticky; top: 7rem; }
+.case__head h2 { max-width: 22ch; }
+.case__main { display: grid; gap: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem); }
+.case__body { font-size: var(--text-lg); line-height: 1.55; max-width: 44rem; }
+.case__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-8); }
+.case__stat { border-top: 1px solid var(--line); padding-top: var(--s-4); display: grid; gap: var(--s-2); align-content: start; }
+.case__num {
+  font-family: var(--font-display); font-weight: 600; line-height: 0.95;
+  font-size: clamp(3.25rem, 2.4rem + 4vw, 5.5rem); color: var(--accent-text); letter-spacing: -0.02em;
+}
+.case__label { color: var(--ink-soft); font-size: var(--text-sm); max-width: 18rem; }
+.case__note { color: var(--ink-soft); font-size: var(--text-sm); max-width: 44rem; border-left: 3px solid var(--line); padding-left: var(--s-4); }
+@media (max-width: 880px) {
+  .case__grid { grid-template-columns: 1fr; }
+  .case__head { position: static; }
+}
+@media (max-width: 640px) {
+  .case__stats { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    WHY
    ============================================================ */
 .why { padding: var(--section) 0; }

@@ -220,7 +220,7 @@
   });
 
   /* ---------- service links preselect the form topic ---------- */
-  document.querySelectorAll('.svc__hit[data-topic]').forEach(function (hit) {
+  document.querySelectorAll('a[data-topic]').forEach(function (hit) {
     hit.addEventListener('click', function () {
       var sel = document.getElementById('fTopic');
       if (sel) {
