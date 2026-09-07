@@ -718,7 +718,7 @@ html.js .reveal.is-in { opacity: 1; }
    ============================================================ */
 @media (pointer: coarse) {
   .brand,
-  .lang-toggle,
+  .lang-toggle__opt,
   .theme-toggle,
   .burger,
   .header__cta,
@@ -732,7 +732,7 @@ html.js .reveal.is-in { opacity: 1; }
     position: relative;
   }
   .brand::after,
-  .lang-toggle::after,
+  .lang-toggle__opt::after,
   .theme-toggle::after,
   .burger::before,
   .header__cta::after,
@@ -750,6 +750,12 @@ html.js .reveal.is-in { opacity: 1; }
     translate: -50% -50%;
     width: max(100%, 44px);
     height: max(100%, 44px);
+  }
+  /* each language option gets its own hit area; keep it inside the pill so
+     taps never land on the container or a neighbour */
+  .lang-toggle__opt::after {
+    width: calc(100% + 0.5rem);
+    height: 44px;
   }
 }
 
