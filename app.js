@@ -374,10 +374,9 @@
       if (f && f.classList.contains('has-error')) validate();
     });
   });
-  /* Set FORM_ENDPOINT to a POST URL (e.g. a Formspree/Basin form or your own
-     handler) to submit in the background via fetch. While it is empty, the form
-     gracefully falls back to opening the visitor's mail client. */
-  var FORM_ENDPOINT = '';
+  /* Background submission via FormSubmit AJAX. If the request fails, the form
+     falls back to opening the visitor's mail client. */
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/alexander@vinsch.ai';
 
   function showSuccess() {
     success.hidden = false;
@@ -403,7 +402,11 @@
       email: d.email.value.trim(),
       topic: topicLabel,
       message: d.message.value.trim(),
-      locale: lang
+      locale: lang,
+      _subject: tr('form.mailSubject'),
+      _replyto: d.email.value.trim(),
+      _template: 'table',
+      _captcha: 'false'
     };
     var submitBtn = form.querySelector('.form__submit');
 

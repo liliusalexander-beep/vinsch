@@ -586,6 +586,8 @@ html.js .hero__media.intro-fade { animation-delay: 250ms; }
   transition: border-color var(--t-fast), background var(--t-fast);
 }
 .form__field textarea { resize: vertical; min-height: 7rem; }
+.form__field select option { background-color: var(--bg-raise); color: var(--ink); }
+.form__field select option[disabled] { color: var(--ink-soft); }
 .form__field select { appearance: none; padding-right: 2.5rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none'%3E%3Cpath d='M1 1.5 7 7.5 13 1.5' stroke='%23BDB2A0' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
 .form__field label {
   position: absolute; left: 1rem; top: 0.95rem;
