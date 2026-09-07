@@ -6,7 +6,7 @@ window.VINSCH_I18N = {
     "skip": "Hoppa till innehåll",
 
     "meta.title": "Vinsch | Webbutveckling, AI-rådgivning och tech-konsulting",
-    "meta.desc": "Vinsch formger och bygger snabba, lättskötta webbplatser och hjälper tech-, SaaS- och digitala produktbolag att använda AI där det gör nytta och ta kloka tekniska vägval. Rådgivning och genomförande från samma person. Med bas i Stockholm, för bolag i hela Norden.",
+    "meta.desc": "Vinsch formger och bygger snabba, lättskötta webbplatser och hjälper företag i alla branscher att använda AI där det gör nytta och ta kloka tekniska vägval. Rådgivning och genomförande från samma person. Med bas i Stockholm, för bolag i hela Norden.",
 
     "nav.services": "Tjänster",
     "nav.why": "Varför Vinsch",
@@ -23,7 +23,7 @@ window.VINSCH_I18N = {
     "hero.title1": "Mer lyftkraft",
     "hero.title2": "i den digitala",
     "hero.title3": "<em>affären.</em>",
-    "hero.lede": "Vinsch formger och bygger webbplatser som håller, och hjälper tech-, SaaS- och digitala produktbolag att använda AI där det bär och ta kloka tekniska vägval. Du får råd och genomförande från samma person.",
+    "hero.lede": "Vinsch formger och bygger webbplatser som håller, och hjälper företag i alla branscher att använda AI där det bär och ta kloka tekniska vägval. Du får råd och genomförande från samma person.",
     "hero.cta2": "Se tjänsterna",
     "hero.trust1": "Rådgivning och genomförande",
     "hero.trust2": "Med bas i Stockholm, verksam i hela Norden",
@@ -175,7 +175,7 @@ window.VINSCH_I18N = {
     "skip": "Siirry sisältöön",
 
     "meta.title": "Vinsch | Verkkosivustoja, tekoälyneuvontaa ja teknologiakonsultointia",
-    "meta.desc": "Vinsch suunnittelee ja rakentaa nopeita, helposti ylläpidettäviä verkkosivustoja sekä auttaa teknologia- ja SaaS-yrityksiä ja digitaalisia tuotteita kehittäviä yrityksiä hyödyntämään tekoälyä järkevästi ja ratkaisemaan teknisiä pullonkauloja. Neuvonta ja toteutus samalta henkilöltä. Kotipaikka Tukholma, asiakkaita koko Pohjolassa.",
+    "meta.desc": "Vinsch suunnittelee ja rakentaa nopeita, helposti ylläpidettäviä verkkosivustoja sekä auttaa kaikkien toimialojen yrityksiä hyödyntämään tekoälyä järkevästi ja ratkaisemaan teknisiä pullonkauloja. Neuvonta ja toteutus samalta henkilöltä. Kotipaikka Tukholma, asiakkaita koko Pohjolassa.",
 
     "nav.services": "Palvelut",
     "nav.why": "Miksi Vinsch",
@@ -192,7 +192,7 @@ window.VINSCH_I18N = {
     "hero.title1": "Lisää nostovoimaa",
     "hero.title2": "digitaaliseen",
     "hero.title3": "<em>liiketoimintaan.</em>",
-    "hero.lede": "Vinsch suunnittelee ja rakentaa verkkosivustoja, jotka kestävät aikaa, ja auttaa teknologia- ja SaaS-yrityksiä sekä digitaalisia tuotteita kehittäviä yrityksiä hyödyntämään tekoälyä järkevästi ja tekemään kestäviä teknisiä valintoja. Saat neuvon ja toteutuksen samasta paikasta.",
+    "hero.lede": "Vinsch suunnittelee ja rakentaa verkkosivustoja, jotka kestävät aikaa, ja auttaa kaikkien toimialojen yrityksiä hyödyntämään tekoälyä järkevästi ja tekemään kestäviä teknisiä valintoja. Saat neuvon ja toteutuksen samasta paikasta.",
     "hero.cta2": "Tutustu palveluihin",
     "hero.trust1": "Neuvonta ja toteutus",
     "hero.trust2": "Kotipaikka Tukholma, työkenttänä koko Pohjola",
@@ -344,7 +344,7 @@ window.VINSCH_I18N = {
     "skip": "Skip to content",
 
     "meta.title": "Vinsch | Web development, AI advisory and tech consulting",
-    "meta.desc": "Vinsch designs and builds fast, maintainable websites and helps tech, SaaS and digital product companies put AI to work and make sound technical calls. Advice and execution from the same person. Based in Stockholm, working across the Nordics.",
+    "meta.desc": "Vinsch designs and builds fast, maintainable websites and helps companies across all industries put AI to work and make sound technical calls. Advice and execution from the same person. Based in Stockholm, working across the Nordics.",
 
     "nav.services": "Services",
     "nav.why": "Why Vinsch",
@@ -361,7 +361,7 @@ window.VINSCH_I18N = {
     "hero.title1": "More leverage",
     "hero.title2": "for your digital",
     "hero.title3": "<em>business.</em>",
-    "hero.lede": "Vinsch designs and builds websites that hold up, and helps tech, SaaS and digital product companies put AI to work and make sound technical calls. Advice and execution from the same person.",
+    "hero.lede": "Vinsch designs and builds websites that hold up, and helps companies across all industries put AI to work and make sound technical calls. Advice and execution from the same person.",
     "hero.cta2": "See the services",
     "hero.trust1": "Advice and execution",
     "hero.trust2": "Based in Stockholm, working across the Nordics",

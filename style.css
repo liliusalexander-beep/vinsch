@@ -32,9 +32,9 @@
 
 :root {
   /* color: light */
-  --bg: #F4F1EA;
-  --bg-raise: #FBF9F3;
-  --bg-dim: #ECE7DC;
+  --bg: #EDE7DA;
+  --bg-raise: #F6F1E6;
+  --bg-dim: #E3DCCB;
   --ink: #1B1916;
   --ink-soft: #5E574B;
   --line: rgba(27, 25, 22, 0.14);
