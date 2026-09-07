@@ -1,15 +1,15 @@
-/* Talja · trilingual dictionary (Swedish default, Finnish, English)
+/* Vinsch · trilingual dictionary (Swedish default, Finnish, English)
    Flat keys match data-i18n / data-i18n-html / data-i18n-arialabel attributes in index.html.
    No em-dashes or en-dashes anywhere by house style. */
-window.TALJA_I18N = {
+window.VINSCH_I18N = {
   sv: {
     "skip": "Hoppa till innehåll",
 
-    "meta.title": "Talja | Webbutveckling, AI-rådgivning och tech-konsulting",
-    "meta.desc": "Talja formger och bygger snabba, lättskötta webbplatser och hjälper tech-, SaaS- och digitala produktbolag att använda AI där det gör nytta och ta kloka tekniska vägval. Rådgivning och genomförande från samma person. Med bas i Stockholm, för bolag i hela Norden.",
+    "meta.title": "Vinsch | Webbutveckling, AI-rådgivning och tech-konsulting",
+    "meta.desc": "Vinsch formger och bygger snabba, lättskötta webbplatser och hjälper tech-, SaaS- och digitala produktbolag att använda AI där det gör nytta och ta kloka tekniska vägval. Rådgivning och genomförande från samma person. Med bas i Stockholm, för bolag i hela Norden.",
 
     "nav.services": "Tjänster",
-    "nav.why": "Varför Talja",
+    "nav.why": "Varför Vinsch",
     "nav.process": "Process",
     "nav.faq": "Vanliga frågor",
     "nav.contact": "Kontakt",
@@ -23,13 +23,13 @@ window.TALJA_I18N = {
     "hero.title1": "Mer lyftkraft",
     "hero.title2": "i den digitala",
     "hero.title3": "<em>affären.</em>",
-    "hero.lede": "Talja formger och bygger webbplatser som håller, och hjälper tech-, SaaS- och digitala produktbolag att använda AI där det bär och ta kloka tekniska vägval. Du får råd och genomförande från samma person.",
+    "hero.lede": "Vinsch formger och bygger webbplatser som håller, och hjälper tech-, SaaS- och digitala produktbolag att använda AI där det bär och ta kloka tekniska vägval. Du får råd och genomförande från samma person.",
     "hero.cta2": "Se tjänsterna",
     "hero.trust1": "Rådgivning och genomförande",
     "hero.trust2": "Med bas i Stockholm, verksam i hela Norden",
     "hero.trust3": "Webbplatser på svenska, finska och engelska",
     "hero.trust4": "Du äger resultatet",
-    "hero.cardTitle": "Talja, blocket och taljan",
+    "hero.cardTitle": "Vinsch, veven bakom tunga lyft",
     "hero.cardBody": "Liten kraft in. Tungt lyft ut. Det är hela idén.",
     "hero.scroll": "Rulla",
 
@@ -73,7 +73,7 @@ window.TALJA_I18N = {
     "why.3.t": "Avgränsat arbete, synliga val",
     "why.3.d": "Mål, omfattning och de viktigaste besluten görs begripliga. Du vet vad som görs nu och vad som är klokt att göra sen.",
     "why.4.t": "Med bas i Stockholm, verksam i hela Norden",
-    "why.4.d": "Talja har sitt säte i Stockholm och arbetar med bolag i hela Norden, med Sverige och Finland som huvudmarknader. Samarbetet fungerar på plats, på distans och med internationella team.",
+    "why.4.d": "Vinsch har sitt säte i Stockholm och arbetar med bolag i hela Norden, med Sverige och Finland som huvudmarknader. Samarbetet fungerar på plats, på distans och med internationella team.",
 
     "proc.title": "Så går det till.",
     "proc.lede": "Ingen förstudieteater och inga 40-sidiga rapporter. Tre steg från första meddelande till genomfört arbete.",
@@ -85,12 +85,12 @@ window.TALJA_I18N = {
     "proc.3.d": "Vi arbetar enligt överenskommelse med rådgivning, genomförande eller en kombination. Valen görs synliga, och du har alltid tydliga nästa steg.",
 
     "studio.quote": "”De flesta bolag behöver inte fler verktyg. De behöver rätt hävstång mellan de verktyg som redan finns.”",
-    "studio.cite": "Taljas grundprincip",
+    "studio.cite": "Vinschs grundprincip",
 
     "case.kicker": "Ur verkligheten",
     "case.title": "AI i säljarbetet, mätt där det räknas.",
-    "case.lede": "AI-stödda säljflöden är specialområdet inom Taljas AI-rådgivning. Här är resultatet av åtta månader i skarpt läge.",
-    "case.body": "Från början av oktober 2025 till slutet av maj 2026 byggde och använde Taljas grundare ett AI-stött säljflöde i en internationell B2B-säljorganisation med enterprisekunder. AI skötte kontoresearch, prioriteringen av vilka som rings och förberedelserna inför varje samtal. Varje samtal hölls av en människa.",
+    "case.lede": "AI-stödda säljflöden är specialområdet inom Vinschs AI-rådgivning. Här är resultatet av åtta månader i skarpt läge.",
+    "case.body": "Från början av oktober 2025 till slutet av maj 2026 byggde och använde Vinschs grundare ett AI-stött säljflöde i en internationell B2B-säljorganisation med enterprisekunder. AI skötte kontoresearch, prioriteringen av vilka som rings och förberedelserna inför varje samtal. Varje samtal hölls av en människa.",
     "case.stat1n": "22",
     "case.stat1l": "samtal per fullt kvalificerat möte på enterprisenivå",
     "case.stat2n": "8",
@@ -106,7 +106,7 @@ window.TALJA_I18N = {
     "faq.2.q": "Vad kostar det?",
     "faq.2.a": "Det beror på omfattningen. Mindre rådgivningsinsatser prissätts oftast fast, längre uppdrag per timme eller per fas. Du får alltid en tydlig offert innan arbetet börjar.",
     "faq.3.q": "Arbetar ni på plats eller på distans?",
-    "faq.3.a": "Båda. Talja utgår från Stockholm och arbetar på plats där det behövs, på distans med kunder i hela Norden och internationellt.",
+    "faq.3.a": "Båda. Vinsch utgår från Stockholm och arbetar på plats där det behövs, på distans med kunder i hela Norden och internationellt.",
     "faq.4.q": "Vilka språk arbetar ni på?",
     "faq.4.a": "Rådgivning och löpande dialog sker på svenska eller engelska. Webbplatser, innehåll och dokumentation levereras även på finska, fullt lokaliserade för finska besökare.",
     "faq.5.q": "Kan ni ta över något som någon annan byggt?",
@@ -119,7 +119,7 @@ window.TALJA_I18N = {
     "contact.email": "E-post",
     "contact.note": "Vill du hellre mejla direkt? Samma inkorg, samma person.",
 
-    "form.title": "Kontakta Talja",
+    "form.title": "Kontakta Vinsch",
     "form.name": "Namn",
     "form.email": "E-post",
     "form.company": "Företag (valfritt)",
@@ -135,8 +135,8 @@ window.TALJA_I18N = {
     "form.submit": "Skicka meddelande",
     "form.small": "Formuläret öppnar ditt e-postprogram med ett färdigt meddelande. Du kan också mejla direkt till <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
     "form.successTitle": "Nästan klart.",
-    "form.successBody": "Ditt e-postprogram öppnas med ett färdigt meddelande. Skicka det, så får du svar från Talja. Öppnades inget fönster? Mejla <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
-    "form.mailSubject": "Förfrågan till Talja",
+    "form.successBody": "Ditt e-postprogram öppnas med ett färdigt meddelande. Skicka det, så får du svar från Vinsch. Öppnades inget fönster? Mejla <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
+    "form.mailSubject": "Förfrågan till Vinsch",
     "form.mailName": "Namn",
     "form.mailCompany": "Företag",
     "form.mailEmail": "E-post",
@@ -151,14 +151,14 @@ window.TALJA_I18N = {
     "err.send": "Det gick inte att skicka. Försök igen eller mejla direkt.",
 
     "aria.lang": "Byt språk",
-    "aria.brand": "Talja, till sidans topp",
+    "aria.brand": "Vinsch, till sidans topp",
     "aria.navMain": "Huvudmeny",
     "aria.navFooter": "Sidfot",
     "aria.scroll": "Rulla till tjänsterna",
 
     "svc.flag": "Kärntjänst",
 
-    "alt.hero": "Ett skulpturalt block och talja: ett bärnstensfärgat rep över två blockhjul lyfter en tung stenkub",
+    "alt.hero": "En skulptural vevvinsch: ett bärnstensfärgat rep runt en trätrumma lyfter en tung stenkub",
     "alt.svcWeb": "Ett skulpturalt webbläsarfönster i keramik med en bärnstensfärgad cirkel",
     "alt.svcAi": "En liten skulptural maskin av keramikskivor med ett träkugghjul och en bärnstensfärgad vev",
     "alt.svcTech": "En kulbana i trä som leder keramikkulor, en i bärnsten",
@@ -174,11 +174,11 @@ window.TALJA_I18N = {
   fi: {
     "skip": "Siirry sisältöön",
 
-    "meta.title": "Talja | Verkkosivustoja, tekoälyneuvontaa ja teknologiakonsultointia",
-    "meta.desc": "Talja suunnittelee ja rakentaa nopeita, helposti ylläpidettäviä verkkosivustoja sekä auttaa teknologia- ja SaaS-yrityksiä ja digitaalisia tuotteita kehittäviä yrityksiä hyödyntämään tekoälyä järkevästi ja ratkaisemaan teknisiä pullonkauloja. Neuvonta ja toteutus samalta henkilöltä. Kotipaikka Tukholma, asiakkaita koko Pohjolassa.",
+    "meta.title": "Vinsch | Verkkosivustoja, tekoälyneuvontaa ja teknologiakonsultointia",
+    "meta.desc": "Vinsch suunnittelee ja rakentaa nopeita, helposti ylläpidettäviä verkkosivustoja sekä auttaa teknologia- ja SaaS-yrityksiä ja digitaalisia tuotteita kehittäviä yrityksiä hyödyntämään tekoälyä järkevästi ja ratkaisemaan teknisiä pullonkauloja. Neuvonta ja toteutus samalta henkilöltä. Kotipaikka Tukholma, asiakkaita koko Pohjolassa.",
 
     "nav.services": "Palvelut",
-    "nav.why": "Miksi Talja",
+    "nav.why": "Miksi Vinsch",
     "nav.process": "Prosessi",
     "nav.faq": "Usein kysyttyä",
     "nav.contact": "Yhteydenotto",
@@ -192,13 +192,13 @@ window.TALJA_I18N = {
     "hero.title1": "Lisää nostovoimaa",
     "hero.title2": "digitaaliseen",
     "hero.title3": "<em>liiketoimintaan.</em>",
-    "hero.lede": "Talja suunnittelee ja rakentaa verkkosivustoja, jotka kestävät aikaa, ja auttaa teknologia- ja SaaS-yrityksiä sekä digitaalisia tuotteita kehittäviä yrityksiä hyödyntämään tekoälyä järkevästi ja tekemään kestäviä teknisiä valintoja. Saat neuvon ja toteutuksen samasta paikasta.",
+    "hero.lede": "Vinsch suunnittelee ja rakentaa verkkosivustoja, jotka kestävät aikaa, ja auttaa teknologia- ja SaaS-yrityksiä sekä digitaalisia tuotteita kehittäviä yrityksiä hyödyntämään tekoälyä järkevästi ja tekemään kestäviä teknisiä valintoja. Saat neuvon ja toteutuksen samasta paikasta.",
     "hero.cta2": "Tutustu palveluihin",
     "hero.trust1": "Neuvonta ja toteutus",
     "hero.trust2": "Kotipaikka Tukholma, työkenttänä koko Pohjola",
     "hero.trust3": "Verkkosivustot suomeksi, ruotsiksi ja englanniksi",
     "hero.trust4": "Sinä omistat lopputuloksen",
-    "hero.cardTitle": "Talja eli väkipyörästö",
+    "hero.cardTitle": "Vinsch eli vinssi",
     "hero.cardBody": "Pieni voima sisään. Raskas kuorma ylös. Siinä koko idea.",
     "hero.scroll": "Vieritä",
 
@@ -242,7 +242,7 @@ window.TALJA_I18N = {
     "why.3.t": "Rajattu työ, näkyvät valinnat",
     "why.3.d": "Tavoite, laajuus ja tärkeimmät päätökset tehdään ymmärrettäviksi. Näin tiedät, mitä tehdään nyt ja mitä kannattaa tehdä seuraavaksi.",
     "why.4.t": "Kotipaikka Tukholma, työkenttänä koko Pohjola",
-    "why.4.d": "Taljan kotipaikka on Tukholma, ja asiakkaita on eri puolilla Pohjolaa, pääpaino Ruotsissa ja Suomessa. Yhteistyö onnistuu paikan päällä, etänä ja kansainvälisten tiimien kanssa.",
+    "why.4.d": "Vinschin kotipaikka on Tukholma, ja asiakkaita on eri puolilla Pohjolaa, pääpaino Ruotsissa ja Suomessa. Yhteistyö onnistuu paikan päällä, etänä ja kansainvälisten tiimien kanssa.",
 
     "proc.title": "Näin etenemme.",
     "proc.lede": "Ei raskasta esiselvitystä eikä 40 sivun raportteja. Kolme vaihetta ensimmäisestä viestistä valmiiseen työhön.",
@@ -254,12 +254,12 @@ window.TALJA_I18N = {
     "proc.3.d": "Etenemme sovitusti neuvonnalla, toteutuksella tai niiden yhdistelmällä. Teemme valinnat näkyviksi ja jätämme selkeät jatkoaskeleet.",
 
     "studio.quote": "”Useimmat yritykset eivät tarvitse lisää työkaluja. Ne tarvitsevat oikean vivun jo käytössä olevien työkalujen väliin.”",
-    "studio.cite": "Taljan perusperiaate",
+    "studio.cite": "Vinschin perusperiaate",
 
     "case.kicker": "Käytännön näyttö",
     "case.title": "Tekoäly myyntityössä, tuloksilla mitattuna.",
-    "case.lede": "Tekoälyavusteiset myynnin työnkulut ovat Taljan tekoälyneuvonnan erikoisala. Tässä tulos kahdeksan kuukauden todellisesta myyntityöstä.",
-    "case.body": "Lokakuun 2025 alusta toukokuun 2026 loppuun Taljan perustaja rakensi ja käytti tekoälyavusteista myynnin työnkulkua kansainvälisessä B2B-myyntiorganisaatiossa, jonka asiakkaat ovat suuryrityksiä. Tekoäly hoiti asiakastutkimuksen, soittojen priorisoinnin ja jokaisen puhelun valmistelun. Jokaisen puhelun hoiti ihminen.",
+    "case.lede": "Tekoälyavusteiset myynnin työnkulut ovat Vinschin tekoälyneuvonnan erikoisala. Tässä tulos kahdeksan kuukauden todellisesta myyntityöstä.",
+    "case.body": "Lokakuun 2025 alusta toukokuun 2026 loppuun Vinschin perustaja rakensi ja käytti tekoälyavusteista myynnin työnkulkua kansainvälisessä B2B-myyntiorganisaatiossa, jonka asiakkaat ovat suuryrityksiä. Tekoäly hoiti asiakastutkimuksen, soittojen priorisoinnin ja jokaisen puhelun valmistelun. Jokaisen puhelun hoiti ihminen.",
     "case.stat1n": "22",
     "case.stat1l": "puhelua yhtä täysin kvalifioitua enterprise-tapaamista kohden",
     "case.stat2n": "8",
@@ -275,7 +275,7 @@ window.TALJA_I18N = {
     "faq.2.q": "Mitä työ maksaa?",
     "faq.2.a": "Se riippuu laajuudesta. Pienemmät neuvontatyöt hinnoitellaan yleensä kiinteästi, pidemmät toimeksiannot tunneittain tai vaiheittain. Saat aina selkeän tarjouksen ennen työn aloittamista.",
     "faq.3.q": "Työskentelettekö paikan päällä vai etänä?",
-    "faq.3.a": "Molemmilla tavoilla. Talja toimii Tukholmasta käsin, paikan päällä tarpeen mukaan ja etänä asiakkaiden kanssa koko Pohjolassa ja kansainvälisesti.",
+    "faq.3.a": "Molemmilla tavoilla. Vinsch toimii Tukholmasta käsin, paikan päällä tarpeen mukaan ja etänä asiakkaiden kanssa koko Pohjolassa ja kansainvälisesti.",
     "faq.4.q": "Millä kielillä palvelette?",
     "faq.4.a": "Neuvonta ja projektin aikainen keskustelu käydään ruotsiksi tai englanniksi. Verkkosivustot, sisällöt ja dokumentaatio toteutetaan mielellään myös suomeksi, täysin suomenkielisille kävijöille lokalisoituna.",
     "faq.5.q": "Voitteko ottaa haltuun jonkun muun rakentaman kokonaisuuden?",
@@ -304,8 +304,8 @@ window.TALJA_I18N = {
     "form.submit": "Lähetä yhteydenotto",
     "form.small": "Lomake avaa sähköpostiohjelmasi ja viesti on valmiina. Voit myös lähettää sähköpostia osoitteeseen <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
     "form.successTitle": "Melkein valmista.",
-    "form.successBody": "Sähköpostiohjelmasi avautuu ja viesti on valmiina. Lähetä se, niin saat vastauksen Taljalta. Jos ikkuna ei avautunut, lähetä viesti osoitteeseen <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
-    "form.mailSubject": "Yhteydenotto Taljalle",
+    "form.successBody": "Sähköpostiohjelmasi avautuu ja viesti on valmiina. Lähetä se, niin saat vastauksen Vinschiltä. Jos ikkuna ei avautunut, lähetä viesti osoitteeseen <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
+    "form.mailSubject": "Yhteydenotto Vinschille",
     "form.mailName": "Nimi",
     "form.mailCompany": "Yritys",
     "form.mailEmail": "Sähköposti",
@@ -320,18 +320,18 @@ window.TALJA_I18N = {
     "err.send": "Lähetys epäonnistui. Yritä uudelleen tai lähetä sähköpostia suoraan.",
 
     "aria.lang": "Vaihda kieltä",
-    "aria.brand": "Talja, sivun alkuun",
+    "aria.brand": "Vinsch, sivun alkuun",
     "aria.navMain": "Päävalikko",
     "aria.navFooter": "Alatunnisteen valikko",
     "aria.scroll": "Vieritä palveluihin",
 
     "svc.flag": "Ydinpalvelu",
 
-    "alt.hero": "Veistoksellinen talja: meripihkanvärinen köysi kulkee kahden pyörän yli ja nostaa raskasta kivikuutiota",
+    "alt.hero": "Veistoksellinen vinssi: meripihkanvärinen köysi puisen rummun ympärillä nostaa raskasta kivikuutiota",
     "alt.svcWeb": "Veistoksellinen keraaminen selainikkuna, jossa meripihkanvärinen ympyrä",
     "alt.svcAi": "Pieni veistoksellinen kone keraamisista kiekoista, puisesta hammasrattaasta ja meripihkanvärisestä kammesta",
     "alt.svcTech": "Puinen kuularata, jota pitkin kulkee keraamisia kuulia, yksi meripihkanvärinen",
-    "alt.studio": "Lämminhenkinen skandinaavinen verstas, jossa kannettava tietokone, köysivyyhtejä ja taljanpyöriä tammisella työpöydällä",
+    "alt.studio": "Lämminhenkinen skandinaavinen verstas, jossa kannettava tietokone, köysivyyhtejä ja puisia vinssinosia tammisella työpöydällä",
     "aria.menuOpen": "Avaa valikko",
     "aria.menuClose": "Sulje valikko",
     "aria.themeToDark": "Vaihda tummaan teemaan",
@@ -343,11 +343,11 @@ window.TALJA_I18N = {
   en: {
     "skip": "Skip to content",
 
-    "meta.title": "Talja | Web development, AI advisory and tech consulting",
-    "meta.desc": "Talja designs and builds fast, maintainable websites and helps tech, SaaS and digital product companies put AI to work and make sound technical calls. Advice and execution from the same person. Based in Stockholm, working across the Nordics.",
+    "meta.title": "Vinsch | Web development, AI advisory and tech consulting",
+    "meta.desc": "Vinsch designs and builds fast, maintainable websites and helps tech, SaaS and digital product companies put AI to work and make sound technical calls. Advice and execution from the same person. Based in Stockholm, working across the Nordics.",
 
     "nav.services": "Services",
-    "nav.why": "Why Talja",
+    "nav.why": "Why Vinsch",
     "nav.process": "Process",
     "nav.faq": "FAQ",
     "nav.contact": "Contact",
@@ -361,13 +361,13 @@ window.TALJA_I18N = {
     "hero.title1": "More leverage",
     "hero.title2": "for your digital",
     "hero.title3": "<em>business.</em>",
-    "hero.lede": "Talja designs and builds websites that hold up, and helps tech, SaaS and digital product companies put AI to work and make sound technical calls. Advice and execution from the same person.",
+    "hero.lede": "Vinsch designs and builds websites that hold up, and helps tech, SaaS and digital product companies put AI to work and make sound technical calls. Advice and execution from the same person.",
     "hero.cta2": "See the services",
     "hero.trust1": "Advice and execution",
     "hero.trust2": "Based in Stockholm, working across the Nordics",
     "hero.trust3": "Websites in Swedish, Finnish and English",
     "hero.trust4": "You own the result",
-    "hero.cardTitle": "Talja, the block and tackle",
+    "hero.cardTitle": "Vinsch, the hand-cranked hoist",
     "hero.cardBody": "Small force in. Heavy lift out. That is the whole idea.",
     "hero.scroll": "Scroll",
 
@@ -411,7 +411,7 @@ window.TALJA_I18N = {
     "why.3.t": "Scoped work, visible choices",
     "why.3.d": "Goals, scope and the key decisions are made understandable. You know what is done now and what is wise to do next.",
     "why.4.t": "Based in Stockholm, working across the Nordics",
-    "why.4.d": "Talja is headquartered in Stockholm and works with companies across the Nordics, with Sweden and Finland as its primary markets. Collaboration works on site, remotely and with international teams.",
+    "why.4.d": "Vinsch is headquartered in Stockholm and works with companies across the Nordics, with Sweden and Finland as its primary markets. Collaboration works on site, remotely and with international teams.",
 
     "proc.title": "How it works.",
     "proc.lede": "No discovery theater and no 40-page reports. Three steps from first message to finished work.",
@@ -423,12 +423,12 @@ window.TALJA_I18N = {
     "proc.3.d": "We proceed as agreed with advisory, execution or a combination. Choices are made visible, and you always know the next step.",
 
     "studio.quote": "“Most companies do not need more tools. They need the right lever between the tools they already have.”",
-    "studio.cite": "Talja founding principle",
+    "studio.cite": "Vinsch founding principle",
 
     "case.kicker": "From the field",
     "case.title": "AI in sales work, measured where it matters.",
-    "case.lede": "AI-assisted sales workflows are the speciality within Talja's AI advisory. Here is the result of eight months of live sales work.",
-    "case.body": "From early October 2025 through late May 2026, Talja's founder built and ran an AI-assisted sales workflow inside an international B2B sales organisation serving enterprise clients. AI handled account research, call prioritisation and the preparation for every call. Every call was made by a human.",
+    "case.lede": "AI-assisted sales workflows are the speciality within Vinsch's AI advisory. Here is the result of eight months of live sales work.",
+    "case.body": "From early October 2025 through late May 2026, Vinsch's founder built and ran an AI-assisted sales workflow inside an international B2B sales organisation serving enterprise clients. AI handled account research, call prioritisation and the preparation for every call. Every call was made by a human.",
     "case.stat1n": "22",
     "case.stat1l": "dials per fully qualified enterprise meeting",
     "case.stat2n": "8",
@@ -444,7 +444,7 @@ window.TALJA_I18N = {
     "faq.2.q": "What does it cost?",
     "faq.2.a": "It depends on scope. Smaller advisory engagements are usually priced fixed, longer assignments per hour or per phase. You always get a clear quote before work starts.",
     "faq.3.q": "Do you work on site or remotely?",
-    "faq.3.a": "Both. Talja works out of Stockholm, on site when it helps and remotely with clients across the Nordics and internationally.",
+    "faq.3.a": "Both. Vinsch works out of Stockholm, on site when it helps and remotely with clients across the Nordics and internationally.",
     "faq.4.q": "Which languages do you work in?",
     "faq.4.a": "Advisory work and ongoing dialogue run in Swedish or English. Websites, content and documentation are also delivered in Finnish, fully localised for Finnish-speaking visitors.",
     "faq.5.q": "Can you take over something someone else built?",
@@ -457,7 +457,7 @@ window.TALJA_I18N = {
     "contact.email": "Email",
     "contact.note": "Prefer to email directly? Same inbox, same person.",
 
-    "form.title": "Contact Talja",
+    "form.title": "Contact Vinsch",
     "form.name": "Name",
     "form.email": "Email",
     "form.company": "Company (optional)",
@@ -473,8 +473,8 @@ window.TALJA_I18N = {
     "form.submit": "Send message",
     "form.small": "The form opens your email app with a ready-made message. You can also email directly at <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
     "form.successTitle": "Almost done.",
-    "form.successBody": "Your email app opens with a ready-made message. Send it and you will hear back from Talja. No window opened? Email <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
-    "form.mailSubject": "Inquiry for Talja",
+    "form.successBody": "Your email app opens with a ready-made message. Send it and you will hear back from Vinsch. No window opened? Email <a href=\"mailto:lilius.alexander@gmail.com\">lilius.alexander@gmail.com</a>.",
+    "form.mailSubject": "Inquiry for Vinsch",
     "form.mailName": "Name",
     "form.mailCompany": "Company",
     "form.mailEmail": "Email",
@@ -489,14 +489,14 @@ window.TALJA_I18N = {
     "err.send": "Sending failed. Try again or email directly.",
 
     "aria.lang": "Switch language",
-    "aria.brand": "Talja, back to top",
+    "aria.brand": "Vinsch, back to top",
     "aria.navMain": "Main menu",
     "aria.navFooter": "Footer",
     "aria.scroll": "Scroll to services",
 
     "svc.flag": "Core service",
 
-    "alt.hero": "A sculptural block and tackle: an amber rope over two pulley wheels lifts a heavy stone cube",
+    "alt.hero": "A sculptural hand-cranked winding drum: an amber rope wound on a wooden drum lifts a heavy stone cube",
     "alt.svcWeb": "A sculptural ceramic browser window with an amber circle",
     "alt.svcAi": "A small sculptural machine of ceramic discs with a wooden gear and an amber crank",
     "alt.svcTech": "A wooden marble run guiding ceramic spheres, one in amber",

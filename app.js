@@ -1,4 +1,4 @@
-/* Talja · interactions */
+/* Vinsch · interactions */
 (function () {
   'use strict';
 
@@ -16,7 +16,7 @@
   }
 
   /* ---------- i18n (English default, Swedish and Finnish) ---------- */
-  var I18N = window.TALJA_I18N || { sv: {}, fi: {}, en: {} };
+  var I18N = window.VINSCH_I18N || { sv: {}, fi: {}, en: {} };
   var LANGS = ['en', 'sv', 'fi'];
   var lang = (LANGS.indexOf(doc.lang) >= 0) ? doc.lang : 'en';
   function tr(key) {
@@ -70,7 +70,7 @@
   var themeToggle = document.getElementById('themeToggle');
   function setTheme(mode) {
     doc.dataset.theme = mode;
-    writePref('talja-theme', mode, true);
+    writePref('vinsch-theme', mode, true);
     themeToggle.setAttribute('aria-label', mode === 'dark' ? tr('aria.themeToLight') : tr('aria.themeToDark'));
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', mode === 'dark' ? '#171411' : '#F4F1EA');
@@ -88,7 +88,7 @@
       var next = opt.getAttribute('data-lang');
       if (LANGS.indexOf(next) < 0 || next === lang) return;
       lang = next;
-      writePref('talja-lang', lang, true);
+      writePref('vinsch-lang', lang, true);
       applyI18n();
     });
   }

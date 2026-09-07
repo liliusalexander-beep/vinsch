@@ -1,23 +1,9 @@
-# Talja, webbplats
+# Vinsch, webbplats
 
-Statisk enkelsidig webbplats för Talja: AI-rådgivning, webbutveckling och tech-konsulting för tech-, SaaS- och digitala produktbolag i Sverige och Finland.
+Statisk enkelsidig webbplats för Vinsch: webbutveckling, AI-rådgivning och tech-konsulting för tech-, SaaS- och digitala produktbolag i Norden.
 
-## Innehåll
+Teknik: vanilla HTML, CSS och JavaScript. GSAP med ScrollTrigger och Lenis smooth scrolling, självhostade typsnitt (Clash Display, Satoshi), generativ rep-canvas i hero.
 
-- `index.html`: hela sidans struktur, svensk grundtext
-- `i18n.js`: ordbok med svenska, finska och engelska
-- `app.js`: språkväxling, tema, animationer, formulärlogik
-- `style.css`, `base.css`: stilar med ljust och mörkt tema
-- `assets/`: bilder och typsnitt
+Tre språk: engelska (standard), svenska och finska. Språkval sparas i cookie `vinsch-lang`. Tema är mörkt som standard, ljust val sparas i cookie `vinsch-theme`.
 
-## Språk
-
-Tre språk: svenska (standard), finska och engelska. Språkval sparas i cookie `talja-lang`. Växlaren i sidhuvudet cyklar sv, fi, en.
-
-## Kontakt och formulär
-
-Formuläret öppnar besökarens e-postprogram med ett förifyllt meddelande till lilius.alexander@gmail.com. Vill du senare skicka i bakgrunden, sätt `FORM_ENDPOINT` i `app.js` till en POST-URL, till exempel Formspree.
-
-## Uppdatera innehåll
-
-All synlig text finns i `i18n.js` under nycklar per språk. Ändra texten i alla tre språk samtidigt så att versionerna hålls i synk. Ingen påhittad information: inga kundcase, siffror, adresser eller telefonnummer får läggas till utan underlag.
+Deploy: statiska filer, ingen byggkedja. Cache-busting via versionerade asset-URL:er (?v=N).

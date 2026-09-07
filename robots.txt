@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://talja.pplx.app/sitemap.xml
+Sitemap: https://vinsch.pplx.app/sitemap.xml

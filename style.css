@@ -1,5 +1,5 @@
 /* ============================================================
-   TALJA · design system
+   VINSCH · design system
    Warm paper, ink, burnt amber. Clash Display + Satoshi.
    ============================================================ */
 
@@ -682,7 +682,7 @@ html.js .hero__media.intro-fade { animation-delay: 250ms; }
   color: rgba(242, 237, 226, 0.06); user-select: none; margin-bottom: -0.12em;
 }
 /* Watermark text lives in CSS so it never enters the accessibility tree or contrast checks */
-.footer__word::after { content: "Talja"; }
+.footer__word::after { content: "Vinsch"; }
 .footer__bottom {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-4);
   border-top: 1px solid rgba(242, 237, 226, 0.1); padding: var(--s-6) 0 var(--s-8);
