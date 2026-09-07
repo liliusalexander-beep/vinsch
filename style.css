@@ -192,7 +192,7 @@ p { text-wrap: pretty; }
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   transition: background 300ms var(--ease-in-out), box-shadow 300ms var(--ease-in-out);
 }
-.header.is-scrolled { background: color-mix(in srgb, var(--bg) 97%, transparent); box-shadow: 0 1px 0 var(--line-soft), var(--shadow-md); }
+.header.is-scrolled { background: color-mix(in srgb, var(--bg) 98%, transparent); box-shadow: 0 1px 0 var(--line-soft), var(--shadow-md); }
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--s-6); height: 4.5rem; }
 
 .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); }
@@ -759,8 +759,19 @@ html.js .reveal.is-in { opacity: 1; }
   }
 }
 
+/* small screens: keep the whole header row inside the viewport.
+   The contact CTA also lives in the open mobile menu, so hiding it
+   here loses nothing. */
+@media (max-width: 560px) {
+  .header__cta { display: none; }
+  .header__inner { gap: var(--s-4); }
+  .header__actions { gap: var(--s-2); }
+}
+
 /* very narrow screens */
 @media (max-width: 379px) {
-  .header__cta { display: none; }
   .btn { white-space: normal; text-align: center; }
+  .header__inner { gap: var(--s-2); }
+  .lang-toggle { padding: 0 0.4rem; gap: 0.15rem; }
+  .lang-toggle__opt { font-size: 0.72rem; }
 }
