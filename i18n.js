@@ -29,8 +29,8 @@ window.VINSCH_I18N = {
     "hero.trust2": "Med bas i Stockholm, verksam i hela Norden",
     "hero.trust3": "Webbplatser på svenska, finska och engelska",
     "hero.trust4": "Du äger resultatet",
-    "hero.cardTitle": "Vinsch, veven bakom tunga lyft",
-    "hero.cardBody": "Liten kraft in. Tungt lyft ut. Det är hela idén.",
+    "hero.cardTitle": "Vinsch, som på segelbåten",
+    "hero.cardBody": "Liten kraft in. Hårt skot hem. Det är hela idén.",
     "hero.scroll": "Rulla",
 
     "mq.1": "Webbutveckling",
@@ -158,7 +158,7 @@ window.VINSCH_I18N = {
 
     "svc.flag": "Kärntjänst",
 
-    "alt.hero": "En skulptural vevvinsch: ett bärnstensfärgat rep runt en trätrumma lyfter en tung stenkub",
+    "alt.hero": "En skulptural segelvinsch i brons på ett teakpodium, med ett bärnstensfärgat skot i tre varv runt trumman",
     "alt.svcWeb": "Ett skulpturalt webbläsarfönster i keramik med en bärnstensfärgad cirkel",
     "alt.svcAi": "En liten skulptural maskin av keramikskivor med ett träkugghjul och en bärnstensfärgad vev",
     "alt.svcTech": "En kulbana i trä som leder keramikkulor, en i bärnsten",
@@ -198,8 +198,8 @@ window.VINSCH_I18N = {
     "hero.trust2": "Kotipaikka Tukholma, työkenttänä koko Pohjola",
     "hero.trust3": "Verkkosivustot suomeksi, ruotsiksi ja englanniksi",
     "hero.trust4": "Sinä omistat lopputuloksen",
-    "hero.cardTitle": "Vinsch eli vinssi",
-    "hero.cardBody": "Pieni voima sisään. Raskas kuorma ylös. Siinä koko idea.",
+    "hero.cardTitle": "Vinsch eli purjeveneen vinssi",
+    "hero.cardBody": "Pieni voima sisään. Kireä skuutti kotiin. Siinä koko idea.",
     "hero.scroll": "Vieritä",
 
     "mq.1": "Verkkosivustot",
@@ -327,7 +327,7 @@ window.VINSCH_I18N = {
 
     "svc.flag": "Ydinpalvelu",
 
-    "alt.hero": "Veistoksellinen vinssi: meripihkanvärinen köysi puisen rummun ympärillä nostaa raskasta kivikuutiota",
+    "alt.hero": "Veistoksellinen pronssinen purjeveneen vinssi tiikkijalustalla, meripihkanvärinen skuutti kolmella kierroksella rummun ympärillä",
     "alt.svcWeb": "Veistoksellinen keraaminen selainikkuna, jossa meripihkanvärinen ympyrä",
     "alt.svcAi": "Pieni veistoksellinen kone keraamisista kiekoista, puisesta hammasrattaasta ja meripihkanvärisestä kammesta",
     "alt.svcTech": "Puinen kuularata, jota pitkin kulkee keraamisia kuulia, yksi meripihkanvärinen",
@@ -367,8 +367,8 @@ window.VINSCH_I18N = {
     "hero.trust2": "Based in Stockholm, working across the Nordics",
     "hero.trust3": "Websites in Swedish, Finnish and English",
     "hero.trust4": "You own the result",
-    "hero.cardTitle": "Vinsch, the hand-cranked hoist",
-    "hero.cardBody": "Small force in. Heavy lift out. That is the whole idea.",
+    "hero.cardTitle": "Vinsch, as on a sailboat",
+    "hero.cardBody": "Small force in. A loaded sheet home. That is the whole idea.",
     "hero.scroll": "Scroll",
 
     "mq.1": "Web development",
@@ -496,7 +496,7 @@ window.VINSCH_I18N = {
 
     "svc.flag": "Core service",
 
-    "alt.hero": "A sculptural hand-cranked winding drum: an amber rope wound on a wooden drum lifts a heavy stone cube",
+    "alt.hero": "A sculptural bronze winding drum from a sailboat on a teak plinth, an amber sheet wrapped three turns around it",
     "alt.svcWeb": "A sculptural ceramic browser window with an amber circle",
     "alt.svcAi": "A small sculptural machine of ceramic discs with a wooden gear and an amber crank",
     "alt.svcTech": "A wooden marble run guiding ceramic spheres, one in amber",
