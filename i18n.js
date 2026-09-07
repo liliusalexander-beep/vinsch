@@ -367,7 +367,7 @@ window.VINSCH_I18N = {
     "hero.trust2": "Based in Stockholm, working across the Nordics",
     "hero.trust3": "Websites in Swedish, Finnish and English",
     "hero.trust4": "You own the result",
-    "hero.cardTitle": "Vinsch, as on a sailboat",
+    "hero.cardTitle": "Vinsch, Swedish for winch",
     "hero.cardBody": "Small force in. A loaded sheet home. That is the whole idea.",
     "hero.scroll": "Scroll",
 
