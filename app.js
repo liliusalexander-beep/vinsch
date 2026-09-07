@@ -434,7 +434,7 @@
       '',
       payload.message
     ].join('\n');
-    var href = 'mailto:lilius.alexander@gmail.com?subject=' +
+    var href = 'mailto:alexander@vinsch.ai?subject=' +
       encodeURIComponent(tr('form.mailSubject')) +
       '&body=' + encodeURIComponent(body);
     window.location.href = href;
