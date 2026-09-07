@@ -15,10 +15,10 @@
     try { document.cookie = k + '=' + encodeURIComponent(v) + '; path=/; SameSite=Lax' + (persist ? '; max-age=31536000' : ''); } catch (e) {}
   }
 
-  /* ---------- i18n (Swedish default, Finnish and English) ---------- */
+  /* ---------- i18n (English default, Swedish and Finnish) ---------- */
   var I18N = window.TALJA_I18N || { sv: {}, fi: {}, en: {} };
-  var LANGS = ['sv', 'fi', 'en'];
-  var lang = (LANGS.indexOf(doc.lang) >= 0) ? doc.lang : 'sv';
+  var LANGS = ['en', 'sv', 'fi'];
+  var lang = (LANGS.indexOf(doc.lang) >= 0) ? doc.lang : 'en';
   function tr(key) {
     var d = I18N[lang];
     return (d && d[key] != null) ? d[key] : key;
@@ -41,6 +41,11 @@
     document.querySelectorAll('[data-i18n-arialabel]').forEach(function (el) {
       var k = el.getAttribute('data-i18n-arialabel');
       if (dict[k] != null) el.setAttribute('aria-label', dict[k]);
+      else if (window.console && console.warn) console.warn('i18n missing [' + lang + ']:', k);
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-alt');
+      if (dict[k] != null) el.setAttribute('alt', dict[k]);
       else if (window.console && console.warn) console.warn('i18n missing [' + lang + ']:', k);
     });
     if (dict['meta.title']) document.title = dict['meta.title'];
@@ -74,12 +79,15 @@
     setTheme(doc.dataset.theme === 'dark' ? 'light' : 'dark');
   });
 
-  /* ---------- language toggle (cycles sv -> fi -> en -> sv) ---------- */
+  /* ---------- language toggle (direct choice: en / sv / fi) ---------- */
   var langToggle = document.getElementById('langToggle');
   if (langToggle) {
-    langToggle.addEventListener('click', function () {
-      var i = LANGS.indexOf(lang);
-      lang = LANGS[(i + 1) % LANGS.length];
+    langToggle.addEventListener('click', function (e) {
+      var opt = e.target.closest('.lang-toggle__opt');
+      if (!opt) return;
+      var next = opt.getAttribute('data-lang');
+      if (LANGS.indexOf(next) < 0 || next === lang) return;
+      lang = next;
       writePref('talja-lang', lang, true);
       applyI18n();
     });
