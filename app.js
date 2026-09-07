@@ -127,15 +127,7 @@
     if (e.target.closest('a')) closeNav();
   });
 
-  /* ---------- hero intro (no preloader) ---------- */
-  heroIntro();
-
-  function heroIntro() {
-    var hero = document.querySelector('.hero');
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { hero.classList.add('is-intro'); });
-    });
-  }
+  /* ---------- hero intro runs via CSS animations (see style.css intro-rise/intro-fade) ---------- */
 
   /* ---------- boot motion stack after DOM + scripts ---------- */
   window.addEventListener('DOMContentLoaded', function () {

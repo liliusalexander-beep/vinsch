@@ -7,27 +7,27 @@
 /* Latin-only unicode-range so the browser skips loading Clash / Satoshi for Hangul glyphs and falls through to --font-ko cleanly */
 @font-face {
   font-family: "Clash Display"; font-style: normal; font-weight: 500;
-  src: url("assets/fonts/clash-500.woff2") format("woff2"); font-display: swap;
+  src: url("assets/fonts/clash-500.woff2?v=2") format("woff2"); font-display: swap;
 }
 @font-face {
   font-family: "Clash Display"; font-style: normal; font-weight: 600;
-  src: url("assets/fonts/clash-600.woff2") format("woff2"); font-display: swap;
+  src: url("assets/fonts/clash-600.woff2?v=2") format("woff2"); font-display: swap;
 }
 @font-face {
   font-family: "Clash Display"; font-style: normal; font-weight: 700;
-  src: url("assets/fonts/clash-700.woff2") format("woff2"); font-display: swap;
+  src: url("assets/fonts/clash-700.woff2?v=2") format("woff2"); font-display: swap;
 }
 @font-face {
   font-family: "Satoshi"; font-style: normal; font-weight: 400;
-  src: url("assets/fonts/satoshi-400.woff2") format("woff2"); font-display: swap;
+  src: url("assets/fonts/satoshi-400.woff2?v=2") format("woff2"); font-display: swap;
 }
 @font-face {
   font-family: "Satoshi"; font-style: normal; font-weight: 500;
-  src: url("assets/fonts/satoshi-500.woff2") format("woff2"); font-display: swap;
+  src: url("assets/fonts/satoshi-500.woff2?v=2") format("woff2"); font-display: swap;
 }
 @font-face {
   font-family: "Satoshi"; font-style: normal; font-weight: 700;
-  src: url("assets/fonts/satoshi-700.woff2") format("woff2"); font-display: swap;
+  src: url("assets/fonts/satoshi-700.woff2?v=2") format("woff2"); font-display: swap;
 }
 
 :root {
@@ -271,23 +271,23 @@ p { text-wrap: pretty; }
 .hero__title em { font-style: normal; color: var(--accent); }
 .hero__line { display: block; overflow: hidden; }
 .hero__line > span { display: block; }
-html.js .hero__line > span { translate: 0 110%; transition: translate 1100ms var(--ease-out); }
-html.js .hero__line:nth-child(2) > span { transition-delay: 90ms; }
-html.js .hero__line:nth-child(3) > span { transition-delay: 180ms; }
-html.js .hero.is-intro .hero__line > span { translate: 0 0; }
+html.js .hero__line > span { translate: 0 110%; animation: intro-rise 1100ms var(--ease-out) forwards; }
+html.js .hero__line:nth-child(2) > span { animation-delay: 90ms; }
+html.js .hero__line:nth-child(3) > span { animation-delay: 180ms; }
+@keyframes intro-rise { to { translate: 0 0; } }
 .hero__lede { max-width: 34rem; font-size: var(--text-lg); line-height: 1.5; color: var(--ink-soft); margin-bottom: var(--s-8); }
 .hero__cta { display: flex; flex-wrap: wrap; gap: var(--s-4); margin-bottom: var(--s-8); }
 .hero__trust { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-6); list-style: none; font-size: var(--text-sm); font-weight: 500; color: var(--ink-soft); }
 .hero__trust li { display: flex; align-items: center; gap: 0.5rem; }
 .hero__trust li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-html.js .intro-fade { opacity: 0; transition: opacity 900ms var(--ease-out); }
-html.js .hero.is-intro .intro-fade { opacity: 1; }
-html.js .hero.is-intro .hero__kicker { transition-delay: 100ms; }
-html.js .hero.is-intro .hero__lede { transition-delay: 350ms; }
-html.js .hero.is-intro .hero__cta { transition-delay: 500ms; }
-html.js .hero.is-intro .hero__trust { transition-delay: 650ms; }
-html.js .hero.is-intro .hero__media { transition-delay: 300ms; }
+html.js .intro-fade { opacity: 0; animation: intro-fade 900ms var(--ease-out) forwards; }
+html.js .hero__kicker.intro-fade { animation-delay: 100ms; }
+html.js .hero__lede.intro-fade { animation-delay: 250ms; }
+html.js .hero__cta.intro-fade { animation-delay: 400ms; }
+html.js .hero__trust.intro-fade { animation-delay: 550ms; }
+html.js .hero__media.intro-fade { animation-delay: 250ms; }
+@keyframes intro-fade { to { opacity: 1; } }
 
 .hero__media { position: relative; }
 .hero__frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
