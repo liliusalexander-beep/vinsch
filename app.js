@@ -141,11 +141,26 @@
         a.addEventListener('click', function (e) {
           var id = a.getAttribute('href');
           if (id.length < 2) return;
+          if (id === '#top') {
+            e.preventDefault();
+            if (nav.classList.contains('is-open')) { closeNav(); lenis.resize(); }
+            lenis.scrollTo(0, { duration: 0.7, force: true });
+            return;
+          }
           var target = document.querySelector(id);
           if (!target) return;
           e.preventDefault();
           if (nav.classList.contains('is-open')) { closeNav(); lenis.resize(); }
           lenis.scrollTo(target, { offset: -64, force: true });
+        });
+      });
+    } else {
+      /* no smooth-scroll stack: make the brand link jump straight to the top */
+      document.querySelectorAll('a[href="#top"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (nav.classList.contains('is-open')) closeNav();
+          window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
         });
       });
     }
