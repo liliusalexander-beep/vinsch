@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vinsch | Web development, AI advisory and tech consulting</title>
-  <meta name="description" content="Vinsch designs and builds fast, maintainable websites and helps companies across all industries put AI to work and make sound technical calls. Advice and execution from the same person. Based in Stockholm, working across the Nordics.">
+  <title>Vinsch | Web development, AI advisory and app development</title>
+  <meta name="description" content="Vinsch designs and builds fast, maintainable websites and apps and helps companies across all industries put AI to work. Advice and execution from the same person. Based in Stockholm, working across the Nordics.">
   <link rel="canonical" href="https://vinsch.ai/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Vinsch">
-  <meta property="og:title" content="Vinsch | Web development, AI advisory and tech consulting">
-  <meta property="og:description" content="Websites, AI advisory and tech consulting for companies across all industries in the Nordics, with Sweden and Finland as primary markets. Advice and execution from the same person.">
+  <meta property="og:title" content="Vinsch | Web development, AI advisory and app development">
+  <meta property="og:description" content="Websites, AI advisory and app development for companies across all industries in the Nordics, with Sweden and Finland as primary markets. Advice and execution from the same person.">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="sv_SE">
   <meta property="og:locale:alternate" content="fi_FI">
@@ -147,7 +147,7 @@ summary {
   white-space: nowrap;
   border-width: 0;
 }</style>
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
   <script>document.documentElement.classList.add('js');
     (function(){try{
       var ck=function(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;};
@@ -163,9 +163,10 @@ summary {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Vinsch",
-    "description": "Web development, AI advisory and tech consulting for companies across all industries in the Nordics, with Sweden and Finland as primary markets.",
+    "description": "Web development, AI advisory and app development for companies across all industries in the Nordics, with Sweden and Finland as primary markets.",
     "url": "https://vinsch.ai/",
     "email": "alexander@vinsch.ai",
+    "founder": { "@type": "Person", "name": "Alexander Lilius" },
     "address": { "@type": "PostalAddress", "addressLocality": "Stockholm", "addressCountry": "SE" },
     "areaServed": [
       { "@type": "Country", "name": "Sweden" },
@@ -198,6 +199,7 @@ summary {
           <li><a class="nav__link" href="#services"><span data-i18n="nav.services">Services</span></a></li>
           <li><a class="nav__link" href="#why"><span data-i18n="nav.why">Why Vinsch</span></a></li>
           <li><a class="nav__link" href="#process"><span data-i18n="nav.process">Process</span></a></li>
+          <li><a class="nav__link" href="#about"><span data-i18n="nav.about">About Vinsch</span></a></li>
           <li><a class="nav__link" href="#faq"><span data-i18n="nav.faq">FAQ</span></a></li>
           <li><a class="nav__link" href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
         </ul>
@@ -230,13 +232,13 @@ summary {
       <canvas class="hero__canvas" id="ropeCanvas" aria-hidden="true"></canvas>
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="hero__kicker intro-fade" data-i18n="hero.kicker">Web development · AI advisory · Tech consulting</p>
+          <p class="hero__kicker intro-fade" data-i18n="hero.kicker">Web development · AI advisory · App development</p>
           <h1 class="hero__title" id="heroTitle">
             <span class="hero__line"><span data-i18n="hero.title1">More leverage</span></span>
             <span class="hero__line"><span data-i18n="hero.title2">for your digital</span></span>
             <span class="hero__line"><span data-i18n-html="hero.title3"><em>business.</em></span></span>
           </h1>
-          <p class="hero__lede intro-fade" data-i18n="hero.lede">Vinsch designs and builds websites that hold up, and helps companies across all industries put AI to work and make sound technical calls. Advice and execution from the same person.</p>
+          <p class="hero__lede intro-fade" data-i18n="hero.lede">Vinsch designs and builds websites and apps that hold up, and helps companies across all industries put AI to work. Advice and execution from the same person.</p>
           <div class="hero__cta intro-fade">
             <a class="btn btn--solid btn--lg" href="#contact" data-magnetic data-i18n="cta.primary">Tell us what you need</a>
             <a class="btn btn--ghost btn--lg" href="#services" data-magnetic data-i18n="hero.cta2">See the services</a>
@@ -244,7 +246,7 @@ summary {
           <ul class="hero__trust intro-fade">
             <li data-i18n="hero.trust1">Advice and execution</li>
             <li data-i18n="hero.trust2">Based in Stockholm, working across the Nordics</li>
-            <li data-i18n="hero.trust3">Websites in Swedish, Finnish and English</li>
+            <li data-i18n="hero.trust3">Websites in one or several languages of your choice. Linguistic perfection in Swedish and English is guaranteed, with no proofreading needed from the client.</li>
             <li data-i18n="hero.trust4">You own the result</li>
           </ul>
         </div>
@@ -262,8 +264,8 @@ summary {
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track" id="marqueeTrack">
-        <span data-i18n="mq.1">Web development</span><i>·</i><span data-i18n="mq.2">AI advisory</span><i>·</i><span data-i18n="mq.3">Tech consulting</span><i>·</i><span data-i18n="mq.4">Stockholm</span><i>·</i><span data-i18n="mq.5">Across the Nordics</span><i>·</i>
-        <span data-i18n="mq.1">Web development</span><i>·</i><span data-i18n="mq.2">AI advisory</span><i>·</i><span data-i18n="mq.3">Tech consulting</span><i>·</i><span data-i18n="mq.4">Stockholm</span><i>·</i><span data-i18n="mq.5">Across the Nordics</span><i>·</i>
+        <span data-i18n="mq.1">Web development</span><i>·</i><span data-i18n="mq.2">AI advisory</span><i>·</i><span data-i18n="mq.3">App development</span><i>·</i><span data-i18n="mq.4">Stockholm</span><i>·</i><span data-i18n="mq.5">Across the Nordics</span><i>·</i>
+        <span data-i18n="mq.1">Web development</span><i>·</i><span data-i18n="mq.2">AI advisory</span><i>·</i><span data-i18n="mq.3">App development</span><i>·</i><span data-i18n="mq.4">Stockholm</span><i>·</i><span data-i18n="mq.5">Across the Nordics</span><i>·</i>
       </div>
     </div>
 
@@ -301,16 +303,16 @@ summary {
             <figure class="svc__inline"><img src="assets/svc-tools.webp" alt="A small sculptural machine of ceramic discs with a wooden gear and an amber crank" data-i18n-alt="alt.svcAi" loading="lazy" width="640" height="960"></figure>
           </li>
           <li class="svc__row reveal" data-img="assets/svc-auto.webp">
-            <a class="svc__hit" href="#contact" data-topic="tech" aria-label="Tech consulting. Tell us what you need." data-i18n-arialabel="svc.3.aria">
+            <a class="svc__hit" href="#contact" data-topic="app" aria-label="App development. Tell us what you need." data-i18n-arialabel="svc.3.aria">
               <span class="svc__no">03</span>
               <div class="svc__body">
-                <h3 class="svc__title" data-i18n="svc.3.t">Tech consulting</h3>
-                <p class="svc__desc" data-i18n="svc.3.d">Support with architecture, technology choices, integrations and prioritising development work. Solutions are shaped around your business, your team and the environment you already run.</p>
-                <ul class="svc__tags"><li data-i18n="svc.3.a">Architecture</li><li data-i18n="svc.3.b">Technology choices</li><li data-i18n="svc.3.c">Integrations</li><li data-i18n="svc.3.e">Development support</li></ul>
+                <h3 class="svc__title" data-i18n="svc.3.t">App development</h3>
+                <p class="svc__desc" data-i18n="svc.3.d">We build apps and tailored tools that simplify the work, from internal AI-powered tools to services for your customers. The solution is built for your business, not from a template, and works with the systems you already run.</p>
+                <ul class="svc__tags"><li data-i18n="svc.3.a">Web apps</li><li data-i18n="svc.3.b">Internal tools</li><li data-i18n="svc.3.c">AI features</li><li data-i18n="svc.3.e">Integrations</li></ul>
               </div>
               <span class="svc__arrow" aria-hidden="true">→</span>
             </a>
-            <figure class="svc__inline"><img src="assets/svc-auto.webp" alt="A wooden marble run guiding ceramic spheres, one in amber" data-i18n-alt="alt.svcTech" loading="lazy" width="640" height="960"></figure>
+            <figure class="svc__inline"><img src="assets/svc-auto.webp" alt="A wooden marble run guiding ceramic spheres, one in amber" data-i18n-alt="alt.svcApp" loading="lazy" width="640" height="960"></figure>
           </li>
         </ul>
       </div>
@@ -346,7 +348,7 @@ summary {
               <span class="case__label" data-i18n="case.stat2l">months of live sales work, October 2025 through May 2026</span>
             </div>
           </div>
-          <p class="case__note reveal" data-i18n="case.note">Published B2B cold-calling studies report anywhere from about 40 to over 300 dials per booked meeting, depending on definitions, lists and markets. The result above covers one seller, one market and the stated period. Outcomes vary with the offer, the list and the execution.</p>
+          <p class="case__note reveal" data-i18n="case.note">Published B2B cold-calling studies report anywhere from about 40 to over 300 dials per booked meeting, depending on definitions, lists and markets. The result above covers one seller and the stated period. Outcomes vary with the offer, the list and the execution.</p>
         </div>
       </div>
     </section>
@@ -409,6 +411,36 @@ summary {
       </blockquote>
     </section>
 
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="kicker" data-i18n="about.kicker">The company</p>
+          <h2 id="aboutTitle" data-i18n="about.title">About Vinsch</h2>
+          <p class="section-head__lede" data-i18n="about.lede">Vinsch is a Stockholm-based digital studio helping small and mid-sized companies with AI advisory, web development and app development.</p>
+        </header>
+        <div class="about__grid">
+          <div class="about__body reveal">
+            <p data-i18n="about.body1">Vinsch was founded by Alexander Lilius on a simple premise: smaller companies deserve the same digital leverage as the big ones, without heavy projects or long consultant chains. Many know that AI, a better website or a tailored tool would make a difference, but lack a partner who knows the technology and understands the business.</p>
+            <p data-i18n="about.body2">That is why Vinsch works close to the client, in clearly scoped engagements. We help you choose, build and adopt solutions that create real business value, shaped around your actual operations, needs and goals. Technical understanding, business focus and straight communication belong together in every engagement.</p>
+            <p data-i18n="about.body3">Sweden and Finland are the primary markets, and relevant work is taken on across the rest of the Nordics and the EU.</p>
+          </div>
+          <aside class="founder reveal">
+            <figure class="founder__media" aria-hidden="true"><span class="founder__monogram">AL</span></figure>
+            <div>
+              <p class="kicker" data-i18n="about.fKicker">The founder</p>
+              <h3 class="founder__name" data-i18n="about.fName">Alexander Lilius</h3>
+              <p class="founder__role" data-i18n="about.fRole">Founder and your point of contact</p>
+            </div>
+            <p data-i18n="about.f1">Alexander has worked in B2B sales within cybersecurity and SaaS, with prospecting, needs analysis, qualification and client communication as daily work. In parallel he has built websites, digital products and internal AI solutions, and AI-based workflows are a natural part of how he works.</p>
+            <p data-i18n="about.f2">Vinsch was started because that combination is rare: commercial experience and technical execution in the same person. You do not need to translate between business and technology. You describe the need, get a clear proposal and work directly with the person building the solution.</p>
+            <p data-i18n="about.f3">Sailing is a genuine interest and the origin of the name: on board, the winch turns small force into large effect. The same idea guides every engagement.</p>
+            <a class="btn btn--solid" href="#contact" data-magnetic data-i18n="about.cta">Tell us what you need</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="faq" id="faq" aria-labelledby="faqTitle">
       <div class="container faq__grid">
@@ -467,7 +499,7 @@ summary {
           <ul class="contact__channels">
             <li><span data-i18n="contact.email">Email</span><a href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a></li>
           </ul>
-          <p class="contact__note" data-i18n="contact.note">Prefer to email directly? Same inbox, same person.</p>
+          <p class="contact__note" data-i18n="contact.note">Prefer to email directly? Use the email address above.</p>
         </div>
         <form class="form" id="quoteForm" novalidate>
           <h3 class="form__title" data-i18n="form.title">Contact Vinsch</h3>
@@ -494,7 +526,7 @@ summary {
               <option value="web" data-i18n="form.opt2">Web development</option>
               <option value="ai" data-i18n="form.opt1">AI advisory</option>
               <option value="sales" data-i18n="form.optSales">AI in sales work</option>
-              <option value="tech" data-i18n="form.opt3">Tech consulting</option>
+              <option value="app" data-i18n="form.opt3">App development</option>
               <option value="multi" data-i18n="form.opt4">Several of these</option>
               <option value="unsure" data-i18n="form.opt5">Not sure yet</option>
               <option value="other" data-i18n="form.opt6">Other</option>
@@ -538,6 +570,7 @@ summary {
           <a href="#services" data-i18n="nav.services">Services</a>
           <a href="#why" data-i18n="nav.why">Why Vinsch</a>
           <a href="#process" data-i18n="nav.process">Process</a>
+          <a href="#about" data-i18n="nav.about">About Vinsch</a>
           <a href="#faq" data-i18n="nav.faq">FAQ</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
@@ -550,7 +583,7 @@ summary {
     </div>
   </footer>
 
-  <script src="i18n.js?v=16" defer></script>
+  <script src="i18n.js?v=17" defer></script>
   <script src="app.js?v=14" defer></script>
   <script src="assets/vendor/lenis.min.js?v=1" defer></script>
   <script src="assets/vendor/gsap.min.js?v=1" defer></script>

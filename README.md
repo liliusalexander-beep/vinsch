@@ -1,6 +1,6 @@
 # Vinsch, webbplats
 
-Statisk enkelsidig webbplats för Vinsch: webbutveckling, AI-rådgivning och tech-konsulting för tech-, SaaS- och digitala produktbolag i Norden.
+Statisk enkelsidig webbplats för Vinsch: webbutveckling, AI-rådgivning och apputveckling för små och medelstora företag i Norden.
 
 Teknik: vanilla HTML, CSS och JavaScript. GSAP med ScrollTrigger och Lenis smooth scrolling, självhostade typsnitt (Clash Display, Satoshi), generativ rep-canvas i hero.
 
