@@ -964,6 +964,46 @@ html[data-theme="light"][data-light-palette] .form textarea::placeholder {
   color: var(--inverse-soft);
   opacity: 1;
 }
+
+/* Dark theme: continuous image veil replaces the local text plates. Dark only. */
+[data-theme="dark"] .hero__scrim {
+  background:
+    linear-gradient(to bottom, rgba(var(--scrim), 0.92) 0%, rgba(var(--scrim), 0.84) var(--header-h), rgba(var(--scrim), 0) 34%),
+    linear-gradient(to right, rgba(var(--scrim), 0.80) 0%, rgba(var(--scrim), 0.50) 40%, rgba(var(--scrim), 0.06) 100%),
+    linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 0.97) 14%, rgba(var(--scrim), 0.80) 30%, rgba(var(--scrim), 0.30) 56%, rgba(var(--scrim), 0) 100%);
+}
+/* Dark theme: while the hero scrolls under the fixed header, a soft top veil keeps header text readable over the image. */
+[data-theme="dark"] .header:not(.is-scrolled)::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; bottom: -1.5rem; z-index: -1; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(var(--scrim), 0.78) 0%, rgba(var(--scrim), 0.55) 70%, rgba(var(--scrim), 0) 100%);
+}
+@media (max-width: 880px) {
+  [data-theme="dark"] .hero__scrim {
+    background:
+      linear-gradient(to bottom, rgba(var(--scrim), 0.92) 0%, rgba(var(--scrim), 0.82) var(--header-h), rgba(var(--scrim), 0) 24%),
+      linear-gradient(to right, rgba(var(--scrim), 0.45) 0%, rgba(var(--scrim), 0.12) 100%),
+      linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 0.98) 36%, rgba(var(--scrim), 0.90) 52%, rgba(var(--scrim), 0.46) 72%, rgba(var(--scrim), 0) 92%);
+  }
+}
+[data-theme="dark"] .hero__line,
+[data-theme="dark"] .hero__kicker,
+[data-theme="dark"] .hero__panel,
+[data-theme="dark"] .hero__note,
+[data-theme="dark"] .hero__scroll {
+  background: transparent;
+}
+[data-theme="dark"] .hero__kicker,
+[data-theme="dark"] .hero__panel,
+[data-theme="dark"] .hero__note {
+  border-color: transparent;
+}
+[data-theme="dark"] .band--hero .btn--ghost { background: transparent; }
+[data-theme="dark"] .band--hero .btn--ghost:hover { background: var(--ink); }
+[data-theme="dark"] .about__media::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(var(--scrim), 0.96) 0%, rgba(var(--scrim), 0.84) 22%, rgba(var(--scrim), 0.40) 48%, rgba(var(--scrim), 0) 72%);
+}
+[data-theme="dark"] .about__quote { background: transparent; border-color: transparent; }
   </style>
   <script>document.documentElement.classList.add('js');
     (function(){try{
