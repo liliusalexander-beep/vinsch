@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-light-palette="marine">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -879,6 +879,90 @@ html.js .reveal:nth-child(5) { transition-delay: 320ms; }
   .hero__scroll-line::after { animation: none; transform: none; }
   .duo__img { will-change: auto; transform: none !important; }
   .arrow-link__arrow, .qa__a, .qa__icon::before, .qa__icon::after, .theme-toggle svg { transition: none; }
+}
+
+/* Vinsch. Endast ljust tema. */
+html[data-theme="light"][data-light-palette="marine"] {
+  --bg: #DADAD2;
+  --bg-raise: #ECECE4;
+  --bg-dim: #C9CFCA;
+  --ink: #202C32;
+  --ink-soft: #39464D;
+  --line: rgba(32, 44, 50, 0.18);
+  --line-strong: rgba(32, 44, 50, 0.56);
+  --accent: #954820;
+  --accent-deep: #713216;
+  --accent-ink: #FFF9F1;
+  --accent-text: #873F1D;
+  --accent-text-inverse: #F2B285;
+  --accent-band: #7E3919;
+  --inverse-bg: #202C32;
+  --inverse-bg-2: #2B3940;
+  --inverse-bg-3: #35464D;
+  --inverse-ink: #F3F5F1;
+  --inverse-soft: #C4CFD0;
+  --inverse-line: rgba(243, 245, 241, 0.22);
+  --inverse-line-strong: rgba(243, 245, 241, 0.56);
+  --error: #923B2A;
+  --error-inverse: #FFB6A3;
+  --duo-shadow: #293C43;
+  --duo-light: #D0D8D2;
+  --duo-hero-shadow: #293C43;
+  --duo-hero-light: #DADAD2;
+  --scrim: 218, 218, 210;
+}
+
+/* Gemensam sammanhängande bildslöja ersätter de lokala plattorna. */
+html[data-theme="light"][data-light-palette] .hero__scrim {
+  background:
+    linear-gradient(to bottom, rgba(var(--scrim), 0.90) 0%, rgba(var(--scrim), 0.82) var(--header-h), rgba(var(--scrim), 0) 32%),
+    linear-gradient(to right, rgba(var(--scrim), 0.72) 0%, rgba(var(--scrim), 0.48) 48%, rgba(var(--scrim), 0.12) 100%),
+    linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 0.98) 12%, rgba(var(--scrim), 0.78) 28%, rgba(var(--scrim), 0.18) 60%, rgba(var(--scrim), 0) 100%);
+}
+
+@media (max-width: 880px) {
+  html[data-theme="light"][data-light-palette] .hero__scrim {
+    background:
+      linear-gradient(to bottom, rgba(var(--scrim), 0.90) 0%, rgba(var(--scrim), 0.82) var(--header-h), rgba(var(--scrim), 0) 26%),
+      linear-gradient(to right, rgba(var(--scrim), 0.60) 0%, rgba(var(--scrim), 0.28) 100%),
+      linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 1) 43%, rgba(var(--scrim), 0.94) 57%, rgba(var(--scrim), 0.40) 74%, rgba(var(--scrim), 0) 94%);
+  }
+}
+
+html[data-theme="light"][data-light-palette] .hero__line,
+html[data-theme="light"][data-light-palette] .hero__kicker,
+html[data-theme="light"][data-light-palette] .hero__panel,
+html[data-theme="light"][data-light-palette] .hero__note,
+html[data-theme="light"][data-light-palette] .hero__scroll {
+  background: transparent;
+}
+
+html[data-theme="light"][data-light-palette] .hero__kicker,
+html[data-theme="light"][data-light-palette] .hero__panel,
+html[data-theme="light"][data-light-palette] .hero__note {
+  border-color: transparent;
+}
+
+html[data-theme="light"][data-light-palette] .band--hero .btn--ghost {
+  background: transparent;
+}
+
+html[data-theme="light"][data-light-palette] .band--hero .btn--ghost:hover {
+  background: var(--ink);
+}
+
+html[data-theme="light"][data-light-palette] .band--hero :focus-visible {
+  outline-color: var(--accent-deep);
+}
+
+html[data-theme="light"][data-light-palette] .about__quote {
+  background: var(--bg-raise);
+}
+
+html[data-theme="light"][data-light-palette] .form input::placeholder,
+html[data-theme="light"][data-light-palette] .form textarea::placeholder {
+  color: var(--inverse-soft);
+  opacity: 1;
 }
   </style>
   <script>document.documentElement.classList.add('js');
