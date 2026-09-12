@@ -72,7 +72,7 @@
   --text-base: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --text-lg: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem);
   --text-xl: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
-  --text-statement: clamp(2.5rem, 5vw, 4.5rem);
+  --text-statement: clamp(2.2rem, 5vw, 4.5rem);
   --text-statement-xl: clamp(3rem, 6.8vw, 6.25rem);
   --text-hero: clamp(2.7rem, 8.6vw, 7.75rem);
   --text-stat: clamp(6rem, 15vw, 14rem);
@@ -480,6 +480,7 @@ html:not(.js) .hero__word { transform: none; }
 }
 @media (max-width: 880px) {
   .svc-panel { grid-template-columns: 1fr; min-height: 0; }
+  .svc-panel__title { overflow-wrap: break-word; hyphens: auto; }
   .svc-panel__media { aspect-ratio: 16 / 9; min-height: 0; order: 0; }
   .svc-panel--flip .svc-panel__media { order: 0; }
   .svc-panel__text { padding: 2.5rem var(--gutter) 3.5rem; }
