@@ -22,132 +22,9 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
   <link rel="preload" href="assets/fonts/clash-600.woff2?v=2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/satoshi-400.woff2?v=2" as="font" type="font/woff2" crossorigin>
-  <style>/* base.css: reset + foundations */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
-  hanging-punctuation: first last;
-  scroll-padding-top: 5rem;
-}
-
-body {
-  min-height: 100dvh;
-  line-height: 1.6;
-  font-family: var(--font-body, sans-serif);
-  font-size: var(--text-base);
-  color: var(--color-text);
-  background-color: var(--color-bg);
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-input,
-button,
-textarea,
-select {
-  font: inherit;
-  color: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-  line-height: 1.15;
-}
-p,
-li,
-figcaption {
-  text-wrap: pretty;
-  max-width: 72ch;
-}
-
-::selection {
-  background: oklch(from var(--color-primary) l c h / 0.25);
-  color: var(--color-text);
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-  border-radius: var(--radius-sm);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-button {
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-a,
-button,
-[role='button'],
-[role='link'],
-input,
-textarea,
-select,
-summary {
-  transition:
-    color var(--transition-interactive),
-    background var(--transition-interactive),
-    border-color var(--transition-interactive),
-    box-shadow var(--transition-interactive);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}</style>
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="assets/hero-720.avif 720w, assets/hero-1080.avif 1080w, assets/hero-1440.avif 1440w, assets/hero-1792.avif 1792w" imagesizes="100vw">
+  <link rel="stylesheet" href="base.css?v=1">
+  <link rel="stylesheet" href="style.css?v=21">
   <script>document.documentElement.classList.add('js');
     (function(){try{
       var ck=function(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;};
@@ -181,11 +58,8 @@ summary {
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
-  <!-- Custom cursor (desktop only) -->
-  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
-
   <header class="header" id="top">
-    <div class="header__inner container">
+    <div class="header__inner wrap">
       <a class="brand" href="#top" aria-label="Vinsch, back to top" data-i18n-arialabel="aria.brand">
         <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
           <circle cx="24" cy="21" r="9.5" stroke="currentColor" stroke-width="3.4"/>
@@ -204,7 +78,7 @@ summary {
           <li><a class="nav__link" href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
         </ul>
         <div class="nav__foot">
-          <a class="btn btn--solid" href="#contact" data-magnetic data-i18n="cta.primary">Tell us what you need</a>
+          <a class="btn btn--solid" href="#contact" data-i18n="cta.primary">Tell us what you need</a>
           <p class="nav__meta"><a href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a></p>
         </div>
       </nav>
@@ -220,331 +94,363 @@ summary {
           <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M18.5 5.5l-1.7 1.7M7.2 16.8l-1.7 1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         </button>
-        <a class="btn btn--solid header__cta" href="#contact" data-magnetic data-i18n="cta.short">Contact</a>
+        <a class="btn btn--solid btn--sm header__cta" href="#contact" data-i18n="cta.short">Contact</a>
         <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="heroTitle">
-      <canvas class="hero__canvas" id="ropeCanvas" aria-hidden="true"></canvas>
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="hero__kicker intro-fade" data-i18n="hero.kicker">Web development · AI advisory · App development</p>
+
+    <!-- 01 HERO: full-viewport duotone band -->
+    <section class="hero band band--hero" aria-labelledby="heroTitle">
+      <div class="duo duo--hero" aria-hidden="true">
+        <picture>
+            <source type="image/avif" srcset="assets/hero-720.avif 720w, assets/hero-1080.avif 1080w, assets/hero-1440.avif 1440w, assets/hero-1792.avif 1792w" sizes="100vw">
+            <source type="image/webp" srcset="assets/hero-720.webp 720w, assets/hero-1080.webp 1080w, assets/hero-1440.webp 1440w, assets/hero-1792.webp 1792w" sizes="100vw">
+            <img class="duo__img" data-parallax="0.07" fetchpriority="high" src="assets/hero-1440.webp" alt="A sculptural bronze winding drum from a sailboat on a teak plinth, an amber sheet wrapped three turns around it" data-i18n-alt="alt.hero" width="1792" height="2400">
+          </picture>
+      </div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="wrap hero__layout">
+        <p class="hero__kicker" data-i18n="hero.kicker">Web development · AI advisory · App development</p>
+        <div class="hero__stack">
           <h1 class="hero__title" id="heroTitle">
-            <span class="hero__line"><span data-i18n="hero.title1">More leverage</span></span>
-            <span class="hero__line"><span data-i18n="hero.title2">for your digital</span></span>
-            <span class="hero__line"><span data-i18n-html="hero.title3"><em>business.</em></span></span>
+            <span class="hero__line"><span class="hero__word" data-i18n="hero.title1">More leverage</span></span>
+            <span class="hero__line"><span class="hero__word" data-i18n="hero.title2">for your digital</span></span>
+            <span class="hero__line"><span class="hero__word" data-i18n-html="hero.title3"><em>business.</em></span></span>
           </h1>
-          <p class="hero__lede intro-fade" data-i18n="hero.lede">Vinsch designs and builds websites and apps that hold up, and helps companies across all industries put AI to work. Advice and execution from the same person.</p>
-          <div class="hero__cta intro-fade">
-            <a class="btn btn--solid btn--lg" href="#contact" data-magnetic data-i18n="cta.primary">Tell us what you need</a>
-            <a class="btn btn--ghost btn--lg" href="#services" data-magnetic data-i18n="hero.cta2">See the services</a>
+          <div class="hero__panel">
+            <p class="hero__lede" data-i18n="hero.lede">Vinsch designs and builds websites and apps that hold up, and helps companies across all industries put AI to work. Advice and execution from the same person.</p>
+            <div class="hero__cta">
+              <a class="btn btn--solid btn--lg" href="#contact" data-i18n="cta.primary">Tell us what you need</a>
+              <a class="btn btn--ghost btn--lg" href="#services" data-i18n="hero.cta2">See the services</a>
+            </div>
           </div>
-          <ul class="hero__trust intro-fade">
-            <li data-i18n="hero.trust1">Advice and execution</li>
-            <li data-i18n="hero.trust2">Based in Stockholm, working across the Nordics</li>
-            <li data-i18n="hero.trust3">Websites in one or several languages of your choice. Linguistic perfection in Swedish and English is guaranteed, with no proofreading needed from the client.</li>
-            <li data-i18n="hero.trust4">You own the result</li>
-          </ul>
         </div>
-        <figure class="hero__media intro-fade">
-          <div class="hero__frame"><img src="assets/hero.webp?v=2" srcset="assets/hero-720.webp?v=2 720w, assets/hero.webp?v=2 1000w" sizes="(max-width: 880px) min(92vw, 26rem), 40vw" alt="A sculptural bronze winding drum from a sailboat on a teak plinth, an amber sheet wrapped three turns around it" data-i18n-alt="alt.hero" width="1000" height="1500"></div>
-          <figcaption class="hero__card">
-            <strong data-i18n="hero.cardTitle">Vinsch, Swedish for winch</strong>
-            <span data-i18n="hero.cardBody">Small force in. The sheet hauled home. That is the whole idea.</span>
-          </figcaption>
-        </figure>
+        <aside class="hero__note">
+          <strong data-i18n="hero.cardTitle">Vinsch, Swedish for winch</strong>
+          <span data-i18n="hero.cardBody">Small force in. The sheet hauled home. That is the whole idea.</span>
+        </aside>
+        <a class="hero__scroll" href="#services" aria-label="Scroll to services" data-i18n-arialabel="aria.scroll"><span class="hero__scroll-line" aria-hidden="true"></span><span data-i18n="hero.scroll">Scroll</span></a>
       </div>
-      <a class="hero__scroll" href="#services" aria-label="Scroll to services" data-i18n-arialabel="aria.scroll"><span class="hero__scroll-line"></span><span data-i18n="hero.scroll">Scroll</span></a>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track" id="marqueeTrack">
-        <span data-i18n="mq.1">Web development</span><i>·</i><span data-i18n="mq.2">AI advisory</span><i>·</i><span data-i18n="mq.3">App development</span><i>·</i><span data-i18n="mq.4">Stockholm</span><i>·</i><span data-i18n="mq.5">Across the Nordics</span><i>·</i>
-        <span data-i18n="mq.1">Web development</span><i>·</i><span data-i18n="mq.2">AI advisory</span><i>·</i><span data-i18n="mq.3">App development</span><i>·</i><span data-i18n="mq.4">Stockholm</span><i>·</i><span data-i18n="mq.5">Across the Nordics</span><i>·</i>
-      </div>
+    <!-- 02 USP STRIP -->
+    <div class="band band--strip">
+      <ul class="usp wrap" role="list">
+        <li class="usp__item" data-i18n="hero.trust1">Advice and execution</li>
+        <li class="usp__item" data-i18n="hero.trust2">Based in Stockholm, working across the Nordics</li>
+        <li class="usp__item usp__item--wide" data-i18n="hero.trust3">Websites in one or several languages of your choice. Linguistic perfection in Swedish and English is guaranteed, with no proofreading needed from the client.</li>
+        <li class="usp__item" data-i18n="hero.trust4">You own the result</li>
+      </ul>
     </div>
 
-    <!-- SERVICES -->
+    <!-- 03 SERVICES: intro + three split panels -->
     <section class="services" id="services" aria-labelledby="servicesTitle">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="kicker" data-i18n="nav.services">Services</p>
-          <h2 id="servicesTitle" data-i18n="svc.title">Three ways to add leverage.</h2>
-          <p class="section-head__lede" data-i18n="svc.lede">Start where the friction is greatest. Engagements are clearly scoped, so you know what gets done now and what can wait.</p>
-        </header>
-        <ul class="svc" id="svcList">
-          <li class="svc__row svc__row--primary reveal" data-img="assets/svc-web.webp">
-            <a class="svc__hit" href="#contact" data-topic="web" aria-label="Web development. Tell us what you need." data-i18n-arialabel="svc.2.aria">
-              <span class="svc__no">01</span>
-              <div class="svc__body">
-                <h3 class="svc__title" data-i18n="svc.2.t">Web development</h3>
-                <p class="svc__desc" data-i18n="svc.2.d">We design and build fast, clear, low-maintenance websites. Content, user experience and technology pull in the same direction. Multilingual sites in Swedish, Finnish and English are standard, not an add-on.</p>
-                <ul class="svc__tags"><li class="svc__flag" data-i18n="svc.flag">Core service</li><li data-i18n="svc.2.a">Design and build</li><li data-i18n="svc.2.b">Redesigns</li><li data-i18n="svc.2.c">Content and SEO</li><li data-i18n="svc.2.e">Multilingual sites</li></ul>
-              </div>
-              <span class="svc__arrow" aria-hidden="true">→</span>
-            </a>
-            <figure class="svc__inline"><img src="assets/svc-web.webp" alt="A sculptural ceramic browser window with an amber circle" data-i18n-alt="alt.svcWeb" loading="lazy" width="640" height="960"></figure>
-          </li>
-          <li class="svc__row reveal" data-img="assets/svc-tools.webp">
-            <a class="svc__hit" href="#contact" data-topic="ai" aria-label="AI advisory. Tell us what you need." data-i18n-arialabel="svc.1.aria">
-              <span class="svc__no">02</span>
-              <div class="svc__body">
-                <h3 class="svc__title" data-i18n="svc.1.t">AI advisory</h3>
-                <p class="svc__desc" data-i18n="svc.1.d">We work out where AI genuinely helps your business and what adoption requires. You get prioritised use cases, reasoned choices and clear next steps. One speciality is AI-assisted sales workflows, where research and preparation are automated so selling time goes to the right conversations.</p>
-                <ul class="svc__tags"><li data-i18n="svc.1.a">Current-state review</li><li data-i18n="svc.1.b">Prioritised use cases</li><li data-i18n="svc.1.c">Tool selection</li><li data-i18n="svc.1.e">Adoption plan</li><li data-i18n="svc.1.f">AI-assisted sales workflows</li></ul>
-              </div>
-              <span class="svc__arrow" aria-hidden="true">→</span>
-            </a>
-            <figure class="svc__inline"><img src="assets/svc-tools.webp" alt="A small sculptural machine of ceramic discs with a wooden gear and an amber crank" data-i18n-alt="alt.svcAi" loading="lazy" width="640" height="960"></figure>
-          </li>
-          <li class="svc__row reveal" data-img="assets/svc-auto.webp">
-            <a class="svc__hit" href="#contact" data-topic="app" aria-label="App development. Tell us what you need." data-i18n-arialabel="svc.3.aria">
-              <span class="svc__no">03</span>
-              <div class="svc__body">
-                <h3 class="svc__title" data-i18n="svc.3.t">App development</h3>
-                <p class="svc__desc" data-i18n="svc.3.d">We build apps and tailored tools that simplify the work, from internal AI-powered tools to services for your customers. The solution is built for your business, not from a template, and works with the systems you already run.</p>
-                <ul class="svc__tags"><li data-i18n="svc.3.a">Web apps</li><li data-i18n="svc.3.b">Internal tools</li><li data-i18n="svc.3.c">AI features</li><li data-i18n="svc.3.e">Integrations</li></ul>
-              </div>
-              <span class="svc__arrow" aria-hidden="true">→</span>
-            </a>
-            <figure class="svc__inline"><img src="assets/svc-auto.webp" alt="A wooden marble run guiding ceramic spheres, one in amber" data-i18n-alt="alt.svcApp" loading="lazy" width="640" height="960"></figure>
-          </li>
-        </ul>
+      <div class="band band--paper svc-intro">
+        <div class="wrap svc-intro__grid">
+          <div class="reveal">
+            <p class="kicker" data-i18n="nav.services">Services</p>
+            <h2 class="statement" id="servicesTitle" data-i18n="svc.title">Three ways to add leverage.</h2>
+          </div>
+          <p class="lede reveal" data-i18n="svc.lede">Start where the friction is greatest. Engagements are clearly scoped, so you know what gets done now and what can wait.</p>
+        </div>
       </div>
-      <div class="svc__peek" id="svcPeek" aria-hidden="true"></div>
+      <ul class="svc-stack" id="svcList" role="list">
+        <li class="svc-panel band band--paper" data-topic="web">
+          <div class="svc-panel__media duo duo--soft">
+            <picture>
+            <source type="image/avif" srcset="assets/svc-web-640.avif 640w, assets/svc-web-960.avif 960w, assets/svc-web-1280.avif 1280w, assets/svc-web-1792.avif 1792w" sizes="(min-width: 881px) 50vw, 100vw">
+            <source type="image/webp" srcset="assets/svc-web-640.webp 640w, assets/svc-web-960.webp 960w, assets/svc-web-1280.webp 1280w, assets/svc-web-1792.webp 1792w" sizes="(min-width: 881px) 50vw, 100vw">
+            <img class="duo__img" data-parallax="0.05" loading="lazy" src="assets/svc-web-1280.webp" alt="A sculptural ceramic browser window with an amber circle" data-i18n-alt="alt.svcWeb" width="1792" height="2400">
+          </picture>
+          </div>
+          <div class="svc-panel__text">
+            <div class="svc-panel__inner">
+              <p class="svc-panel__no reveal" aria-hidden="true">01</p>
+              <h3 class="svc-panel__title reveal" data-i18n="svc.2.t">Web development</h3>
+              <p class="svc-panel__desc reveal" data-i18n="svc.2.d">We design and build fast, clear, low-maintenance websites. Content, user experience and technology pull in the same direction. Multilingual sites in Swedish, Finnish and English are standard, not an add-on.</p>
+              <ul class="svc-panel__tags reveal" role="list"><li class="svc-panel__flag" data-i18n="svc.flag">Core service</li><li data-i18n="svc.2.a">Design and build</li><li data-i18n="svc.2.b">Redesigns</li><li data-i18n="svc.2.c">Content and SEO</li><li data-i18n="svc.2.e">Multilingual sites</li></ul>
+              <a class="arrow-link reveal" href="#contact" data-topic="web" aria-label="Web development. Tell us what you need." data-i18n-arialabel="svc.2.aria"><span data-i18n="cta.primary">Tell us what you need</span><span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </li>
+        <li class="svc-panel svc-panel--flip band band--raised" data-topic="ai">
+          <div class="svc-panel__media duo duo--soft">
+            <picture>
+            <source type="image/avif" srcset="assets/svc-tools-640.avif 640w, assets/svc-tools-960.avif 960w, assets/svc-tools-1280.avif 1280w, assets/svc-tools-1792.avif 1792w" sizes="(min-width: 881px) 50vw, 100vw">
+            <source type="image/webp" srcset="assets/svc-tools-640.webp 640w, assets/svc-tools-960.webp 960w, assets/svc-tools-1280.webp 1280w, assets/svc-tools-1792.webp 1792w" sizes="(min-width: 881px) 50vw, 100vw">
+            <img class="duo__img" data-parallax="0.05" loading="lazy" src="assets/svc-tools-1280.webp" alt="A small sculptural machine of ceramic discs with a wooden gear and an amber crank" data-i18n-alt="alt.svcAi" width="1792" height="2400">
+          </picture>
+          </div>
+          <div class="svc-panel__text">
+            <div class="svc-panel__inner">
+              <p class="svc-panel__no reveal" aria-hidden="true">02</p>
+              <h3 class="svc-panel__title reveal" data-i18n="svc.1.t">AI advisory</h3>
+              <p class="svc-panel__desc reveal" data-i18n="svc.1.d">We work out where AI genuinely helps your business and what adoption requires. You get prioritised use cases, reasoned choices and clear next steps. One speciality is AI-assisted sales workflows, where research and preparation are automated so selling time goes to the right conversations.</p>
+              <ul class="svc-panel__tags reveal" role="list"><li data-i18n="svc.1.a">Current-state review</li><li data-i18n="svc.1.b">Prioritised use cases</li><li data-i18n="svc.1.c">Tool selection</li><li data-i18n="svc.1.e">Adoption plan</li><li data-i18n="svc.1.f">AI-assisted sales workflows</li></ul>
+              <a class="arrow-link reveal" href="#contact" data-topic="ai" aria-label="AI advisory. Tell us what you need." data-i18n-arialabel="svc.1.aria"><span data-i18n="cta.primary">Tell us what you need</span><span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </li>
+        <li class="svc-panel band band--dim" data-topic="app">
+          <div class="svc-panel__media duo duo--soft">
+            <picture>
+            <source type="image/avif" srcset="assets/svc-auto-640.avif 640w, assets/svc-auto-960.avif 960w, assets/svc-auto-1280.avif 1280w, assets/svc-auto-1792.avif 1792w" sizes="(min-width: 881px) 50vw, 100vw">
+            <source type="image/webp" srcset="assets/svc-auto-640.webp 640w, assets/svc-auto-960.webp 960w, assets/svc-auto-1280.webp 1280w, assets/svc-auto-1792.webp 1792w" sizes="(min-width: 881px) 50vw, 100vw">
+            <img class="duo__img" data-parallax="0.05" loading="lazy" src="assets/svc-auto-1280.webp" alt="A wooden marble run guiding ceramic spheres, one in amber" data-i18n-alt="alt.svcApp" width="1792" height="2400">
+          </picture>
+          </div>
+          <div class="svc-panel__text">
+            <div class="svc-panel__inner">
+              <p class="svc-panel__no reveal" aria-hidden="true">03</p>
+              <h3 class="svc-panel__title reveal" data-i18n="svc.3.t">App development</h3>
+              <p class="svc-panel__desc reveal" data-i18n="svc.3.d">We build apps and tailored tools that simplify the work, from internal AI-powered tools to services for your customers. The solution is built for your business, not from a template, and works with the systems you already run.</p>
+              <ul class="svc-panel__tags reveal" role="list"><li data-i18n="svc.3.a">Web apps</li><li data-i18n="svc.3.b">Internal tools</li><li data-i18n="svc.3.c">AI features</li><li data-i18n="svc.3.e">Integrations</li></ul>
+              <a class="arrow-link reveal" href="#contact" data-topic="app" aria-label="App development. Tell us what you need." data-i18n-arialabel="svc.3.aria"><span data-i18n="cta.primary">Tell us what you need</span><span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </section>
 
-    <!-- FLOW BAND -->
-    <div class="band band--flow" aria-hidden="true">
-      <img class="band__img" src="assets/flow.webp" alt="An amber rope running in a soft wave across warm paper" data-i18n-alt="alt.flow" loading="lazy" width="1800" height="900">
-      <svg class="band__draw" viewBox="0 0 1440 240" fill="none" preserveAspectRatio="none">
-        <path id="ropePath" d="M-20 170 C 180 60, 360 220, 560 140 S 940 40, 1140 150 S 1380 160, 1460 90" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-      </svg>
+    <!-- 04 CASE: ink inverse band -->
+    <section class="case band band--ink" id="case" aria-labelledby="caseTitle">
+      <div class="wrap case__grid">
+        <div class="case__head">
+          <p class="kicker kicker--inverse reveal" data-i18n="case.kicker">From the field</p>
+          <h2 class="statement reveal" id="caseTitle" data-i18n="case.title">AI in sales work, measured where it matters.</h2>
+          <p class="lede reveal" data-i18n="case.lede">AI-assisted sales workflows are the speciality within Vinsch's AI advisory. Here is the result of eight months of live sales work.</p>
+        </div>
+        <div class="case__stats reveal">
+          <div class="stat">
+            <span class="stat__num" data-count="22" data-i18n="case.stat1n">22</span>
+            <span class="stat__label" data-i18n="case.stat1l">dials per fully qualified enterprise meeting</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="8" data-i18n="case.stat2n">8</span>
+            <span class="stat__label" data-i18n="case.stat2l">months of live sales work, October 2025 through May 2026</span>
+          </div>
+        </div>
+        <div class="case__body">
+          <p class="case__text reveal" data-i18n="case.body">From early October 2025 through late May 2026, Vinsch's founder built and ran an AI-assisted sales workflow inside an international B2B sales organisation serving enterprise clients. AI handled account research, call prioritisation and the preparation for every call. Every call was made by a human.</p>
+          <p class="case__note reveal" data-i18n="case.note">Published B2B cold-calling studies report anywhere from about 40 to over 300 dials per booked meeting, depending on definitions, lists and markets. The result above covers one seller and the stated period. Outcomes vary with the offer, the list and the execution.</p>
+          <a class="btn btn--ghost btn--inverse reveal" href="#contact" data-topic="sales" data-i18n="case.cta">See what the workflow would do for you</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 WHY: paper band, statement + hairline columns -->
+    <section class="why band band--paper" id="why" aria-labelledby="whyTitle">
+      <div class="wrap">
+        <header class="why__head">
+          <p class="kicker reveal" data-i18n="nav.why">Why Vinsch</p>
+          <h2 class="statement statement--xl reveal" id="whyTitle" data-i18n="why.title">The right lever moves more.</h2>
+          <div class="why__ledeRow reveal">
+            <p class="lede" data-i18n="why.lede">A good solution does not always need a heavy project. We focus on the points where a well-scoped effort moves the work furthest.</p>
+            <a class="arrow-link" href="#contact"><span data-i18n="cta.primary">Tell us what you need</span><span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </header>
+        <ul class="why__cols" role="list">
+          <li class="why__col reveal"><h3 data-i18n="why.1.t">Business need first</h3><p data-i18n="why.1.d">We do not start from a tool or a trend. First we work out what needs solving and why.</p></li>
+          <li class="why__col reveal"><h3 data-i18n="why.2.t">Advice and execution on the same map</h3><p data-i18n="why.2.d">Recommendations are made so they can be carried out. During execution, the original goal stays visible.</p></li>
+          <li class="why__col reveal"><h3 data-i18n="why.3.t">Scoped work, visible choices</h3><p data-i18n="why.3.d">Goals, scope and the key decisions are made understandable. You know what is done now and what is wise to do next.</p></li>
+          <li class="why__col reveal"><h3 data-i18n="why.4.t">Based in Stockholm, working across the Nordics</h3><p data-i18n="why.4.d">Vinsch is headquartered in Stockholm and works with companies across the Nordics, with Sweden and Finland as its primary markets. Collaboration works on site, remotely and with international teams.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 06 FLOW: panoramic duotone divider -->
+    <div class="band band--flow duo duo--soft">
+      <picture>
+            <source type="image/avif" srcset="assets/flow-800.avif 800w, assets/flow-1200.avif 1200w, assets/flow-1600.avif 1600w, assets/flow-2200.avif 2200w, assets/flow-2752.avif 2752w" sizes="100vw">
+            <source type="image/webp" srcset="assets/flow-800.webp 800w, assets/flow-1200.webp 1200w, assets/flow-1600.webp 1600w, assets/flow-2200.webp 2200w, assets/flow-2752.webp 2752w" sizes="100vw">
+            <img class="duo__img" data-parallax="0.08" loading="lazy" src="assets/flow-2200.webp" alt="An amber rope running in a soft wave across warm paper" data-i18n-alt="alt.flow" width="2752" height="1536">
+          </picture>
     </div>
 
-    <!-- CASE -->
-    <section class="case" id="case" aria-labelledby="caseTitle">
-      <div class="container case__grid">
-        <div class="case__head reveal">
-          <p class="kicker" data-i18n="case.kicker">From the field</p>
-          <h2 id="caseTitle" data-i18n="case.title">AI in sales work, measured where it matters.</h2>
-          <p class="section-head__lede" data-i18n="case.lede">AI-assisted sales workflows are the speciality within Vinsch's AI advisory. Here is the result of eight months of live sales work.</p>
-          <a class="btn btn--ghost" href="#contact" data-topic="sales" data-magnetic data-i18n="case.cta">See what the workflow would do for you</a>
-        </div>
-        <div class="case__main">
-          <p class="case__body reveal" data-i18n="case.body">From early October 2025 through late May 2026, Vinsch's founder built and ran an AI-assisted sales workflow inside an international B2B sales organisation serving enterprise clients. AI handled account research, call prioritisation and the preparation for every call. Every call was made by a human.</p>
-          <div class="case__stats reveal">
-            <div class="case__stat">
-              <span class="case__num" data-i18n="case.stat1n">22</span>
-              <span class="case__label" data-i18n="case.stat1l">dials per fully qualified enterprise meeting</span>
-            </div>
-            <div class="case__stat">
-              <span class="case__num" data-i18n="case.stat2n">8</span>
-              <span class="case__label" data-i18n="case.stat2l">months of live sales work, October 2025 through May 2026</span>
-            </div>
-          </div>
-          <p class="case__note reveal" data-i18n="case.note">Published B2B cold-calling studies report anywhere from about 40 to over 300 dials per booked meeting, depending on definitions, lists and markets. The result above covers one seller and the stated period. Outcomes vary with the offer, the list and the execution.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section class="why" id="why" aria-labelledby="whyTitle">
-      <div class="container why__grid">
-        <div class="why__side">
-          <div class="why__sticky reveal">
-            <p class="kicker" data-i18n="nav.why">Why Vinsch</p>
-            <h2 id="whyTitle" data-i18n="why.title">The right lever moves more.</h2>
-            <p class="process__lede" data-i18n="why.lede">A good solution does not always need a heavy project. We focus on the points where a well-scoped effort moves the work furthest.</p>
-            <a class="btn btn--ghost" href="#contact" data-magnetic data-i18n="cta.primary">Tell us what you need</a>
-          </div>
-        </div>
-        <ul class="why__list">
-          <li class="why__item reveal"><h3 data-i18n="why.1.t">Business need first</h3><p data-i18n="why.1.d">We do not start from a tool or a trend. First we work out what needs solving and why.</p></li>
-          <li class="why__item reveal"><h3 data-i18n="why.2.t">Advice and execution on the same map</h3><p data-i18n="why.2.d">Recommendations are made so they can be carried out. During execution, the original goal stays visible.</p></li>
-          <li class="why__item reveal"><h3 data-i18n="why.3.t">Scoped work, visible choices</h3><p data-i18n="why.3.d">Goals, scope and the key decisions are made understandable. You know what is done now and what is wise to do next.</p></li>
-          <li class="why__item reveal"><h3 data-i18n="why.4.t">Based in Stockholm, working across the Nordics</h3><p data-i18n="why.4.d">Vinsch is headquartered in Stockholm and works with companies across the Nordics, with Sweden and Finland as its primary markets. Collaboration works on site, remotely and with international teams.</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="process" id="process" aria-labelledby="processTitle">
-      <div class="container process__grid">
-        <div class="process__side">
-          <div class="process__sticky">
+    <!-- 07 PROCESS: horizontal strip -->
+    <section class="process band band--raised" id="process" aria-labelledby="processTitle">
+      <div class="wrap">
+        <header class="process__head">
+          <div class="reveal">
             <p class="kicker" data-i18n="nav.process">Process</p>
-            <h2 id="processTitle" data-i18n="proc.title">How it works.</h2>
-            <p class="process__lede" data-i18n="proc.lede">No discovery theatre and no 40-page reports. Three steps from first message to finished work.</p>
-            <div class="process__progress" aria-hidden="true"><span id="processBar"></span></div>
-            <p class="process__counter" aria-hidden="true"><span id="processNow">01</span> / 03</p>
+            <h2 class="statement" id="processTitle" data-i18n="proc.title">How it works.</h2>
           </div>
-        </div>
-        <ol class="process__steps" id="processSteps">
-          <li class="step" data-step="01">
-            <h3><span class="step__no">01</span> <span data-i18n="proc.1.t">Pin down the need</span></h3>
-            <p data-i18n="proc.1.d">Describe your situation by email or through the form. Together we pin down the goal, the current state and the key constraints.</p>
+          <p class="lede reveal" data-i18n="proc.lede">No discovery theatre and no 40-page reports. Three steps from first message to finished work.</p>
+        </header>
+        <ol class="steps" id="processSteps" role="list">
+          <li class="step reveal">
+            <span class="step__no" aria-hidden="true">01</span>
+            <h3 class="step__title" data-i18n="proc.1.t">Pin down the need</h3>
+            <p class="step__desc" data-i18n="proc.1.d">Describe your situation by email or through the form. Together we pin down the goal, the current state and the key constraints.</p>
           </li>
-          <li class="step" data-step="02">
-            <h3><span class="step__no">02</span> <span data-i18n="proc.2.t">Choose a direction</span></h3>
-            <p data-i18n="proc.2.d">You get a proposal covering scope, priorities and way of working. Based on that, you decide how we proceed.</p>
+          <li class="step reveal">
+            <span class="step__no" aria-hidden="true">02</span>
+            <h3 class="step__title" data-i18n="proc.2.t">Choose a direction</h3>
+            <p class="step__desc" data-i18n="proc.2.d">You get a proposal covering scope, priorities and way of working. Based on that, you decide how we proceed.</p>
           </li>
-          <li class="step" data-step="03">
-            <h3><span class="step__no">03</span> <span data-i18n="proc.3.t">Carry it out</span></h3>
-            <p data-i18n="proc.3.d">We proceed as agreed with advisory, execution or a combination. Choices are made visible, and you always know the next step.</p>
+          <li class="step reveal">
+            <span class="step__no" aria-hidden="true">03</span>
+            <h3 class="step__title" data-i18n="proc.3.t">Carry it out</h3>
+            <p class="step__desc" data-i18n="proc.3.d">We proceed as agreed with advisory, execution or a combination. Choices are made visible, and you always know the next step.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- STUDIO BAND -->
-    <section class="band band--studio" aria-label="Founding principle">
-      <img class="band__img" src="assets/studio.webp" alt="A warm Scandinavian workshop with a laptop, rope coils and pulley wheels on an oak workbench" data-i18n-alt="alt.studio" loading="lazy" width="1800" height="900">
-      <blockquote class="band__quote reveal">
-        <p data-i18n="studio.quote">“Most companies do not need more tools. They need the right lever between the tools they already have.”</p>
-        <cite data-i18n="studio.cite">Vinsch founding principle</cite>
-      </blockquote>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about" aria-labelledby="aboutTitle">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="kicker" data-i18n="about.kicker">The company</p>
-          <h2 id="aboutTitle" data-i18n="about.title">About Vinsch</h2>
-          <p class="section-head__lede" data-i18n="about.lede">Vinsch is a Stockholm-based digital studio helping small and mid-sized companies with AI advisory, web development and app development.</p>
-        </header>
-        <div class="about__grid">
-          <div class="about__body reveal">
-            <p data-i18n="about.body1">Vinsch was founded by Alexander Lilius on a simple premise: smaller companies deserve the same digital leverage as the big ones, without heavy projects or long consultant chains. Many know that AI, a better website or a tailored tool would make a difference, but lack a partner who knows the technology and understands the business.</p>
-            <p data-i18n="about.body2">That is why Vinsch works close to the client, in clearly scoped engagements. We help you choose, build and adopt solutions that create real business value, shaped around your actual operations, needs and goals. Technical understanding, business focus and straight communication belong together in every engagement.</p>
-            <p data-i18n="about.body3">Sweden and Finland are the primary markets, and relevant work is taken on across the rest of the Nordics and the EU.</p>
-          </div>
-          <aside class="founder reveal">
-            <figure class="founder__media" aria-hidden="true"><span class="founder__monogram">AL</span></figure>
-            <div>
-              <p class="kicker" data-i18n="about.fKicker">The founder</p>
-              <h3 class="founder__name" data-i18n="about.fName">Alexander Lilius</h3>
-              <p class="founder__role" data-i18n="about.fRole">Founder and your point of contact</p>
+    <!-- 08 ABOUT: split band with studio image half -->
+    <section class="about band band--paper" id="about" aria-labelledby="aboutTitle">
+      <div class="about__split">
+        <figure class="about__media duo duo--soft">
+          <picture>
+            <source type="image/avif" srcset="assets/studio-800.avif 800w, assets/studio-1200.avif 1200w, assets/studio-1600.avif 1600w, assets/studio-2200.avif 2200w, assets/studio-2752.avif 2752w" sizes="(min-width: 881px) 50vw, 100vw">
+            <source type="image/webp" srcset="assets/studio-800.webp 800w, assets/studio-1200.webp 1200w, assets/studio-1600.webp 1600w, assets/studio-2200.webp 2200w, assets/studio-2752.webp 2752w" sizes="(min-width: 881px) 50vw, 100vw">
+            <img class="duo__img" data-parallax="0.06" loading="lazy" src="assets/studio-2200.webp" alt="A warm Scandinavian workshop with a laptop, rope coils and pulley wheels on an oak workbench" data-i18n-alt="alt.studio" width="2752" height="1536">
+          </picture>
+          <blockquote class="about__quote reveal">
+            <p data-i18n="studio.quote">“Most companies do not need more tools. They need the right lever between the tools they already have.”</p>
+            <cite data-i18n="studio.cite">Vinsch founding principle</cite>
+          </blockquote>
+        </figure>
+        <div class="about__text">
+          <div class="about__inner">
+            <p class="kicker reveal" data-i18n="about.kicker">The company</p>
+            <h2 class="statement reveal" id="aboutTitle" data-i18n="about.title">About Vinsch</h2>
+            <p class="lede reveal" data-i18n="about.lede">Vinsch is a Stockholm-based digital studio helping small and mid-sized companies with AI advisory, web development and app development.</p>
+            <div class="about__body reveal">
+              <p data-i18n="about.body1">Vinsch was founded by Alexander Lilius on a simple premise: smaller companies deserve the same digital leverage as the big ones, without heavy projects or long consultant chains. Many know that AI, a better website or a tailored tool would make a difference, but lack a partner who knows the technology and understands the business.</p>
+              <p data-i18n="about.body2">That is why Vinsch works close to the client, in clearly scoped engagements. We help you choose, build and adopt solutions that create real business value, shaped around your actual operations, needs and goals. Technical understanding, business focus and straight communication belong together in every engagement.</p>
+              <p data-i18n="about.body3">Sweden and Finland are the primary markets, and relevant work is taken on across the rest of the Nordics and the EU.</p>
             </div>
-            <p data-i18n="about.f1">Alexander has worked in B2B sales within cybersecurity and SaaS, with prospecting, needs analysis, qualification and client communication as daily work. In parallel he has built websites, digital products and internal AI solutions, and AI-based workflows are a natural part of how he works.</p>
-            <p data-i18n="about.f2">Vinsch was started because that combination is rare: commercial experience and technical execution in the same person. You do not need to translate between business and technology. You describe the need, get a clear proposal and work directly with the person building the solution.</p>
-            <p data-i18n="about.f3">Sailing is a genuine interest and the origin of the name: on board, the winch turns small force into large effect. The same idea guides every engagement.</p>
-            <a class="btn btn--solid" href="#contact" data-magnetic data-i18n="about.cta">Tell us what you need</a>
-          </aside>
+            <div class="founder reveal">
+              <div class="founder__head">
+                <span class="founder__monogram" aria-hidden="true">AL</span>
+                <div>
+                  <p class="kicker kicker--plain" data-i18n="about.fKicker">The founder</p>
+                  <h3 class="founder__name" data-i18n="about.fName">Alexander Lilius</h3>
+                  <p class="founder__role" data-i18n="about.fRole">Founder and your point of contact</p>
+                </div>
+              </div>
+              <p data-i18n="about.f1">Alexander has worked in B2B sales within cybersecurity and SaaS, with prospecting, needs analysis, qualification and client communication as daily work. In parallel he has built websites, digital products and internal AI solutions, and AI-based workflows are a natural part of how he works.</p>
+              <p data-i18n="about.f2">Vinsch was started because that combination is rare: commercial experience and technical execution in the same person. You do not need to translate between business and technology. You describe the need, get a clear proposal and work directly with the person building the solution.</p>
+              <p data-i18n="about.f3">Sailing is a genuine interest and the origin of the name: on board, the winch turns small force into large effect. The same idea guides every engagement.</p>
+              <a class="btn btn--solid" href="#contact" data-i18n="about.cta">Tell us what you need</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq" id="faq" aria-labelledby="faqTitle">
-      <div class="container faq__grid">
+    <!-- 09 FAQ: narrow column on raised band -->
+    <section class="faq band band--raised" id="faq" aria-labelledby="faqTitle">
+      <div class="wrap wrap--narrow">
         <header class="faq__head reveal">
           <p class="kicker" data-i18n="nav.faq">FAQ</p>
-          <h2 id="faqTitle" data-i18n="faq.title">Straight answers.</h2>
-          <p class="section-head__lede" data-i18n-html="faq.lede">Anything missing? <a href="#contact">Ask directly</a> and you get a reply by email.</p>
+          <h2 class="statement" id="faqTitle" data-i18n="faq.title">Straight answers.</h2>
+          <p class="lede" data-i18n-html="faq.lede">Anything missing? <a href="#contact">Ask directly</a> and you get a reply by email.</p>
         </header>
-        <div class="faq__list">
-          <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.1.q">How does a collaboration start?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.1.a">Send an email or use the form. A short description of your situation is enough. You get a reply with suggested next steps, often a short call.</p></div></div>
+        <div class="faq__list reveal">
+          <div class="qa">
+            <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa1"><span data-i18n="faq.1.q">How does a collaboration start?</span><i class="qa__icon" aria-hidden="true"></i></button></h3>
+            <div class="qa__a" id="qa1"><div class="qa__inner"><p data-i18n="faq.1.a">Send an email or use the form. A short description of your situation is enough. You get a reply with suggested next steps, often a short call.</p></div></div>
           </div>
-          <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.2.q">What does it cost?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.2.a">It depends on scope. Smaller advisory engagements usually have a fixed price, longer assignments are billed per hour or per phase. You always get a clear quote before work starts.</p></div></div>
+          <div class="qa">
+            <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa2"><span data-i18n="faq.2.q">What does it cost?</span><i class="qa__icon" aria-hidden="true"></i></button></h3>
+            <div class="qa__a" id="qa2"><div class="qa__inner"><p data-i18n="faq.2.a">It depends on scope. Smaller advisory engagements usually have a fixed price, longer assignments are billed per hour or per phase. You always get a clear quote before work starts.</p></div></div>
           </div>
-          <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.3.q">Do you work on site or remotely?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.3.a">Both. Vinsch works out of Stockholm, on site when it helps and remotely with clients across the Nordics and internationally.</p></div></div>
+          <div class="qa">
+            <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa3"><span data-i18n="faq.3.q">Do you work on site or remotely?</span><i class="qa__icon" aria-hidden="true"></i></button></h3>
+            <div class="qa__a" id="qa3"><div class="qa__inner"><p data-i18n="faq.3.a">Both. Vinsch works out of Stockholm, on site when it helps and remotely with clients across the Nordics and internationally.</p></div></div>
           </div>
-          <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.4.q">Which languages do you work in?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.4.a">Advisory work and ongoing dialogue run in Swedish or English. Websites, content and documentation are also delivered in Finnish, fully localised for Finnish-speaking visitors.</p></div></div>
+          <div class="qa">
+            <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa4"><span data-i18n="faq.4.q">Which languages do you work in?</span><i class="qa__icon" aria-hidden="true"></i></button></h3>
+            <div class="qa__a" id="qa4"><div class="qa__inner"><p data-i18n="faq.4.a">Advisory work and ongoing dialogue run in Swedish or English. Websites, content and documentation are also delivered in Finnish, fully localised for Finnish-speaking visitors.</p></div></div>
           </div>
-          <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.5.q">Can you take over something someone else built?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.5.a">Yes. We start by reviewing what exists, tell you honestly what is worth keeping and take it from there.</p></div></div>
+          <div class="qa">
+            <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa5"><span data-i18n="faq.5.q">Can you take over something someone else built?</span><i class="qa__icon" aria-hidden="true"></i></button></h3>
+            <div class="qa__a" id="qa5"><div class="qa__inner"><p data-i18n="faq.5.a">Yes. We start by reviewing what exists, tell you honestly what is worth keeping and take it from there.</p></div></div>
           </div>
-          <div class="qa reveal">
-            <button class="qa__q" type="button" aria-expanded="false"><span data-i18n="faq.6.q">What is behind the 22 dials per meeting figure?</span><i class="qa__icon" aria-hidden="true"></i></button>
-            <div class="qa__a"><div class="qa__inner"><p data-i18n="faq.6.a">Eight months of live sales work, early October 2025 through late May 2026, in an international B2B organisation serving enterprise clients. The AI workflow handled research, prioritisation and call preparation, and every call was made by a human. Published comparison figures vary widely, from about 40 to several hundred dials per booked meeting. What matters is the mechanism: less time on prep and more qualified meetings per hour worked.</p></div></div>
+          <div class="qa">
+            <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa6"><span data-i18n="faq.6.q">What is behind the 22 dials per meeting figure?</span><i class="qa__icon" aria-hidden="true"></i></button></h3>
+            <div class="qa__a" id="qa6"><div class="qa__inner"><p data-i18n="faq.6.a">Eight months of live sales work, early October 2025 through late May 2026, in an international B2B organisation serving enterprise clients. The AI workflow handled research, prioritisation and call preparation, and every call was made by a human. Published comparison figures vary widely, from about 40 to several hundred dials per booked meeting. What matters is the mechanism: less time on prep and more qualified meetings per hour worked.</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA BANNER -->
-    <section class="cta" aria-labelledby="ctaTitle">
-      <div class="container">
+    <!-- 10 CTA: the single accent band -->
+    <section class="cta band band--accent" aria-labelledby="ctaTitle">
+      <div class="wrap cta__grid">
         <h2 class="cta__title reveal" id="ctaTitle" data-i18n="cta.bannerTitle">Tell us what you want to set in motion.</h2>
-        <div class="cta__row reveal">
-          <a class="btn btn--solid btn--lg" href="#contact" data-magnetic data-i18n="cta.primary">Tell us what you need</a>
-          <p data-i18n="cta.bannerNote">A short description is enough. You get a reply by email, and we set up a call when it helps.</p>
+        <div class="cta__side reveal">
+          <a class="btn btn--onaccent btn--lg" href="#contact" data-i18n="cta.primary">Tell us what you need</a>
+          <p class="cta__note" data-i18n="cta.bannerNote">A short description is enough. You get a reply by email, and we set up a call when it helps.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact" aria-labelledby="contactTitle">
-      <div class="container contact__grid">
+    <!-- 11 CONTACT: split on ink -->
+    <section class="contact band band--ink" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap contact__grid">
         <div class="contact__info">
-          <p class="kicker kicker--inverse" data-i18n="nav.contact">Contact</p>
-          <h2 id="contactTitle" data-i18n="contact.title">Tell us what you need.</h2>
-          <p class="contact__lede" data-i18n="contact.lede">Describe your situation in your own words. You get a reply by email with suggested next steps.</p>
-          <ul class="contact__channels">
-            <li><span data-i18n="contact.email">Email</span><a href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a></li>
+          <p class="kicker kicker--inverse reveal" data-i18n="nav.contact">Contact</p>
+          <h2 class="statement reveal" id="contactTitle" data-i18n="contact.title">Tell us what you need.</h2>
+          <p class="lede reveal" data-i18n="contact.lede">Describe your situation in your own words. You get a reply by email with suggested next steps.</p>
+          <ul class="contact__channels reveal" role="list">
+            <li><span class="contact__chLabel" data-i18n="contact.email">Email</span><a class="contact__mail" href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a></li>
           </ul>
-          <p class="contact__note" data-i18n="contact.note">Prefer to email directly? Use the email address above.</p>
+          <p class="contact__note reveal" data-i18n="contact.note">Prefer to email directly? Use the email address above.</p>
         </div>
-        <form class="form" id="quoteForm" novalidate>
+        <form class="form reveal" id="quoteForm" novalidate>
           <h3 class="form__title" data-i18n="form.title">Contact Vinsch</h3>
           <div class="form__row">
             <div class="form__field">
-              <input id="fName" name="name" type="text" autocomplete="name" placeholder=" " required>
               <label for="fName" data-i18n="form.name">Name</label>
+              <input id="fName" name="name" type="text" autocomplete="name" required>
               <p class="form__err" aria-live="polite"></p>
             </div>
             <div class="form__field">
-              <input id="fEmail" name="email" type="email" autocomplete="email" placeholder=" " required>
               <label for="fEmail" data-i18n="form.email">Email</label>
+              <input id="fEmail" name="email" type="email" autocomplete="email" required>
               <p class="form__err" aria-live="polite"></p>
             </div>
           </div>
           <div class="form__field">
-            <input id="fCompany" name="company" type="text" autocomplete="organization" placeholder=" ">
             <label for="fCompany" data-i18n="form.company">Company (optional)</label>
+            <input id="fCompany" name="company" type="text" autocomplete="organization">
             <p class="form__err" aria-live="polite"></p>
           </div>
           <div class="form__field">
-            <select id="fTopic" name="topic" required>
-              <option value="" selected disabled hidden></option>
-              <option value="web" data-i18n="form.opt2">Web development</option>
-              <option value="ai" data-i18n="form.opt1">AI advisory</option>
-              <option value="sales" data-i18n="form.optSales">AI in sales work</option>
-              <option value="app" data-i18n="form.opt3">App development</option>
-              <option value="multi" data-i18n="form.opt4">Several of these</option>
-              <option value="unsure" data-i18n="form.opt5">Not sure yet</option>
-              <option value="other" data-i18n="form.opt6">Other</option>
-            </select>
             <label for="fTopic" data-i18n="form.topic">Where can we help?</label>
+            <div class="form__select">
+              <select id="fTopic" name="topic" required>
+                <option value="" selected disabled hidden></option>
+                <option value="web" data-i18n="form.opt2">Web development</option>
+                <option value="ai" data-i18n="form.opt1">AI advisory</option>
+                <option value="sales" data-i18n="form.optSales">AI in sales work</option>
+                <option value="app" data-i18n="form.opt3">App development</option>
+                <option value="multi" data-i18n="form.opt4">Several of these</option>
+                <option value="unsure" data-i18n="form.opt5">Not sure yet</option>
+                <option value="other" data-i18n="form.opt6">Other</option>
+              </select>
+            </div>
             <p class="form__err" aria-live="polite"></p>
           </div>
           <div class="form__field">
-            <textarea id="fMsg" name="message" rows="4" placeholder=" " required></textarea>
             <label for="fMsg" data-i18n="form.msg">What do you want to solve or build?</label>
+            <textarea id="fMsg" name="message" rows="5" required></textarea>
             <p class="form__err" aria-live="polite"></p>
           </div>
           <div class="form__hp" aria-hidden="true">
             <label for="fWebsite">Leave this field empty</label>
             <input id="fWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
-          <button class="btn btn--solid btn--lg form__submit" type="submit" data-magnetic data-i18n="form.submit">Send message</button>
-          <p class="form__small" data-i18n-html="form.small">Your message goes straight to Vinsch. You can also email <a href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a>.</p>
+          <div class="form__foot">
+            <button class="btn btn--solid btn--lg form__submit" type="submit" data-i18n="form.submit">Send message</button>
+            <p class="form__small" data-i18n-html="form.small">Your message goes straight to Vinsch. You can also email <a href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a>.</p>
+          </div>
           <div class="form__success" id="formSuccess" hidden>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="form__success-icon"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.6" opacity="0.4"/><path d="M17 8.5 10.5 15 7 11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <h4 data-i18n="form.successTitle">Thank you for your message.</h4>
@@ -555,38 +461,35 @@ summary {
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <a class="brand brand--footer" href="#top" aria-label="Vinsch, back to top" data-i18n-arialabel="aria.brand">
-          <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <circle cx="24" cy="21" r="9.5" stroke="currentColor" stroke-width="3.4"/>
-            <path d="M24 36.5 A15.5 15.5 0 1 1 39.5 21 V41" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
-            <circle cx="24" cy="21" r="3.4" fill="var(--accent)"/>
-          </svg>
-          <span class="brand__word">Vinsch</span>
-        </a>
-        <nav class="footer__nav" aria-label="Footer" data-i18n-arialabel="aria.navFooter">
-          <a href="#services" data-i18n="nav.services">Services</a>
-          <a href="#why" data-i18n="nav.why">Why Vinsch</a>
-          <a href="#process" data-i18n="nav.process">Process</a>
-          <a href="#about" data-i18n="nav.about">About Vinsch</a>
-          <a href="#faq" data-i18n="nav.faq">FAQ</a>
-          <a href="#contact" data-i18n="nav.contact">Contact</a>
-        </nav>
-      </div>
-      <div class="footer__word" aria-hidden="true"></div>
-      <div class="footer__bottom">
-        <p>© <span id="year">2026</span> Vinsch · <a href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a></p>
-        <p data-i18n="footer.tag">Based in Stockholm · Working across the Nordics</p>
-      </div>
+  <!-- 12 FOOTER: watermark finale -->
+  <footer class="footer band band--ink">
+    <div class="wrap footer__top">
+      <a class="brand brand--footer" href="#top" aria-label="Vinsch, back to top" data-i18n-arialabel="aria.brand">
+        <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="21" r="9.5" stroke="currentColor" stroke-width="3.4"/>
+          <path d="M24 36.5 A15.5 15.5 0 1 1 39.5 21 V41" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+          <circle cx="24" cy="21" r="3.4" fill="var(--accent)"/>
+        </svg>
+        <span class="brand__word">Vinsch</span>
+      </a>
+      <nav class="footer__nav" aria-label="Footer" data-i18n-arialabel="aria.navFooter">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#why" data-i18n="nav.why">Why Vinsch</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#about" data-i18n="nav.about">About Vinsch</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer__word" aria-hidden="true">Vinsch</div>
+    <div class="wrap footer__bottom">
+      <p class="footer__legal">© <span id="year">2026</span> Vinsch · <a href="mailto:alexander@vinsch.ai">alexander@vinsch.ai</a></p>
+      <p class="footer__tags"><span data-i18n="mq.1">Web development</span><i aria-hidden="true">·</i><span data-i18n="mq.2">AI advisory</span><i aria-hidden="true">·</i><span data-i18n="mq.3">App development</span><i aria-hidden="true">·</i><span data-i18n="mq.4">Stockholm</span><i aria-hidden="true">·</i><span data-i18n="mq.5">Across the Nordics</span></p>
+      <p class="footer__tag" data-i18n="footer.tag">Based in Stockholm · Working across the Nordics</p>
     </div>
   </footer>
 
-  <script src="i18n.js?v=18" defer></script>
-  <script src="app.js?v=14" defer></script>
-  <script src="assets/vendor/lenis.min.js?v=1" defer></script>
-  <script src="assets/vendor/gsap.min.js?v=1" defer></script>
-  <script src="assets/vendor/ScrollTrigger.min.js?v=1" defer></script>
+  <script src="i18n.js?v=21" defer></script>
+  <script src="app.js?v=21" defer></script>
 </body>
 </html>
