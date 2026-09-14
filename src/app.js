@@ -68,6 +68,8 @@
     }
     /* stats already counted up keep their final value; the dictionary value is the source of truth */
     document.querySelectorAll('.stat__num[data-count]').forEach(function (n) { n.dataset.final = n.textContent.trim(); });
+    /* error messages already on screen follow the new language */
+    if (form && form.querySelector('.has-error')) validate();
   }
 
   /* ---------- theme ---------- */
@@ -121,18 +123,30 @@
   /* ---------- mobile nav ---------- */
   var burger = document.getElementById('burger');
   var nav = document.getElementById('nav');
+  /* while the overlay menu is open, the page behind it is inert so Tab stays inside the menu */
+  function setBehindInert(on) {
+    document.querySelectorAll('main, footer').forEach(function (el) {
+      if (on) el.setAttribute('inert', ''); else el.removeAttribute('inert');
+    });
+  }
   function closeNav() {
     if (!nav.classList.contains('is-open')) return;
     nav.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
     burger.setAttribute('aria-label', tr('aria.menuOpen'));
     document.body.style.overflow = '';
+    setBehindInert(false);
   }
   burger.addEventListener('click', function () {
     var open = nav.classList.toggle('is-open');
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? tr('aria.menuClose') : tr('aria.menuOpen'));
     document.body.style.overflow = open ? 'hidden' : '';
+    setBehindInert(open);
+    if (open) {
+      var first = nav.querySelector('.nav__link');
+      if (first) first.focus({ preventScroll: true });
+    }
   });
   nav.addEventListener('click', function (e) {
     if (e.target.closest('a')) closeNav();
@@ -268,8 +282,16 @@
     var field = input.closest('.form__field');
     if (!field) return;
     field.classList.toggle('has-error', !!msg);
-    field.querySelector('.form__err').textContent = msg || '';
-    if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    var err = field.querySelector('.form__err');
+    err.textContent = msg || '';
+    if (!err.id) err.id = (input.id || input.name) + '-error';
+    if (msg) {
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', err.id);
+    } else {
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+    }
   }
   function validate() {
     var ok = true;

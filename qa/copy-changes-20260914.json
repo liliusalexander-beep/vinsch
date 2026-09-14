@@ -1,0 +1,104 @@
+[
+  {
+    "lang": "sv",
+    "key": "alt.hero",
+    "before": "En skulptural segelvinsch i brons på ett teakpodium, med ett bärnstensfärgat skot i tre varv runt trumman",
+    "after": "En skulptural segelvinsch i brons på ett teakpodium, med ett skot lagt i tre varv runt trumman"
+  },
+  {
+    "lang": "sv",
+    "key": "alt.svcWeb",
+    "before": "Ett skulpturalt webbläsarfönster i keramik med en bärnstensfärgad cirkel",
+    "after": "Ett skulpturalt webbläsarfönster i keramik med en cirkel i mitten"
+  },
+  {
+    "lang": "sv",
+    "key": "alt.svcAi",
+    "before": "En liten skulptural maskin av keramikskivor med ett träkugghjul och en bärnstensfärgad vev",
+    "after": "En liten skulptural maskin av keramikskivor med ett träkugghjul och en vev"
+  },
+  {
+    "lang": "sv",
+    "key": "alt.svcApp",
+    "before": "En kulbana i trä som leder keramikkulor, en i bärnsten",
+    "after": "En kulbana i trä som leder keramikkulor"
+  },
+  {
+    "lang": "sv",
+    "key": "alt.flow",
+    "before": "Ett bärnstensfärgat rep som löper i en mjuk våg över varmt papper",
+    "after": "Ett rep som löper i en mjuk våg över papper"
+  },
+  {
+    "lang": "fi",
+    "key": "svc.2.t",
+    "before": "Verkkosivustojen suunnittelu ja toteutus",
+    "after": "Verkkosivustot"
+  },
+  {
+    "lang": "fi",
+    "key": "svc.2.aria",
+    "before": "Verkkosivustojen suunnittelu ja toteutus. Kerro tarpeestasi.",
+    "after": "Verkkosivustot. Kerro tarpeestasi."
+  },
+  {
+    "lang": "fi",
+    "key": "alt.hero",
+    "before": "Veistoksellinen pronssinen purjeveneen vinssi tiikkijalustalla, meripihkanvärinen skuutti kolmella kierroksella rummun ympärillä",
+    "after": "Veistoksellinen pronssinen purjeveneen vinssi tiikkijalustalla, skuutti kolmella kierroksella rummun ympärillä"
+  },
+  {
+    "lang": "fi",
+    "key": "alt.svcWeb",
+    "before": "Veistoksellinen keraaminen selainikkuna, jossa meripihkanvärinen ympyrä",
+    "after": "Veistoksellinen keraaminen selainikkuna, jonka keskellä on ympyrä"
+  },
+  {
+    "lang": "fi",
+    "key": "alt.svcAi",
+    "before": "Pieni veistoksellinen kone keraamisista kiekoista, puisesta hammasrattaasta ja meripihkanvärisestä kammesta",
+    "after": "Pieni veistoksellinen kone keraamisista kiekoista, puisesta hammasrattaasta ja kammesta"
+  },
+  {
+    "lang": "fi",
+    "key": "alt.svcApp",
+    "before": "Puinen kuularata, jota pitkin kulkee keraamisia kuulia, yksi meripihkanvärinen",
+    "after": "Puinen kuularata, jota pitkin kulkee keraamisia kuulia"
+  },
+  {
+    "lang": "fi",
+    "key": "alt.flow",
+    "before": "Meripihkanvärinen köysi kulkee loivana aaltona lämpimän paperin yllä",
+    "after": "Köysi kulkee loivana aaltona paperin yllä"
+  },
+  {
+    "lang": "en",
+    "key": "alt.hero",
+    "before": "A sculptural bronze sailboat winch on a teak plinth, an amber sheet wrapped three turns around the drum",
+    "after": "A sculptural bronze sailboat winch on a teak plinth, a sheet wrapped three turns around the drum"
+  },
+  {
+    "lang": "en",
+    "key": "alt.svcWeb",
+    "before": "A sculptural ceramic browser window with an amber circle",
+    "after": "A sculptural ceramic browser window with a circle at its centre"
+  },
+  {
+    "lang": "en",
+    "key": "alt.svcAi",
+    "before": "A small sculptural machine of ceramic discs with a wooden gear and an amber crank",
+    "after": "A small sculptural machine of ceramic discs with a wooden gear and a crank"
+  },
+  {
+    "lang": "en",
+    "key": "alt.svcApp",
+    "before": "A wooden marble run guiding ceramic spheres, one in amber",
+    "after": "A wooden marble run guiding ceramic spheres"
+  },
+  {
+    "lang": "en",
+    "key": "alt.flow",
+    "before": "An amber rope running in a soft wave across warm paper",
+    "after": "A rope running in a soft wave across paper"
+  }
+]
