@@ -765,7 +765,7 @@ html.js .svc-panel__body.is-open .svc-panel__desc { opacity: 1; transform: none;
    ------------------------------------------------------------ */
 .about__split { display: grid; grid-template-columns: 1fr 1fr; }
 .about__media { position: relative; min-height: 100%; margin: 0; }
-@media (min-width: 881px) { .about__media { position: sticky; top: 0; height: 100vh; height: 100svh; } }
+@media (min-width: 881px) { .about__media { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 0; align-self: start; } }
 .about__quote {
   position: absolute; z-index: 2; left: clamp(1.25rem, 4vw, 3rem); right: clamp(1.25rem, 4vw, 3rem); bottom: clamp(1.25rem, 4vw, 3rem);
   max-width: 28rem; background: rgba(var(--scrim), 0.94); padding: 1.5rem 1.6rem; border-left: 2px solid var(--accent);
@@ -1390,8 +1390,8 @@ html[data-theme="light"][data-light-palette] .form textarea::placeholder {
       <div class="about__split">
         <figure class="about__media duo duo--soft">
           <picture>
-            <source type="image/avif" srcset="assets/studio-p-540.avif 540w, assets/studio-p-768.avif 768w, assets/studio-p-1024.avif 1024w, assets/studio-p-1280.avif 1280w, assets/studio-p-1536.avif 1536w" sizes="(min-width: 1600px) 60vw, (min-width: 881px) 90vw, 100vw">
-            <source type="image/webp" srcset="assets/studio-p-540.webp 540w, assets/studio-p-768.webp 768w, assets/studio-p-1024.webp 1024w, assets/studio-p-1280.webp 1280w, assets/studio-p-1536.webp 1536w" sizes="(min-width: 1600px) 60vw, (min-width: 881px) 90vw, 100vw">
+            <source type="image/avif" srcset="assets/studio-p-540.avif 540w, assets/studio-p-768.avif 768w, assets/studio-p-1024.avif 1024w, assets/studio-p-1280.avif 1280w, assets/studio-p-1536.avif 1536w" sizes="(min-width: 881px) 50vw, 100vw">
+            <source type="image/webp" srcset="assets/studio-p-540.webp 540w, assets/studio-p-768.webp 768w, assets/studio-p-1024.webp 1024w, assets/studio-p-1280.webp 1280w, assets/studio-p-1536.webp 1536w" sizes="(min-width: 881px) 50vw, 100vw">
             <img class="duo__img" data-parallax="0.06" loading="lazy" src="assets/studio-p-1280.webp" alt="A warm Scandinavian workshop with a laptop, rope coils and pulley wheels on an oak workbench" data-i18n-alt="alt.studio" width="1536" height="2752">
           </picture>
           <blockquote class="about__quote reveal">
