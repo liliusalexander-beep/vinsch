@@ -76,7 +76,7 @@
     writePref('vinsch-theme', mode, true);
     if (themeToggle) themeToggle.setAttribute('aria-label', mode === 'dark' ? tr('aria.themeToLight') : tr('aria.themeToDark'));
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', mode === 'dark' ? '#171411' : '#F7F8FA');
+    if (meta) meta.setAttribute('content', mode === 'dark' ? '#151A21' : '#F7F8FA');
   }
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
