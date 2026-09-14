@@ -76,7 +76,7 @@
     writePref('vinsch-theme', mode, true);
     if (themeToggle) themeToggle.setAttribute('aria-label', mode === 'dark' ? tr('aria.themeToLight') : tr('aria.themeToDark'));
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', mode === 'dark' ? '#171411' : '#EDE7DA');
+    if (meta) meta.setAttribute('content', mode === 'dark' ? '#171411' : '#F7F8FA');
   }
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
@@ -242,6 +242,21 @@
     btn.addEventListener('click', function () {
       var open = qa.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  /* ---------- Services accordion: one open at a time, button handles Enter and Space natively ---------- */
+  var svcToggles = Array.prototype.slice.call(document.querySelectorAll('.svc-panel__toggle'));
+  function setSvc(btn, open) {
+    var body = document.getElementById(btn.getAttribute('aria-controls'));
+    btn.setAttribute('aria-expanded', String(open));
+    if (body) body.classList.toggle('is-open', open);
+  }
+  svcToggles.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      svcToggles.forEach(function (other) { if (other !== btn) setSvc(other, false); });
+      setSvc(btn, open);
     });
   });
 
