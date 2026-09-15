@@ -992,20 +992,49 @@ html[data-theme="light"][data-light-palette="dawn"] .qa__icon { border-color: va
 html[data-theme="light"][data-light-palette="dawn"] .qa.is-open .qa__icon { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--accent-ink); }
 html[data-theme="light"][data-light-palette="dawn"] .form input:hover, html[data-theme="light"][data-light-palette="dawn"] .form select:hover, html[data-theme="light"][data-light-palette="dawn"] .form textarea:hover { border-color: var(--accent-text-inverse); }
 
-/* Gemensam sammanhängande bildslöja ersätter de lokala plattorna. */
+/* Light image treatments: retain texture instead of clipping shadows to a flat tint. */
+html[data-theme="light"][data-light-palette] .duo--hero .duo__img {
+  filter: grayscale(1) contrast(1.12);
+}
+html[data-theme="light"][data-light-palette] .duo--hero::after {
+  mix-blend-mode: screen;
+  opacity: 0.24;
+}
+html[data-theme="light"][data-light-palette] .svc-panel[data-topic="web"] .duo::after {
+  mix-blend-mode: screen;
+  opacity: 0.18;
+}
+html[data-theme="light"][data-light-palette] .svc-panel[data-topic="ai"] .duo::after {
+  mix-blend-mode: screen;
+  opacity: 0.24;
+}
+html[data-theme="light"][data-light-palette] .svc-panel[data-topic="app"] .duo::after {
+  mix-blend-mode: screen;
+  opacity: 0.20;
+}
+html[data-theme="light"][data-light-palette] .band--flow::after {
+  mix-blend-mode: screen;
+  opacity: 0.16;
+}
+html[data-theme="light"][data-light-palette] .about__media::after {
+  mix-blend-mode: screen;
+  opacity: 0.28;
+}
+
+/* Keep the continuous veil strongest at text, opening the winch and rope elsewhere. */
 html[data-theme="light"][data-light-palette] .hero__scrim {
   background:
-    linear-gradient(to bottom, rgba(var(--scrim), 0.90) 0%, rgba(var(--scrim), 0.82) var(--header-h), rgba(var(--scrim), 0) 32%),
-    linear-gradient(to right, rgba(var(--scrim), 0.72) 0%, rgba(var(--scrim), 0.48) 48%, rgba(var(--scrim), 0.12) 100%),
-    linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 0.98) 12%, rgba(var(--scrim), 0.78) 28%, rgba(var(--scrim), 0.18) 60%, rgba(var(--scrim), 0) 100%);
+    linear-gradient(to bottom, rgba(var(--scrim), 0.90) 0%, rgba(var(--scrim), 0.82) var(--header-h), rgba(var(--scrim), 0) 26%),
+    linear-gradient(to right, rgba(var(--scrim), 0.64) 0%, rgba(var(--scrim), 0.54) 48%, rgba(var(--scrim), 0.08) 100%),
+    linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 0.97) 12%, rgba(var(--scrim), 0.70) 28%, rgba(var(--scrim), 0.10) 55%, rgba(var(--scrim), 0) 72%);
 }
 
 @media (max-width: 880px) {
   html[data-theme="light"][data-light-palette] .hero__scrim {
     background:
       linear-gradient(to bottom, rgba(var(--scrim), 0.90) 0%, rgba(var(--scrim), 0.82) var(--header-h), rgba(var(--scrim), 0) 26%),
-      linear-gradient(to right, rgba(var(--scrim), 0.60) 0%, rgba(var(--scrim), 0.28) 100%),
-      linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 1) 43%, rgba(var(--scrim), 0.94) 57%, rgba(var(--scrim), 0.40) 74%, rgba(var(--scrim), 0) 94%);
+      linear-gradient(to right, rgba(var(--scrim), 0.20) 0%, rgba(var(--scrim), 0) 100%),
+      linear-gradient(to top, rgba(var(--scrim), 1) 0%, rgba(var(--scrim), 1) 35%, rgba(var(--scrim), 0.96) 51%, rgba(var(--scrim), 0.40) 70%, rgba(var(--scrim), 0) 92%);
   }
 }
 
