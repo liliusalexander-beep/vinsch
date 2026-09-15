@@ -518,9 +518,8 @@ p { text-wrap: pretty; }
 .hero__word { display: inline-block; transform: translateY(112%); }
 .hero__title em { font-style: normal; color: var(--accent-text); }
 [data-theme="dark"] .hero__title em { color: var(--accent); }
-/* light theme: the paper duotone is too bright behind display type, so each line sits on its own scrim strip */
-[data-theme="light"] .hero__title { margin-left: -0.4rem; }
-[data-theme="light"] .hero__line { display: table; background: rgba(var(--scrim), 0.9); padding: 0.06em 0.4rem 0.14em; margin: 0 0 -0.04em; }
+/* Theme rules may only change colour. Hero title geometry (display, padding, margin) is shared by both themes
+   so the hero height, and therefore the cover-fitted image scale and position, is identical when switching theme. */
 [data-theme="light"] .hero__title em { color: var(--accent-deep); }
 @media (min-width: 881px) {
   [data-theme="light"] .hero__scrim {
